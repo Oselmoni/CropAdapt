@@ -1,0 +1,1512 @@
+GID	PI Number	Common Name	Species
+G00002	FC31721		Glycine max
+G00004	FC33243	Anderson	Glycine max
+G00004_2	FC33243	Anderson	Glycine max
+G00007	PI123440	No. 2	Glycine max
+G00008	PI153262	Roumanie	Glycine max
+G00009	PI157421	Ebony	Glycine max
+G00010	PI165563	Bhart	Glycine max
+G00021	PI180501	Strain No. 18	Glycine max
+G00023	PI196166	No. 2296	Glycine max
+G00024	PI196175	Yu tae	Glycine max
+G00026	PI200508	Natsu Daizu	Glycine max
+G00027	PI209332	No. 4	Glycine max
+G00030	PI243541	Shakujo	Glycine max
+G00031	PI245331		Glycine soja
+G00032	PI248515	White Hilum Iwata Variety No. 2	Glycine max
+G00033	PI253658B	No. 9	Glycine max
+G00035	PI317334A	Kitamishiro	Glycine max
+G00036	PI317336	Shinsei	Glycine max
+G00037	PI323576	H 67-27	Glycine max
+G00040	PI326582A		Glycine soja
+G00042	PI339734		Glycine max
+G00044	PI339871A		Glycine soja
+G00044_2	PI339871A		Glycine soja
+G00048	PI366120		Glycine soja
+G00049	PI366121		Glycine soja
+G00049_2	PI366121		Glycine soja
+G00050	PI366122		Glycine soja
+G00051	PI366123		Glycine soja
+G00054	PI378683		Glycine soja
+G00056	PI378692		Glycine soja
+G00059	PI378697A		Glycine soja
+G00060	PI378702		Glycine soja
+G00061	PI393551		Glycine soja
+G00063	PI398296	KAS 173-3	Glycine max
+G00067	PI398593	KAS 390-4	Glycine max
+G00068	PI398595	KAS 390-5	Glycine max
+G00070	PI398610	KAS 390-8	Glycine max
+G00072	PI398614	KAS 390-9	Glycine max
+G00073	PI398881	KLS 126-1	Glycine max
+G00074	PI399043	KLS 903	Glycine max
+G00075	PI404166	Krasnoarmejskaja	Glycine max
+G00076	PI404182	Sin i tu li rau	Glycine max
+G00077	PI404188A	Huaj an si er dian	Glycine max
+G00078	PI404198B	(Sun huan do)	Glycine max
+G00079	PI407020	RB 1072	Glycine soja
+G00080	PI407027	RB 1072	Glycine soja
+G00081	PI407038	RB 1072	Glycine soja
+G00082	PI407042	RB 1072	Glycine soja
+G00083	PI407052	RB 1072	Glycine soja
+G00087	PI407096	RB 1072	Glycine soja
+G00089	PI407131	RB 1072	Glycine soja
+G00091	PI407162	K1-D	Glycine soja
+G00092	PI407170	K2-E	Glycine soja
+G00093	PI407171	K2-F	Glycine soja
+G00095	PI407184	K29	Glycine soja
+G00097	PI407195	K12-A	Glycine soja
+G00098	PI407197	K12-C	Glycine soja
+G00100	PI407214	K23-A	Glycine soja
+G00101	PI407228	K46-D	Glycine soja
+G00105	PI407246	K37-B	Glycine soja
+G00106	PI407248	K37-D	Glycine soja
+G00107	PI407275	K101-A	Glycine soja
+G00108	PI407285	Yasei Daizu	Glycine soja
+G00110	PI407288		Glycine soja
+G00110_2	PI407288		Glycine soja
+G00111	PI407300		Glycine soja
+G00112	PI407301		Glycine soja
+G00114	PI407716	Jin nung No. 3	Glycine max
+G00115	PI407729		Glycine max
+G00116	PI407788A	ORD 8113	Glycine max
+G00117	PI407801		Glycine max
+G00118	PI407849	KAS 510-1	Glycine max
+G00119	PI407965	KAERI 504-4	Glycine max
+G00121	PI408105A	KAS 633-19	Glycine max
+G00122	PI416890	Gokuwase natsu daizu	Glycine max
+G00124	PI416937	Houjaku Kuwazu	Glycine max
+G00125	PI416971	Kaifuu gyuumou ou 1	Glycine max
+G00126	PI417015	Kawanagare (Iwate)	Glycine max
+G00127	PI417091	Kuro mame	Glycine max
+G00130	PI417398	Touhou torotou	Glycine max
+G00133	PI423954	Shirome	Glycine max
+G00134	PI423967	Nabeshima	Glycine max
+G00136	PI423991	J-077633	Glycine soja
+G00138	PI424007	74005	Glycine soja
+G00139	PI424025B	74023	Glycine soja
+G00140	PI424035	74038	Glycine soja
+G00142	PI424045	74060	Glycine soja
+G00145	PI424078	74077	Glycine max
+G00146	PI424079	74079	Glycine soja
+G00147	PI424082	74082	Glycine soja
+G00148	PI424083A	74083	Glycine soja
+G00149	PI424088	74088	Glycine soja
+G00150	PI424096	74148	Glycine soja
+G00151	PI424102A	74101	Glycine soja
+G00152	PI424116	74116	Glycine soja
+G00154	PI424298	KAS 300-10	Glycine max
+G00155	PI424391	KAS 521-15	Glycine max
+G00157	PI424608A	KAS 681-21	Glycine max
+G00158	PI427136	Backchung No.42	Glycine max
+G00162	PI437169B	(VNIISC-4)	Glycine max
+G00162_2	PI437169B	(VNIISC-4)	Glycine max
+G00163	PI437321	Dunganscaja 462	Glycine max
+G00164	PI437653	Er-da-li	Glycine max
+G00165	PI437654	Er-hej-jan	Glycine max
+G00165_2	PI437654	Er-hej-jan	Glycine max
+G00166	PI437655	Er-huan-jan	Glycine max
+G00168	PI437679	Nan-cou	Glycine max
+G00168_2	PI437679	Nan-cou	Glycine max
+G00169	PI437690	Pin-din-guan	Glycine max
+G00171	PI437725	Te-zu-gan	Glycine max
+G00172	PI437863A	DV-2841	Glycine max
+G00174	PI437944	VIR 569	Glycine max
+G00176	PI438258	VIR 4714	Glycine max
+G00179	PI438471	Fiskeby III	Glycine max
+G00180	PI438498	Sable	Glycine max
+G00185	PI447004		Glycine soja
+G00186	PI458515	Tie Zhugan	Glycine max
+G00187	PI458535		Glycine soja
+G00188	PI458536		Glycine soja
+G00188_2	PI458536		Glycine soja
+G00189	PI458538		Glycine soja
+G00190	PI458826A	He Feng No. 23	Glycine max
+G00191	PI464881	Heihe Xiaohuang Dou	Glycine max
+G00194	PI464920B	(Jin Dou 33)	Glycine max
+G00195	PI464927A	LS-005	Glycine soja
+G00197	PI464929A	LS-009	Glycine soja
+G00198	PI464929B	(LS-009)	Glycine soja
+G00199	PI464935	81-200002	Glycine soja
+G00201	PI467312	Cha-mo-shi-dou	Glycine max
+G00202	PI467343	Yan-nong No. 2	Glycine max
+G00206	PI468400A		Glycine soja
+G00212	PI468915		Glycine max
+G00213	PI468916		Glycine soja
+G00213_2	PI468916		Glycine soja
+G00214	PI471938	197	Glycine max
+G00215	PI475783B	(Tsing 2)	Glycine max
+G00218	PI479751	GD 50351-1	Glycine soja
+G00219	PI479752	GD 50388-2	Glycine soja
+G00219_2	PI479752	GD 50388-2	Glycine soja
+G00221	PI479768	Long 79-3313-1	Glycine soja
+G00222	PI479769	Long 79-5801	Glycine soja
+G00225	PI483252	Doko	Glycine max
+G00227	PI483460B		Glycine soja
+G00229	PI483463		Glycine soja
+G00230	PI483464A		Glycine soja
+G00231	PI483465		Glycine soja
+G00234	PI495017C	(Beijing da qing don)	Glycine max
+G00236	PI504286	75042	Glycine soja
+G00237	PI504288	S	Glycine max
+G00243	PI507354	Tokei 421	Glycine max
+G00244	PI507355	Tokei 423	Glycine max
+G00246	PI507618	NIAR 040015	Glycine soja
+G00248	PI507641	NIAR 060014	Glycine soja
+G00249	PI507656	NIAR 090011	Glycine soja
+G00250	PI507662	NIAR 090019	Glycine soja
+G00251	PI507681B	(Jangiabad)	Glycine max
+G00253	PI507761	VIR 8455	Glycine soja
+G00256	PI508083	Dassel	Glycine max
+G00257	PI508266	Young	Glycine max
+G00260	PI513382	Glenwood	Glycine max
+G00261	PI515961	Pennyrile	Glycine max
+G00263	PI518664	Hutcheson	Glycine max
+G00263_2	PI518664	Hutcheson	Glycine max
+G00266	PI518703	He feng 25	Glycine max
+G00267	PI518711	Jilin 21	Glycine max
+G00268	PI518750	NS-16	Glycine max
+G00269	PI518751	NS-20	Glycine max
+G00269_2	PI518751	NS-20	Glycine max
+G00270	PI522182B	ZYD 253	Glycine soja
+G00272	PI522216	VIR 8500	Glycine soja
+G00273	PI522226	VIR 8511	Glycine soja
+G00273_2	PI522226	VIR 8511	Glycine soja
+G00274	PI522228	VIR 8514	Glycine soja
+G00278	PI533602	Lloyd	Glycine max
+G00280	PI533655	Burlison	Glycine max
+G00281	PI536635	Sprite	Glycine max
+G00283	PI540552	Hoyt	Glycine max
+G00283_2	PI540552	Hoyt	Glycine max
+G00284	PI540556	Jack	Glycine max
+G00286	PI542044	Kunitz	Glycine max
+G00287	PI542403	Dawson	Glycine max
+G00290	PI546044	OT89-06	Glycine max
+G00293	PI547409	L62-1251	Glycine max
+G00294	PI547459	L64-1081	Glycine max
+G00295	PI547460	L64-1083	Glycine max
+G00296	PI547488	L67-3207	Glycine max
+G00297	PI547562	L72-2157	Glycine max
+G00299	PI547680	L62-17	Glycine max
+G00300	PI547686	L62-956	Glycine max
+G00301	PI547690	L63-1212	Glycine max
+G00302	PI547716	L62-667	Glycine max
+G00303	PI547779	L72D-4110	Glycine max
+G00304	PI547831	L83-0215	Glycine soja
+G00305	PI547862	L83-570	Glycine max
+G00306	PI548182	T157	Glycine max
+G00307	PI548190	T176	Glycine max
+G00310	PI548298	A.K. (Harrow)	Glycine max
+G00311	PI548311	Capital	Glycine max
+G00312	PI548316	Cloud	Glycine max
+G00313	PI548317	Columbia	Glycine max
+G00314	PI548318	Dunfield	Glycine max
+G00315	PI548342	Higan	Glycine max
+G00316	PI548348	Illini	Glycine max
+G00317	PI548349	Ilsoy	Glycine max
+G00318	PI548356	Kanro	Glycine max
+G00319	PI548360	Korean	Glycine max
+G00320	PI548362	Lincoln	Glycine max
+G00320_2	PI548362	Lincoln	Glycine max
+G00323	PI548379	Mandarin (Ottawa)	Glycine max
+G00324	PI548382	Manitoba Brown	Glycine max
+G00326	PI548391	Mukden	Glycine max
+G00327	PI548402	Peking	Glycine max
+G00327_2	PI548402	Peking	Glycine max
+G00327_3	PI548402	Peking	Glycine max
+G00328	PI548406	Richland	Glycine max
+G00329	PI548415	Sooty	Glycine max
+G00330	PI548417	Soysota	Glycine max
+G00333	PI548445	CNS	Glycine max
+G00334	PI548456	Haberlandt	Glycine max
+G00336	PI548477	Ogden	Glycine max
+G00339	PI548485	Roanoke	Glycine max
+G00340	PI548488	S-100	Glycine max
+G00345	PI548506	Amsoy	Glycine max
+G00346	PI548510	Beeson	Glycine max
+G00347	PI548511	Beeson 80	Glycine max
+G00348	PI548512	Century	Glycine max
+G00352	PI548520	Preston	Glycine max
+G00352_2	PI548520	Preston	Glycine max
+G00354	PI548524	Weber	Glycine max
+G00354_2	PI548524	Weber	Glycine max
+G00357	PI548533	Clark	Glycine max
+G00358	PI548540	Corsoy	Glycine max
+G00364	PI548565	Gnome	Glycine max
+G00366	PI548573	Harosoy	Glycine max
+G00369	PI548582	McCall	Glycine max
+G00371	PI548593	Maple Arrow	Glycine max
+G00372	PI548603	Perry	Glycine max
+G00373	PI548604	Pershing	Glycine max
+G00376	PI548631	Williams	Glycine max
+G00378	PI548634	Zane	Glycine max
+G00379	PI548638	OAC Libra	Glycine max
+G00380	PI548643	Maple Glen	Glycine max
+G00381	PI548644	OAC Musca	Glycine max
+G00385	PI548656	Lee	Glycine max
+G00386	PI548657	Jackson	Glycine max
+G00386_2	PI548657	Jackson	Glycine max
+G00389	PI548667	Essex	Glycine max
+G00393	PI548985	Kershaw	Glycine max
+G00398	PI549018	ZYD 3939	Glycine max
+G00400	PI549031		Glycine max
+G00401	PI549032	ZYD 2632	Glycine soja
+G00403	PI549046	ZYD 3728	Glycine soja
+G00403_2	PI549046	ZYD 3728	Glycine soja
+G00404	PI549047	Mrs. Wong's Picnic #1	Glycine soja
+G00405	PI549048		Glycine soja
+G00406	PI552538	Dunbar	Glycine max
+G00412	PI553047	Gordon	Glycine max
+G00417	PI561271	Pei xian da quing dou	Glycine max
+G00418	PI561301	Bai lu dou	Glycine max
+G00420	PI561370	Fen dou 14	Glycine max
+G00422	PI562547	KC1	Glycine soja
+G00423	PI562551	KC26	Glycine soja
+G00424	PI562553	KD5	Glycine soja
+G00425	PI562559	KE16	Glycine soja
+G00428	PI562565	KF13	Glycine soja
+G00428_2	PI562565	KF13	Glycine soja
+G00429	PI567071A	MARIF 2669	Glycine max
+G00430	PI567171	Hei he No. 1	Glycine max
+G00430_2	PI567171	Hei he No. 1	Glycine max
+G00432	PI567189A	Ekhabac	Glycine max
+G00437	PI567230	WJK-PRC-23	Glycine max
+G00438	PI567258	He pi dou	Glycine max
+G00439	PI567293	Ben di huang dou	Glycine max
+G00440	PI567298	Chan yao dou	Glycine max
+G00442	PI567305	Hei dou zi	Glycine max
+G00443	PI567336B	(Lao hei dou)	Glycine max
+G00444	PI567343	Ma huang dou	Glycine max
+G00445	PI567354	You huang dou	Glycine max
+G00446	PI567357	Du jia qiao huang dou	Glycine max
+G00447	PI567364	Ping luo huang da dou	Glycine max
+G00448	PI567383	Da ke huang dou	Glycine max
+G00449	PI567387	Huang huai dou	Glycine max
+G00449_2	PI567387	Huang huai dou	Glycine max
+G00450	PI567395	Lai wa dou	Glycine max
+G00452	PI567503	Niu mao huang	Glycine max
+G00453	PI567516C	(Ba yue zha)	Glycine max
+G00454	PI567519	Bai hua chi	Glycine max
+G00455	PI567525	Cao qing huang dou	Glycine max
+G00455_2	PI567525	Cao qing huang dou	Glycine max
+G00456	PI567611	Ba yue zha	Glycine max
+G00457	PI567651	Shang cai er cao ping ding shi	Glycine max
+G00458	PI567690	Fu yang (7)	Glycine max
+G00459	PI567719	Fu yang (43)	Glycine max
+G00460	PI567731	Fu yang (56)	Glycine max
+G00461	PI567763	Pei xian xiao you dou	Glycine max
+G00463	PI567782	OAC Dorado	Glycine max
+G00467	PI574486	Jin dou 13	Glycine max
+G00470	PI578341	L 521	Glycine soja
+G00472	PI578357	KZ-6352/91	Glycine soja
+G00473	PI578366	Hong hu liu yue bao	Glycine max
+G00475	PI578457A	May den	Glycine max
+G00477	PI587552	Nan jing da ping ding huang yi No. 1	Glycine max
+G00478	PI587584	Yi zheng da li huang dou	Glycine max
+G00479	PI587666	Er dao zao	Glycine max
+G00480	PI587699	Qing dou	Glycine max
+G00482	PI587752	Xian ning dong huang dou jia	Glycine max
+G00485	PI587802	Da li huang	Glycine max
+G00486	PI587848	Wu chang hei dong dou	Glycine max
+G00487	PI587950	Sha xian wu dou	Glycine max
+G00489	PI588053A	Xiao li huang	Glycine max
+G00490	PI591431	OT94-49	Glycine max
+G00491	PI591432	OT94-51	Glycine max
+G00492	PI591433	OT94-37	Glycine max
+G00493	PI591435	OT94-41	Glycine max
+G00495	PI591495	L93-2740	Glycine max
+G00496	PI591511	L89-1581	Glycine max
+G00497	PI591539	L91-8558	Glycine max
+G00498	PI591541	L74-102	Glycine max
+G00502	PI592941	Liao dou No. 10	Glycine max
+G00504	PI593258	Macon	Glycine max
+G00505	PI593983	Hidaka-6	Glycine soja
+G00505_2	PI593983	Hidaka-6	Glycine soja
+G00506	PI594012	Heuksatangdu	Glycine max
+G00507	PI594301	Toyomusume	Glycine max
+G00508	PI594451	Liu yue bao	Glycine max
+G00510	PI594512A	Bian zi jiang se dou	Glycine max
+G00511	PI594551	Bai mao dou	Glycine max
+G00512	PI594579	Zhong he tian cheng dou	Glycine max
+G00513	PI594599	Chang de chun hei dou	Glycine max
+G00514	PI594615	Liu yue zao	Glycine max
+G00515	PI594629	Xiao hua lian	Glycine max
+G00516	PI594777	Liu yue huang	Glycine max
+G00517	PI594788	Da zao dou	Glycine max
+G00518	PI594826A	Xiao bai dou	Glycine max
+G00519	PI594875A	Hu pi dou	Glycine max
+G00520	PI595362	MAGELLAN	Glycine max
+G00524	PI597387	Pana	Glycine max
+G00525	PI597448D	Jiamusi-1	Glycine soja
+G00526	PI597458C	ZYD3233	Glycine soja
+G00527	PI597459C	ZYD3234	Glycine soja
+G00527_2	PI597459C	ZYD3234	Glycine soja
+G00528	PI597459D	ZYD3234	Glycine soja
+G00529	PI597460A	ZYD3235	Glycine soja
+G00530	PI597461A	ZYD3243	Glycine soja
+G00531	PI597461B	ZYD3243	Glycine soja
+G00532	PI597461C	ZYD3243	Glycine soja
+G00533	PI597462B	ZYD3258	Glycine soja
+G00535	PI598124	Maverick	Glycine max
+G00535_2	PI598124	Maverick	Glycine max
+G00538	PI602991	Niu jiao qi da hei dou	Glycine max
+G00539	PI602995	LG90-2550	Glycine max
+G00540	PI603154	GL 2622 /96	Glycine max
+G00541	PI603170	GL 2683 /96	Glycine max
+G00542	PI603175	GL 2688 /96	Glycine max
+G00543	PI603176A		Glycine max
+G00544	PI603318	Xiao zhu yao	Glycine max
+G00545	PI603336	Qing pi si li huang	Glycine max
+G00546	PI603357	Du Lu Dou	Glycine max
+G00547	PI603384	Ping ding xiang	Glycine max
+G00548	PI603399	Xiao bai qi	Glycine max
+G00548_2	PI603399	Xiao bai qi	Glycine max
+G00549	PI603400	Tian e dan	Glycine max
+G00550	PI603413	Yu shi dou	Glycine max
+G00551	PI603420	ZDD01501	Glycine max
+G00552	PI603424A	ZDD007871	Glycine max
+G00553	PI603497	Hua dou	Glycine max
+G00554	PI603516	Xiao ma yi dan	Glycine max
+G00555	PI603596	Bai hua gu tian dou	Glycine max
+G00556	PI603675	Huai yin gua dou jia	Glycine max
+G00556_2	PI603675	Huai yin gua dou jia	Glycine max
+G00557	PI603756	ZDD05996	Glycine max
+G00558	PI603767	Xia hei dou	Glycine max
+G00559	PI605869A	Sample 140	Glycine max
+G00560	PI612611	Browngilgun	Glycine max
+G00561	PI612719	Harbin 91-6065	Glycine max
+G00566	PI615553	LG92-1255	Glycine max
+G00569	PI628809	BR-16	Glycine max
+G00570	PI628838	FT-Abyara	Glycine max
+G00571	PI628856	IAS-5	Glycine max
+G00572	PI628879	Parana	Glycine max
+G00573	PI628930	FT-Cristalina	Glycine max
+G00574	PI628946	IAC-8	Glycine max
+G00577	PI633730	LG94-1128	Glycine max
+G00578	PI633731	LG94-1906	Glycine max
+G00579	PI634883	(Elf)	Glycine max
+G00580	PI639283	LG97-7012	Glycine max
+G00581	PI639285	LG98-1605	Glycine max
+G00582	PI639586	KB 14	Glycine soja
+G00582_2	PI639586	KB 14	Glycine soja
+G00583	PI639588B	KA 325	Glycine soja
+G00584	PI639621	KT 156	Glycine soja
+G00584_2	PI639621	KT 156	Glycine soja
+G00586	PI639635	USSURIISKAYA	Glycine soja
+G00587	PI639693	Skylla	Glycine max
+G00588	PI639740	LD00-3309	Glycine max
+G00588_2	PI639740	LD00-3309	Glycine max
+G00590_2	PI643146	Prohio	Glycine max
+G00591	PI643395	CL0J173-6-8	Glycine max
+G00592	PI647086	N8001	Glycine max
+G00594	PI658519	LD00-2817P	Glycine max
+G00595	PI660989	LG00-3372	Glycine max
+G00596	PI663948	Embrapa 48	Glycine max
+G00597	PI664025	LG04-6000	Glycine max
+G00599	PI79691-4		Glycine max
+G00600	PI80822	Shiheigai Shirobana	Glycine max
+G00601	PI80837	Mejiro	Glycine max
+G00601_2	PI80837	Mejiro	Glycine max
+G00603	PI83945-3	(Dairyu Tsurunoko)	Glycine max
+G00604	PI84631	S-56	Glycine max
+G00604_2	PI84631	S-56	Glycine max
+G00605	PI84987	Oni Hadaka	Glycine max
+G00606	PI84987A	(Oni Hadaka)	Glycine max
+G00607	PI86006	Kiio Shokuzu	Glycine max
+G00608	PI86024	Daidzuhinshu satei	Glycine max
+G00610	PI87617	Miyongaikon	Glycine max
+G00611	PI87631-1	Kindaizu	Glycine max
+G00613	PI88479	Kungchuling Improved No. 77	Glycine max
+G00614	PI88788	5913	Glycine max
+G00616	PI89138	Zontanorukon	Glycine max
+G00617	PI89772	7193	Glycine max
+G00620	PI90763	7570	Glycine max
+G00623		4J105-3-4	Glycine max
+G00624		5M20-2-5-2	Glycine max
+G00629		Anta_82	Glycine max
+G00630		Beijing-IGDB-1	Glycine max
+G00631		Bin Hai Da huang Ke Zi Jia	Glycine max
+G00632		BR-GO_8660	Glycine max
+G00633		BR-MG_46	Glycine max
+G00634		BRS_232	Glycine max
+G00635		BRS_284	Glycine max
+G00636		BRS_360_RR	Glycine max
+G00637		BRS_361	Glycine max
+G00638		BRS_Sambaiba	Glycine max
+G00639		BRS_Valiosa_RR	Glycine max
+G00640		BRS-GO_8360	Glycine max
+G00641		BRS-GO_Chapadoes	Glycine max
+G00642		BRSMG_850G_RR	Glycine max
+G00643		BRSMT_Pintado	Glycine max
+G00644		BRSMT_Uirapuru	Glycine max
+G00645		Cang Dou-11	Glycine max
+G00646		CD_201	Glycine max
+G00647		Chang Nong No.13	Glycine max
+G00648		Chang Nong No.15	Glycine max
+G00649		Chang Nong No.16	Glycine max
+G00650		CL0J095-4-6	Glycine max
+G00651		Cu Dou	Glycine max
+G00652		Da Qing Ren	Glycine max
+G00653		Da Tun Xiao Hei Dou	Glycine max
+G00654		Dai Mi Dou	Glycine max
+G00655		Dong Nong No.26	Glycine max
+G00656		Dong Nong No.51	Glycine max
+G00657		Dong Nong No.52	Glycine max
+G00658		Dong Shan Bai Ma Dou	Glycine max
+G00659		Emgopa_301	Glycine max
+G00661		Fen Dou No.63	Glycine max
+G00662		Fen Dou No.65	Glycine max
+G00663		Fen Dou No.78	Glycine max
+G00664		Fen Dou No.79	Glycine max
+G00665		Fen Dou No.85	Glycine max
+G00666		Fen Dou No.86	Glycine max
+G00667		Fen Dou No.88	Glycine max
+G00668		Fen Dou No.89	Glycine max
+G00670		Guang Rao Da Qing Dou	Glycine max
+G00671		Gui Chun No.8	Glycine max
+G00672		He Dou	Glycine max
+G00673		He Dou No.13	Glycine max
+G00674		Hei Nong No.51	Glycine max
+G00675		Hei Wa Shi Dou	Glycine max
+G00676		Holladay (S-100)	Glycine max
+G00677		Hong Zhu Dou	Glycine max
+G00678		HS6-3976	Glycine max
+G00679		IA3023	Glycine max
+G00681		Ji Shan De Da Li Hei Dou	Glycine max
+G00682		Ji Yu No.90	Glycine max
+G00683		Jin Da No.26	Glycine max
+G00684		Jin Da No.52	Glycine max
+G00685		Jin Da No.62	Glycine max
+G00686		Jin Da No.70	Glycine max
+G00687		Jin Da No.73	Glycine max
+G00688		Jin Da No.75	Glycine max
+G00689		Jin Huang No.35	Glycine max
+G00690		Jin Shan Cha Zhu Shi Dou	Glycine max
+G00691		Jiu Nong No.30	Glycine max
+G00693		LD01-5907	Glycine max
+G00694		LD02-4485	Glycine max
+G00695		LD02-9050	Glycine max
+G00696		LG03-2979	Glycine max
+G00697		LG03-3191	Glycine max
+G00698		LG04-4717	Glycine max
+G00699		LG05-4292	Glycine max
+G00700		LG05-4317	Glycine max
+G00701		LG05-4464	Glycine max
+G00702		LG05-4832	Glycine max
+G00703		Liao Dou No.11	Glycine max
+G00704		Liao Dou No.15	Glycine max
+G00705		Liao Dou No.17	Glycine max
+G00706		Liao Dou No.21	Glycine max
+G00707		Liao Dou No.3	Glycine max
+G00710		Long quan Da Dou	Glycine max
+G00711		Lu Dou No.11	Glycine max
+G00720		NA_5909_RG	Glycine max
+G00721		Nan Guan Xiao PI Qing	Glycine max
+G00722		Nan Nong Cai Dou No.1	Glycine max
+G00723		NE3001	Glycine max
+G00724		Ni Ding Hua Mei Dou	Glycine max
+G00725		Ni Dou	Glycine max
+G00726		Nian Shi Huang Dou	Glycine max
+G00727		P98Y11	Glycine max
+G00728		PI Xian Da Zi Huo Cao	Glycine max
+G00729		PI Xian Nian Zhuang Liu Yue Xian	Glycine max
+G00735		S05-11482	Glycine max
+G00736		S06-13640	Glycine max
+G00737		S07-5049	Glycine max
+G00739		S10-11227	Glycine max
+G00740		Santa_Rosa	Glycine max
+G00741		Sha Xian Qin Dou	Glycine max
+G00742		Sha Xin Dou	Glycine max
+G00743		Shen Li No.3	Glycine max
+G00744		Sheng Dou No.9	Glycine max
+G00745		Shu Xian No.205	Glycine max
+G00746		Su Nong No.10	Glycine max
+G00747		Su Nong No.14	Glycine max
+G00748		Su Nong No.25	Glycine max
+G00749		Su Nong No.33	Glycine max
+G00750		Tai Wan No.1	Glycine max
+G00751		Tai Xin Niu Mao Huang Yi	Glycine max
+G00752		Tie Feng No.22	Glycine max
+G00754		TN05-3027	Glycine max
+G00755		Tong an Zi Hong Dou	Glycine max
+G00756		U03-100612	Glycine max
+G00757		V71-370	Glycine max
+G00759		VMax_RR	Glycine max
+G00760		Wei No.6823	Glycine max
+G00761		Xi Zang Da Dou No.20	Glycine max
+G00762		Xia Men Teng Zai Dou	Glycine max
+G00763		Xiang Dou No.4	Glycine max
+G00764		Xiao Huang Dou	Glycine max
+G00765		Xiao Mi Dou	Glycine max
+G00766		Xin Xian Xiao Huang Dou	Glycine max
+G00767		You Pi Zhi Hei Dou	Glycine max
+G00768		Yu Jiang Wu Yue Niu Mao Huang	Glycine max
+G00769		Zhong Huang No.13	Glycine max
+G00770		Zhong Huang No.14	Glycine max
+G00771		Zhong Huang No.31	Glycine max
+G00772		Zhong Huang No.35	Glycine max
+G00773		Zhong Huang No.38	Glycine max
+G00774		Zhong Huang No.40	Glycine max
+G00775		Zhong Huang No.50	Glycine max
+G00776		ZJ-Y108	Glycine soja
+G00777		ZJ-Y155	Glycine soja
+G00778		ZJ-Y188	Glycine soja
+G00779		ZJ-Y191	Glycine soja
+G00780		ZJ-Y200	Glycine soja
+G00781		ZJ-Y217	Glycine soja
+G00782		ZJ-Y2300-1	Glycine soja
+G00783		ZJ-Y282	Glycine soja
+G00784		ZJ-Y314	Glycine soja
+G00785		ZJ-YJ038	Glycine soja
+G00786		ZJ-YJ086	Glycine soja
+G00787		ZJ-ZY020	Glycine soja
+G00788	PI101404A		Glycine soja
+G00789	PI342622A		Glycine soja
+G00790	PI366124		Glycine soja
+G00791	PI378684A		Glycine soja
+G00791_2	PI378684A		Glycine soja
+G00792	PI378684B		Glycine soja
+G00793	PI378690		Glycine soja
+G00794	PI378696A		Glycine soja
+G00794_2	PI378696A		Glycine soja
+G00795	PI378696B		Glycine soja
+G00796	PI378698		Glycine soja
+G00796_2	PI378698		Glycine soja
+G00797	PI407077	RB 1072	Glycine soja
+G00798	PI407083	RB 1072	Glycine soja
+G00798_2	PI407083	RB 1072	Glycine soja
+G00799	PI407157	RB 1072	Glycine soja
+G00800	PI407190	K56-C	Glycine soja
+G00801	PI407202	K15	Glycine soja
+G00802	PI407220	K25-B	Glycine soja
+G00803	PI407239	K55	Glycine soja
+G00804	PI407241	K35-B	Glycine soja
+G00805	PI407243	K36-B	Glycine soja
+G00806	PI407281	K103-C	Glycine soja
+G00806_2	PI407281	K103-C	Glycine soja
+G00807	PI407286	Tsuru Mame	Glycine soja
+G00807_2	PI407286	Tsuru Mame	Glycine soja
+G00808	PI407303		Glycine soja
+G00808_2	PI407303		Glycine soja
+G00809	PI407308		Glycine soja
+G00809_2	PI407308		Glycine soja
+G00810	PI424004B	74001	Glycine soja
+G00811	PI424008A	74006	Glycine soja
+G00811_2	PI424008A	74006	Glycine soja
+G00812	PI424097	74096	Glycine soja
+G00813	PI424121	74129	Glycine soja
+G00814	PI447003A		Glycine soja
+G00815	PI464890B	(Gong di No. 2019)	Glycine soja
+G00816	PI468918		Glycine soja
+G00816_2	PI468918		Glycine soja
+G00817	PI479746B	GD 50062	Glycine soja
+G00818	PI507595	NIAR 030002	Glycine soja
+G00819	PI507630	NIAR 060002	Glycine soja
+G00820	PI507752	VIR 8448	Glycine soja
+G00820_2	PI507752	VIR 8448	Glycine soja
+G00821	PI507757	VIR 8451	Glycine soja
+G00822	PI522209B	VIR 8493	Glycine soja
+G00823	PI522235B	VIR 8525	Glycine soja
+G00824	PI562558	KE12	Glycine soja
+G00824_2	PI562558	KE12	Glycine soja
+G00825	PI562564	KF7	Glycine soja
+G00826	PI597458B		Glycine soja
+G00826_2	PI597458B		Glycine soja
+G00827	PI597471D	(Zheye 29)	Glycine soja
+G00827_2	PI597471D	(Zheye 29)	Glycine soja
+G00828	PI639590A	KZ 659	Glycine soja
+G00828_2	PI639590A	KZ 659	Glycine soja
+G01131	PI322692	Max C.P1159A8	Glycine max
+G01132	PI548364	Macoupin	Glycine max
+G01133	PI548400	Patoka	Glycine max
+G01134	PI548619	Sparks	Glycine max
+G01135	PI559932	Manokin	Glycine max
+G01136	FC29333	Laredo	Glycine max
+G01137	FC31697		Glycine max
+G01138	PI54591	No. 31	Glycine max
+G01139	PI54608-1	No. 48	Glycine max
+G01140	PI54614	No. 54	Glycine max
+G01141	PI54615-1	No. 55	Glycine max
+G01142	PI58955	Common Yellow Variety	Glycine max
+G01143	PI62203	937	Glycine max
+G01144	PI68521-1	205	Glycine max
+G01145	PI68604-1	285	Glycine max
+G01146	PI68732-1	204	Glycine max
+G01147	PI70080	6908	Glycine max
+G01148	PI70466-3	7336	Glycine max
+G01149	PI71465	No. 33	Glycine max
+G01150	PI81041	Kuro Daizu	Glycine max
+G01151	PI81785	Chusei Hadaka	Glycine max
+G01152	PI83881	Orukon	Glycine max
+G01153	PI83942	Kuro churyu	Glycine max
+G01154	PI84637	S-62	Glycine max
+G01155	PI84656	S-81	Glycine max
+G01156	PI84946-2	(Kandokon)	Glycine max
+G01157	PI84973	Takiya	Glycine max
+G01158	PI86904	Fukota	Glycine max
+G01159	PI86972-2	(Pakute)	Glycine max
+G01160	PI87620	Kuromeshoryu	Glycine max
+G01161	PI88313	5702	Glycine max
+G01162	PI88468	Iganzu	Glycine max
+G01163	PI89005-5	5950	Glycine max
+G01164	PI89775	7221	Glycine max
+G01165	PI90479P	7413	Glycine max
+G01167	PI91100-3	6554	Glycine max
+G01168	PI91159-4	6614	Glycine max
+G01169	PI91160	6615	Glycine max
+G01170	PI92651	7846	Glycine max
+G01171	PI94159-3	(Kiizaya)	Glycine max
+G01172	PI95860	155	Glycine max
+G01173	PI103088	Ming Chuan	Glycine max
+G01174	PI153231	B-63	Glycine max
+G01176	PI154189	No. 57	Glycine max
+G01177	PI159925	Glycine H	Glycine max
+G01178	PI165675	Nanking 332	Glycine max
+G01179	PI166105	Bhart	Glycine max
+G01180	PI171428	Large Yellow Soybean	Glycine max
+G01181	PI171451	Kosamame	Glycine max
+G01182	PI179935	Bhart	Glycine max
+G01183	PI189873	Miko Saumon	Glycine max
+G01184	PI209333	No. 3	Glycine max
+G01185	PI209334	No. 9	Glycine max
+G01186	PI232992	Kono-Kuradaizu	Glycine max
+G01187	PI240664	Bilomi No. 3	Glycine max
+G01188	PI253661B	No. 12	Glycine max
+G01189	PI261272C	(Tua Nao)	Glycine max
+G01190	PI266806C	No. 4	Glycine max
+G01191	PI274453		Glycine max
+G01192	PI291294		Glycine max
+G01193	PI291309D		Glycine max
+G01194	PI291310C		Glycine max
+G01195	PI297505	Czi ti No. 5	Glycine max
+G01196	PI297520	Iregi Universal	Glycine max
+G01197	PI324924	Rhosa	Glycine max
+G01198	PI342434		Glycine max
+G01199	PI342619A		Glycine max
+G01200	PI360957	Karafuto No. 1	Glycine max
+G01201	PI361066B	(F. 56-17)	Glycine max
+G01202	PI361070	Faur	Glycine max
+G01203	PI361080	Kormovaia 15	Glycine max
+G01204	PI361087	Medias 23	Glycine max
+G01205	PI361093	Novosadska Br. 1	Glycine max
+G01206	PI372403B	(Caloria)	Glycine max
+G01207	PI372418	Novosadska Br. 4	Glycine max
+G01208	PI374207	N-9	Glycine max
+G01209	PI378658	Dnepropetrovsk 12	Glycine max
+G01210	PI378663	Habarovskaja II	Glycine max
+G01211	PI378680E	(VNIIMK 9186)	Glycine max
+G01212	PI379618	TC 1	Glycine max
+G01213	PI391577	Ch'a ye sheng tou	Glycine max
+G01214	PI391583	Jilin No. 10	Glycine max
+G01215	PI398633	KAS 390-17-2	Glycine max
+G01216	PI398965	KLS 628-1	Glycine max
+G01217	PI404187	Suj nii hun mao ju	Glycine max
+G01218	PI407701	Hei long No. 3	Glycine max
+G01219	PI407708A	Feng shou No. 10	Glycine max
+G01220	PI407742	16	Glycine max
+G01221	PI416751	A-B(D)	Glycine max
+G01222	PI416838	Choutan	Glycine max
+G01223	PI417215	Ooita Aki Daizu 2	Glycine max
+G01224	PI417242	Pekin dai seitou	Glycine max
+G01225	PI417345B	(Shou outou)	Glycine max
+G01226	PI417381	Tenpoku shirome	Glycine max
+G01227	PI417479	Yougetsu	Glycine max
+G01228	PI417500	Escura A	Glycine max
+G01229	PI417529	A38	Glycine max
+G01230	PI417581	H-060072	Glycine max
+G01231	PI423926	Tousan 72	Glycine max
+G01232	PI424038B	74053	Glycine max
+G01233	PI424195A	ISZ-3	Glycine max
+G01234	PI430595	58-161	Glycine max
+G01235	PI436684	Tie-feng 8	Glycine max
+G01236	PI437110A	VIR 244	Glycine max
+G01237	PI437112A	VIR 249	Glycine max
+G01238	PI437127A	Imeretinscaja	Glycine max
+G01239	PI437160	Krasnodarscaja 13	Glycine max
+G01240	PI437165A	Toncostebel'naja 27	Glycine max
+G01241	PI437240	CSchi 1069	Glycine max
+G01242	PI437265D	(Dobruzanca D)	Glycine max
+G01243	PI437376A	Ussurijscaja 308	Glycine max
+G01244	PI437485	VIR 1048	Glycine max
+G01245	PI437500A	VIR 3810	Glycine max
+G01246	PI437505	VIR 3853	Glycine max
+G01247	PI437662	Gun'-tszu-lin' 658	Glycine max
+G01248	PI437685D	(Phun-zhun)	Glycine max
+G01249	PI437695A	S-185	Glycine max
+G01250	PI437776	VIR 1302	Glycine max
+G01251	PI437788A	VIR 3018	Glycine max
+G01252	PI437793	VIR 3024	Glycine max
+G01253	PI437814A	An'da	Glycine max
+G01254	PI437838	DV-254	Glycine max
+G01256	PI437991B	VIR 1657	Glycine max
+G01257	PI438019B	VIR 1883	Glycine max
+G01258	PI438083	VIR 2506	Glycine max
+G01259	PI438112B	VIR 2623	Glycine max
+G01260	PI438230A	VIR 4521	Glycine max
+G01261	PI438239B	VIR 4536	Glycine max
+G01262	PI438309	VIR 3017	Glycine max
+G01263	PI438323	Grignon 53-F-3	Glycine max
+G01264	PI438335	SAO 196-C	Glycine max
+G01265	PI438336	Sao 208	Glycine max
+G01266	PI438347	35S.277	Glycine max
+G01267	PI438496B	(Peking)	Glycine max
+G01268	PI438496C	(Peking)	Glycine max
+G01269	PI438500	Virginia	Glycine max
+G01270	PI445824A	Wolfsthaler	Glycine max
+G01271	PI458505	Da Bai mei	Glycine max
+G01271_2	PI458505	Da Bai mei	Glycine max
+G01272	PI458510	Ji Ti No. 1	Glycine max
+G01273	PI464896	Jou Nong No. 5	Glycine max
+G01274	PI464912	Dan Dou 1	Glycine max
+G01275	PI464923	Tie Fen 16	Glycine max
+G01276	PI467347	Zi-hua-cuo-zi	Glycine max
+G01277	PI468408B	(Qi Huang No. 1)	Glycine max
+G01278	PI468908		Glycine max
+G01279	PI475820		Glycine max
+G01280	PI476352B	(Colnon)	Glycine max
+G01281	PI479735	Silihuang	Glycine max
+G01282	PI490766	Dawudou	Glycine max
+G01283	PI495020	Xu dou 2	Glycine max
+G01284	PI497953	I.C. 192	Glycine max
+G01285	PI497964A	I.C. 9461	Glycine max
+G01286	PI497967	PLSO 96	Glycine max
+G01288	PI506933	Kouiku 1	Glycine max
+G01289	PI506942	Koushurei 235	Glycine max
+G01290	PI507017	Madara ooha tsuru mame	Glycine max
+G01291	PI507088	Nattou Kotsubu	Glycine max
+G01292	PI507180	Rikuu 21	Glycine max
+G01293	PI507293B	(Shoukin ou)	Glycine max
+G01294	PI507458	Tousan kei BL 521	Glycine max
+G01295	PI507467	Tousan kei F 764	Glycine max
+G01296	PI507471	Tousan kei na 16	Glycine max
+G01297	PI507480	Tousan kei YL 24	Glycine max
+G01298	PI514671	Feng shou No. 7	Glycine max
+G01299	PI518668	TN 4-86	Glycine max
+G01300	PI518727	Ju huang	Glycine max
+G01301	PI532463B	(He bei No. 1)	Glycine max
+G01302	PI538386A	1886	Glycine max
+G01303	PI542972	H7190	Glycine max
+G01304	PI548162	T48	Glycine max
+G01305	PI548169	T117	Glycine max
+G01307	PI548178	T145	Glycine max
+G01308	PI548193	T201	Glycine max
+G01309	PI548198	T209	Glycine max
+G01310	PI548200	T211H	Glycine max
+G01311	PI548256	T279	Glycine max
+G01312	PI548313	Chestnut	Glycine max
+G01314	PI548336	Habaro	Glycine max
+G01315	PI548359	Kingwa	Glycine max
+G01316	PI548383	Mansoy	Glycine max
+G01317	PI548411	Seneca	Glycine max
+G01318	PI548427	Wilson	Glycine max
+G01319	PI548447	Cherokee	Glycine max
+G01320	PI548452	Dixie	Glycine max
+G01321	PI548473	Monetta	Glycine max
+G01322	PI548474	Nanda	Glycine max
+G01323	PI548479	Otootan	Glycine max
+G01324	PI548490	Tanner	Glycine max
+G01325	PI548521	BSR 201	Glycine max
+G01326	PI548561	Hodgson	Glycine max
+G01327	PI548571	Harlon	Glycine max
+G01328	PI548572	Harly	Glycine max
+G01329	PI548633	Wye	Glycine max
+G01331	PI548696	Dortchsoy 67	Glycine max
+G01332	PI548978	Gail	Glycine max
+G01333	PI549017	ZYD 3938	Glycine max
+G01334	PI549021A	Na hei dou	Glycine max
+G01335	PI549026	Gao li huang	Glycine max
+G01336	PI549028	Feng da li	Glycine max
+G01337	PI549040	ZYD 2704	Glycine max
+G01338	PI549041A	ZYD 2709	Glycine max
+G01339	PI556511	A3127	Glycine max
+G01339_2	PI556511	A3127	Glycine max
+G01340	PI561318A	Hui nan bai hua xiao hei dou	Glycine max
+G01341	PI561371	Fen dou 15	Glycine max
+G01342	PI561387	Kosuzu	Glycine max
+G01343	PI561389B	(Okura Natto)	Glycine max
+G01344	PI561701	G88-20092	Glycine max
+G01345	PI567074B	MARIF 2672	Glycine max
+G01346	PI567173	Hei he 51	Glycine max
+G01347	PI567225	Kisinevskaja 90	Glycine max
+G01348	PI567226	Har'kovskaja Zernoukosnaja	Glycine max
+G01349	PI567231	WJK-PRC-46	Glycine max
+G01350	PI567238	W6 6210	Glycine max
+G01350_2	PI567238	W6 6210	Glycine max
+G01351	PI567262A	Similar to: Gu tian type	Glycine max
+G01352	PI567307	Hei huang dou	Glycine max
+G01353	PI567346	Niu mao huang dou	Glycine max
+G01354	PI567352A	Yang yan qing dou	Glycine max
+G01355	PI567353	Yang yan ren dou	Glycine max
+G01356	PI567361	Lu fang huang dou	Glycine max
+G01357	PI567407	Xiao dou	Glycine max
+G01358	PI567408	Xiao jin huang	Glycine max
+G01359	PI567410B	(Yang huang dou)	Glycine max
+G01360	PI567415A	Bai da huang dou	Glycine max
+G01361	PI567416	Bai dou	Glycine max
+G01362	PI567418A	Bai hei dou	Glycine max
+G01363	PI567426	Bai huang dou	Glycine max
+G01364	PI567428	Bai ji yao	Glycine max
+G01365	PI567435B	(Hei hei dou)	Glycine max
+G01366	PI567439	Hong jia huang dou	Glycine max
+G01367	PI567488A	Di liu huang dou No. 2	Glycine max
+G01368	PI567489A	Er da li huang dou	Glycine max
+G01369	PI567532	Dai ye xiao huang dou	Glycine max
+G01370	PI567548	Hua li hu zi	Glycine max
+G01371	PI567558	Liu shi ri jin huang da dou	Glycine max
+G01371_2	PI567558	Liu shi ri jin huang da dou	Glycine max
+G01372	PI567576	Ping ding huang	Glycine max
+G01373	PI567604A	Xin huang dou	Glycine max
+G01374	PI567675	Yu cheng xiao tie jiao huang	Glycine max
+G01375	PI567685	Zhong mou tie jiao er cao	Glycine max
+G01376	PI567698A	Fu yang (17)	Glycine max
+G01377	PI567726	Fu yang (50)	Glycine max
+G01378	PI567746	Pei xian da bai jiao	Glycine max
+G01379	PI567780B	(Tong shan zheng ji dou)	Glycine max
+G01380	PI567788	Bienville	Glycine max
+G01381	PI574477	Fen dou 31	Glycine max
+G01382	PI578309	I-64	Glycine max
+G01383	PI578375B	(Aan tu dang di hei dou)	Glycine max
+G01384	PI578412	Gong jiao 6308-1	Glycine max
+G01385	PI578493	Huang bao zhu	Glycine max
+G01386	PI578495	Jin dou No. 4	Glycine max
+G01387	PI578499A	Lu yue bai	Glycine max
+G01388	PI578503	Tie jia si li huang	Glycine max
+G01389	PI578504	Xiang dou No. 3	Glycine max
+G01390	PI587588A	Tai xing niu mao huang yi	Glycine max
+G01391	PI587588B	(Tai xing niu mao huang yi)	Glycine max
+G01392	PI587712B	(E dou No. 1)	Glycine max
+G01393	PI587804	Jing 789	Glycine max
+G01394	PI587811A	ZDD005777	Glycine max
+G01395	PI592523	Glacier	Glycine max
+G01396	PI592937	Jin dou 14	Glycine max
+G01397	PI592940	Jin dou 17	Glycine max
+G01398	PI592952	Zheng 77249	Glycine max
+G01399	PI592954	Nin zhen No. 1	Glycine max
+G01400	PI592960	Dong nong 38	Glycine max
+G01401	PI593953	Sui nong No. 10	Glycine max
+G01402	PI594170B	(Geden shirazu)	Glycine max
+G01403	PI594307	Tsurusengoku	Glycine max
+G01404	PI594456A	Xiao jin huang	Glycine max
+G01405	PI594880	Song zi dou	Glycine max
+G01406	PI594922	Graham	Glycine max
+G01407	PI597464	Zhe chun No. 3	Glycine max
+G01408	PI597471A	Zheye 29	Glycine max
+G01409	PI597476	Deogyukong	Glycine max
+G01410	PI597478B	(Paldalkong)	Glycine max
+G01411	PI598358	TN 5-95	Glycine max
+G01412	PI602502B	(Xiong yue xiao huang dou)	Glycine max
+G01413	PI602993	Pi xian ruan tiao zhi	Glycine max
+G01414	PI603162	GL 2631 /96	Glycine max
+G01415	PI603290	Zao shu 18	Glycine max
+G01416	PI603345	ZDD00403	Glycine max
+G01417	PI603389	Huang ke	Glycine max
+G01418	PI603397	Hei qi huang da dou	Glycine max
+G01419	PI603426G	(Ben di yuan huang dou)	Glycine max
+G01420	PI603442	Ke qi xiao hei dou	Glycine max
+G01421	PI603458A	Shui dou	Glycine max
+G01422	PI603463	Dong jie No. 1	Glycine max
+G01423	PI603488	ZDD19294	Glycine max
+G01424	PI603492	Qi hei dou	Glycine max
+G01425	PI603494	Hai dou zi	Glycine max
+G01426	PI603495B	(Hong mi lan dou zi)	Glycine max
+G01427	PI603526	Hei you dou	Glycine max
+G01428	PI603549	Mei dou	Glycine max
+G01429	PI603555	Hua da hei dou	Glycine max
+G01430	PI603556	ZDD08563	Glycine max
+G01431	PI603559	ZDD08590	Glycine max
+G01432	PI603698J	(Dan yang shui bai dou)	Glycine max
+G01433	PI603722	Nan chong ba yue huang	Glycine max
+G01434	PI605765B	(Ninh minh)	Glycine max
+G01435	PI606374	Cao bang 8	Glycine max
+G01436	PI612730	Zhong huong No. 10	Glycine max
+G01437	PI612754	ZY 645	Glycine max
+G01438	PI628812	MG/BR-46 (Conquista)	Glycine max
+G01439	PI628913	BR-30	Glycine max
+G01440	PI628963	La Suprema	Glycine max
+G01441	PI631123	TW98-1	Glycine max
+G01442	PI632418	Tara	Glycine max
+G01443	PI632650	DT 22	Glycine max
+G01444	PI639528B	VIR 233	Glycine max
+G01445	PI639543	VIR 3715	Glycine max
+G01446	PI639550E	(KSHI 713)	Glycine max
+G01447	PI639559B	(VYTKA 2)	Glycine max
+G01448	PI639570	VIR 7010	Glycine max
+G01455	PI59845	Sohgetsu	Glycine max
+G01607	PI532454	Tai xing hei dou	Glycine max
+G01661	PI578490	He nan zao feng No. 1	Glycine max
+G01675	PI592936	Ji dou No. 7	Glycine max
+G01731	PI378699A		Glycine soja
+G01732	PI407175	K4-B	Glycine soja
+G01733	PI407183	K8-B	Glycine soja
+G01734	PI407229	K47-A	Glycine soja
+G01735	PI407262	K42-A	Glycine soja
+G01736	PI407270	K45-B	Glycine soja
+G01737	PI407307		Glycine soja
+G01738	PI407315		Glycine soja
+G01739	PI407318A		Glycine soja
+G01740	PI424014	74012	Glycine soja
+G01741	PI424107A	74106	Glycine soja
+G01742	PI507609	NIAR 040023	Glycine soja
+G01743	PI507615	NIAR 040012	Glycine soja
+G01744	PI507619B	NIAR 040016	Glycine soja
+G01745	PI507638	NIAR 060010	Glycine soja
+G01746	PI507667	NIAR 090024	Glycine soja
+G01747	PI507830B	VIR 9044	Glycine soja
+G01748	PI507847	L 598	Glycine soja
+G01749	PI532450	GD50344	Glycine soja
+G01750	PI562534	KA5	Glycine soja
+G01751	PI562557	KE10	Glycine soja
+G01752	PI562568	KF24	Glycine soja
+G01753	PI639590B	(KZ 659)	Glycine max
+G02045	PI548404	Poland Yellow	Glycine max
+G02048	PI548560	Evans	Glycine max
+G02072	PI81775	1486	Glycine max
+G02081	PI567417A	Bai Gun Dou	Glycine max
+G02082		Ba Hong No.1	Glycine max
+G02083		85_140	Glycine max
+G02084		AGS292	Glycine max
+G02085		58_161	Glycine max
+G02086		1508-102	Glycine max
+G02087		23P_3	Glycine max
+G02088		1508-101	Glycine max
+G02089		94_2_6	Glycine max
+G02090		Si Li Yuan	Glycine max
+G02091		Hui Bu Zhi	Glycine max
+G02092		Huang Shou Gan Dou	Glycine max
+G02093		Shan Xi Huang Sha Dou	Glycine max
+G02094		Huang Sha Dou_America	Glycine max
+G02095	PI561313	Huang Qi	Glycine max
+G02096	PI603403	Huang Mao Dou	Glycine max
+G02098		Si Jiao Qi	Glycine max
+G02099		Huang Dou 2	Glycine max
+G02100		Shun Yi Hei Dou	Glycine max
+G02101		Si Li Hei Dou	Glycine max
+G02102	PI538380	Si Jiao Qi Huang Dou	Glycine max
+G02103		Si Li Jia Da Dou	Glycine max
+G02104		Si Li Jia	Glycine max
+G02105		Hui Mao Bian Jing	Glycine max
+G02106	PI592948	Jin Yi No.10	Glycine max
+G02107		Jin Dou No.501	Glycine max
+G02108		Hui Lin Qing	Glycine max
+G02109		Yan Nong No.3	Glycine max
+G02110		Yan Tian Qing Pi Dou	Glycine max
+G02111		Yan Cheng Qi Si Ni Dou	Glycine max
+G02112		Yan Huang No.1	Glycine max
+G02113		Jin Yi No.52	Glycine max
+G02114		Ye Xian Hong Gun Dou	Glycine max
+G02115		Yang Tian Xiao Huang Dou	Glycine max
+G02116		Jin Yi No.59	Glycine max
+G02117		Yang Da Li	Glycine max
+G02118		Yi Li Hei Dou	Glycine max
+G02119		Xu Dou No.10	Glycine max
+G02120		Xu Dou No.11	Glycine max
+G02121		Xin Yang Yang Yan Dou	Glycine max
+G02122		Xin Jiang Zao Shu Pin Zhong	Glycine max
+G02123		Xing Hua Ma Shi Zi Ding	Glycine max
+G02124		Xiong Yue Xiao Li Huang	Glycine max
+G02125	PI587677	Xiao Li Huang	Glycine max
+G02126	PI587919	Xiao Qing Dou	Glycine max
+G02127		Xin Da Dou No.1	Glycine max
+G02128		Xin Da Dou No.8	Glycine max
+G02129		Gao Feng No.1	Glycine max
+G02130		Fu75-65	Glycine max
+G02131	PI458828	Qun Xuan No.1	Glycine max
+G02132		Qing Pi Ping Ding Xiang	Glycine max
+G02133		Qing No.6	Glycine max
+G02134		Bo Tou Qing Pi Dou	Glycine max
+G02135	PI603411	Qing Mo Shi Dou	Glycine max
+G02136		Qing Ke Yuan Dou	Glycine max
+G02137		Qin Yang Bai Dou	Glycine max
+G02138		Qing An Hei Dou	Glycine max
+G02139		Lin Xian Cao Huang Dou	Glycine max
+G02140		Qiao Ning Ping Ding Huang	Glycine max
+G02141		Qian An Yi Li Chuan	Glycine max
+G02142		Liao Dou No.31	Glycine max
+G02143		Lin Dou No.10	Glycine max
+G02144		Liao Dou No.16	Glycine max
+G02145		Liao Dou No.22	Glycine max
+G02146		Li Cheng Xiao Li Qing	Glycine max
+G02149		Liu Shi Tian Huan Cang	Glycine max
+G02150		Liu Yue Hong	Glycine max
+G02151		Xiao Jin Yuan	Glycine max
+G02152		Hei Nong No.48	Glycine max
+G02153	PI603430A	Da Hei Qi	Glycine max
+G02154		Ma Ma Niu Mao Huang	Glycine max
+G02155	PI567300A	Da Hei Dou	Glycine max
+G02156		Lyu Xin Lao Ya Ling	Glycine max
+G02157		Lyu Cao Dou	Glycine max
+G02158		Lu Tuan Bai Jian Ke	Glycine max
+G02159	PI518718A	Lu Dou No.4	Glycine max
+G02160		Long Xuan No.1	Glycine max
+G02161		Long Xiao Li Dou No.1	Glycine max
+G02162		Hei Nong No.41	Glycine max
+G02163		Long Hei No.1	Glycine max
+G02164	PI587658A	Liu Yue Bao	Glycine max
+G02165		Hei Nong No.2	Glycine max
+G02166		Hei He R1	Glycine max
+G02167		Hei Nong No.40	Glycine max
+G02168		Hei Jia Pi Lyu Qing Dou	Glycine max
+G02169		Hei He No.4	Glycine max
+G02170		Hei He No.46	Glycine max
+G02171		Hei He No.36	Glycine max
+G02172	PI567306A	Hei Gun Dou	Glycine max
+G02173		Tian E Dan 2	Glycine max
+G02174		Tie Dou No.37	Glycine max
+G02175		Tie Dou No.61	Glycine max
+G02176		Tie Feng No.31	Glycine max
+G02177		Tie Feng No.35	Glycine max
+G02178	PI594426A	Tie Jiao Huang	Glycine max
+G02179		Tie Jia Hei	Glycine max
+G02180		Tong Shan Tian E Dan	Glycine max
+G02181		TK780	Glycine max
+G02182		Tong Shan Hu Shan Da Si Li	Glycine max
+G02183		Ke Dou No.1	Glycine max
+G02184	PI556949	Ke Feng No.1	Glycine max
+G02185	PI385942	Enrei	Glycine max
+G02186		K20-3	Glycine max
+G02187		Ju Xuan No.23	Glycine max
+G02188		K3	Glycine max
+G02189		K099	Glycine max
+G02190		Kang Xian No.3	Glycine max
+G02191		Ke Bei No.1	Glycine max
+G02192		K9602-1	Glycine max
+G02193		Kai Feng Qing Dou	Glycine max
+G02194		Da Zi Qi	Glycine max
+G02195	PI603428A	Da Li Hei Dou	Glycine max
+G02196	PI594559	Da Li Huang Dou	Glycine max
+G02197		Da Tian E Dan	Glycine max
+G02198	PI587912	Da Li Qing	Glycine max
+G02199		Da Huang Jia	Glycine max
+G02200		Mo Shi	Glycine max
+G02201		Da Li Hei	Glycine max
+G02202		Da Jiao Ni Dou	Glycine max
+G02203	PI587970A	Da Huang Dou	Glycine max
+G02204	PI561341A	Mufeng No.1	Glycine max
+G02205		Mi Yun Lao Ye Lian	Glycine max
+G02206		Mo He No.1	Glycine max
+G02207		Mi Yun Hua Lian Hu	Glycine max
+G02208		Mi Yun Hua Yao	Glycine max
+G02209		Meng Qing No.3	Glycine max
+G02210	PI587696	Mi Feng Qiu	Glycine max
+G02211	PI464911	Cha Mo Shi Dou	Glycine max
+G02212		Chang Chun Man Cang Jin	Glycine max
+G02213		Cang Zhou Da Qing Dou	Glycine max
+G02214		Chang Dou No.006	Glycine max
+G02215		Chang Ji Huang Dou 2	Glycine max
+G02216	PI594576	Cha Dou	Glycine max
+G02217		Nan Nong Da Huang Dou	Glycine max
+G02218		Nan Nong Cai Dou No.5	Glycine max
+G02219		Nen Feng No.11	Glycine max
+G02220		Nan Nong No.493-1	Glycine max
+G02221	PI567481	Bao ding huang dou	Glycine max
+G02222		Cang Dou No.5	Glycine max
+G02223		Cang Dou No.10	Glycine max
+G02224		Cai Lyu Dou	Glycine max
+G02225	PI479717	Bo Di Gao	Glycine max
+G02226		Cai Dou No.2	Glycine max
+G02227		Bo Ai Hong Pi Zao Jiao	Glycine max
+G02228		Bin Hai Da Bai Hua Jia	Glycine max
+G02229		Bian Zhuang Da Dou	Glycine max
+G02230		Bian g2_3	Glycine max
+G02231		Ji Dou No.12	Glycine max
+G02232		Bian Hei Dou	Glycine max
+G02233		Ji Dou No.15	Glycine max
+G02234		Hui Min Tu Zi Yan	Glycine max
+G02235	PI490767	Ji Dou No.1	Glycine max
+G02236		Ji Dou No.18	Glycine max
+G02237		Ji Dou No.19	Glycine max
+G02238		Ji Dou No.16	Glycine max
+G02239		Ji Dou No.17	Glycine max
+G02240		Fang Shan Huang Dou	Glycine max
+G02241		Ji Dou No.20	Glycine max
+G02242		Ji Dou No.21	Glycine max
+G02243		Ke Xin No.6	Glycine max
+G02244		Ke Xin No.8	Glycine max
+G02245		Er Huang Yang	Glycine max
+G02246		Fan Dou No.5	Glycine max
+G02247		E182	Glycine max
+G02248		Dong Yin Xiao Li Dou	Glycine max
+G02249		Tu Hei Dou	Glycine max
+G02250		Xu Dou No.13	Glycine max
+G02251		Xu Dou No.12	Glycine max
+G02252		Xu Dou No.17	Glycine max
+G02253		Xu Dou No.14	Glycine max
+G02254		Xu Dou No.16	Glycine max
+G02255		Xu Dou No.15	Glycine max
+G02256		Xu No.0705	Glycine max
+G02257		Xu Dou No.9	Glycine max
+G02258		Xu Zhou Xiao You Dou	Glycine max
+G02259		Da Xing Qing Dou	Glycine max
+G02260		Yan An Dou	Glycine max
+G02261		Yang Yan	Glycine max
+G02262	PI567505	Tu Er Yan	Glycine max
+G02263		Xiao Li Hei	Glycine max
+G02264		Hong Tong Xiao Hei Dou	Glycine max
+G02265	PI594849	Xiao Hei Dou	Glycine max
+G02266		Xiao Lao Shu Yan Hei Dou	Glycine max
+G02267		Xi Zang Da Dou No.3	Glycine max
+G02268		Xiao Bian Yuan Dou	Glycine max
+G02269		Ken Nong No.5	Glycine max
+G02270	PI602498	Xiao Jin Huang	Glycine max
+G02271		Xiao Huang Dou 2	Glycine max
+G02272		Xiao Hua Dou	Glycine max
+G02273		Yi Du Ping Ding Huang	Glycine max
+G02274		Lei Lei Dou	Glycine max
+G02275	PI592924	Ken Nong No.4	Glycine max
+G02276		Le Shan Zi Pi Dou	Glycine max
+G02277	PI567700	Fu yang (19)	Glycine max
+G02278		Fang Zheng Mo Shi Dou	Glycine max
+G02279	PI548170	T122	Glycine max
+G02280	PI547786	L79-842	Glycine max
+G02281	PI567368	Xi he huang dou	Glycine max
+G02282		Lai Wu Ba Yue Zha	Glycine max
+G02283		Le Shan Da Huang Ke	Glycine max
+G02284	PI547403	L60-246	Glycine max
+G02285	PI567396A	Lao Shu Pi	Glycine max
+G02286		Ji Yu No.53	Glycine max
+G02287		Kuban BenDi No.1	Glycine max
+G02288		Kuai Qing Pi	Glycine max
+G02289		Ji Shi Bai Hua	Glycine max
+G02290		Ji Yu No.63	Glycine max
+G02291		Ji Ti No.2	Glycine max
+G02292		Ji Nong No.14	Glycine max
+G02293		Ji Xiao No.6	Glycine max
+G02294		Ji Yu No.45	Glycine max
+G02295		Ji Nong No.9	Glycine max
+G02296		Ji Nong No.23	Glycine max
+G02297	PI612733	Ji Qing No.1	Glycine max
+G02298		Dong Sheng No.1	Glycine max
+G02299		Dong Nong No.59	Glycine max
+G02300		Deng Ke No.3_1	Glycine max
+G02301	PI567534	Dang Nian Chen	Glycine max
+G02302		DcJSey4500	Glycine max
+G02303		Dong Nong No.44	Glycine max
+G02304		Di Liu Huang Dou-2	Glycine max
+G02305		Dan Cheng Lao Shu Yan	Glycine max
+G02306		Dong Nong L13	Glycine max
+G02307		Dong Nong No.47	Glycine max
+G02308		Dong Nong No.58	Glycine max
+G02309		HK_12	Glycine max
+G02310		Dong Nong No.50	Glycine max
+G02311		Heng Feng Wu Dou	Glycine max
+G02312		Teng Xian Da Wu Ye	Glycine max
+G02313		Te Da Li	Glycine max
+G02314		Hei Nong No.69	Glycine max
+G02315	PI567545	Hei Qi Huang Dou	Glycine max
+G02316	PI567313	Hei Yao Huang Dou	Glycine max
+G02317		Hei Nong No.68	Glycine max
+G02318		Hei Nong No.57	Glycine max
+G02319		Hei Nong No.50	Glycine max
+G02320		Hei Nong No.64	Glycine max
+G02321		Hei Nong No.59	Glycine max
+G02322		Wan Dou No.28	Glycine max
+G02323		Wan Dou No.24	Glycine max
+G02324		Wan Dou No.30	Glycine max
+G02325		Tong Ye Ping	Glycine max
+G02326		Wan Dou No.29	Glycine max
+G02327		Shang Qiu Jiu Yue Qing	Glycine max
+G02328		Tong Xian Hei Shui Dou	Glycine max
+G02329		Shang Qiu Ping Ding Shi	Glycine max
+G02330		Shan Xi Ping Ding Huang	Glycine max
+G02331		Shan Ning No.12	Glycine max
+G02332		Shang Hai Chi Sha Huang Dou	Glycine max
+G02333		Shan Ning No.7	Glycine max
+G02334		Rui Jin Qing Pi Dou	Glycine max
+G02335		Ri Ben Hei Qi	Glycine max
+G02336	PI490768	Rao Shan Gun	Glycine max
+G02337		Shan Dou No.125	Glycine max
+G02338		Jiu Nong No.21	Glycine max
+G02339	PI578497A	Jin Yuan	Glycine max
+G02340		Jiu Nong No.27	Glycine max
+G02341	PI603294	Jin Yuan No.2	Glycine max
+G02342		Jing Feng No.1	Glycine max
+G02343		Jin Zao No.16	Glycine max
+G02344		Jing Huang No.3	Glycine max
+G02345		Jing Huang No.03-5	Glycine max
+G02346		Jing Yin Ke Xuan No.1	Glycine max
+G02347		Su Zhou Wu Yue Mao Jia	Glycine max
+G02348		Jing Xuan No.2	Glycine max
+G02349		Sui Ke No.928	Glycine max
+G02350		Su Xian Ping Ding Wu	Glycine max
+G02351		Su Xian Tian E Dan	Glycine max
+G02352		Sui Nong No.22	Glycine max
+G02353		Sui Nong No.30	Glycine max
+G02354		Ning Yang Jiao Zi Ye	Glycine max
+G02355		Sui Ning Da Qing Dou Jia	Glycine max
+G02356		Ning Xian Yi Wo Feng	Glycine max
+G02357		Niu Jiao Qi	Glycine max
+G02358		Sui Nong No.16	Glycine max
+G02359		Ning Zhen No.1	Glycine max
+G02360		Ken Nong No.14	Glycine max
+G02361		Ken Feng No.6	Glycine max
+G02362		Ni Ri Li Ya No.4	Glycine max
+G02363		Ken Dou No.33	Glycine max
+G02364		Nen Feng No.16	Glycine max
+G02365		Ken Feng No.14	Glycine max
+G02366		Ken Feng No.15	Glycine max
+G02367		Ken Feng No.19	Glycine max
+G02368		Niu Mao Huang Hei Dou	Glycine max
+G02369	PI567345	Niu Mao Huang	Glycine max
+G02370		Ken Dou No.25	Glycine max
+G02371		Ken Dou No.30	Glycine max
+G02372		Bi Yang Niu Mao Huang	Glycine max
+G02373		Bi Yang Xiao Zi Huang	Glycine max
+G02374		Bei Chuan Wu Yan Wo	Glycine max
+G02375		Bei Chuan Tu Er Dou	Glycine max
+G02376		Bei Dou No.14	Glycine max
+G02377		Bei Dou No.50	Glycine max
+G02378		Bei Dou No.9	Glycine max
+G02379		Bei Hai Dao Da Dou	Glycine max
+G02380		Bei Jing Xiao Hei Dou	Glycine max
+G02381		Ben Di Da Huang Dou	Glycine max
+G02382		Ji Huang No.13	Glycine max
+G02384		Ji Lin No.21	Glycine max
+G02385		Ji Lin No.35	Glycine max
+G02386		Ji Ke Dou No.1	Glycine max
+G02387		Ji Lin No.31	Glycine max
+G02388		Ji Mo You Dou	Glycine max
+G02389		Chang Ji Huang Dou 1	Glycine max
+G02390		Ji No.56	Glycine max
+G02391		Ji Lin No.45	Glycine max
+G02392	PI567614A	Chang Yuan Xiao Tian E Dan	Glycine max
+G02393		Ji NF No.58	Glycine max
+G02394		Guo Yang Da Jian Ke	Glycine max
+G02395		Gui Chun No.2	Glycine max
+G02396	PI578488A	Feng Xian Sui Dao Huang	Glycine max
+G02397		Han Dou No.10	Glycine max
+G02398		Guan Yun Mao Ye Dou	Glycine max
+G02399		Gong Xian Er Ji Zao	Glycine max
+G02400		Guan Yun Hai Bai Hua	Glycine max
+G02401		Chang Dou No.001	Glycine max
+G02402		Han No.6192	Glycine max
+G02403	PI578360	Guan Nan Chun Hei Dou	Glycine max
+G02404		Feng Jiao 66-12	Glycine max
+G02405		He Dou No.10	Glycine max
+G02406		He Dou No.16	Glycine max
+G02407		Chang Dou No.003	Glycine max
+G02408		Xi Chuan Ji Wo Huang	Glycine max
+G02409		Fu Yang No.335	Glycine max
+G02410		Fo Ding Zhu	Glycine max
+G02411		Fen Dou No.28	Glycine max
+G02412		Fen Dou No.16	Glycine max
+G02413		Fen Dou No.62	Glycine max
+G02414	PI567730	Fu yang (54)	Glycine max
+G02416	PI567720A	Fu yang (44)	Glycine max
+G02417		Ping Yi Liu Yue Xian	Glycine max
+G02418		Fen Dou No.56	Glycine max
+G02419	PI632420	X88	Glycine max
+G02420	PI283327	Pingtung Pearl	Glycine max
+G02421		Ping Ding Huang Dou	Glycine max
+G02422		Ping Ding Hei	Glycine max
+G02423		Jin Dou No.41	Glycine max
+G02424		Jin Dou No.43	Glycine max
+G02425		Jin Dou No.10	Glycine max
+G02426	PI578494A	Jin Dou No.1	Glycine max
+G02427		Jin Yi No.43	Glycine max
+G02428		Jin Yi No.46	Glycine max
+G02429		Jin Yi No.31	Glycine max
+G02430		Jian No.8	Glycine max
+G02431		Jin Yi No.51	Glycine max
+G02432		Jian No.9	Glycine max
+G02433		Jin Da No.78-2	Glycine max
+G02434	PI567623	Ji Yuan Shui Bai Dou	Glycine max
+G02435		Jin Da No.78-1	Glycine max
+G02436		Ji Yu No.76	Glycine max
+G02437		Jin Da No.74	Glycine max
+G02438		Jie Jie Si	Glycine max
+G02439		Peng Xi Da Liu Yue Huang	Glycine max
+G02440	PI297543	Peking	Glycine max
+G02441	PI567751A	Pei Xian Hong Mao You	Glycine max
+G02442		Pei Xian Hong Mao You Jia	Glycine max
+G02443		Pei Xian La Yang Huang	Glycine max
+G02444	PI567756	Pei Xian Si Li Cao	Glycine max
+G02445	PI603537A	Niu Yan Jing Quan Zi	Glycine max
+G02446	PI567744A	Pei Xian Ba Yue Zha	Glycine max
+G02447	PI603469	Pa Man Qing	Glycine max
+G02448		Huan Xian Yang Yan Jing Dou	Glycine max
+G02449	PI594901	Pei Xian Da Bai Jiao	Glycine max
+G02450		Huang Dou 1	Glycine max
+G02451		Sui Xiao Li Dou No.1	Glycine max
+G02452		Hua Dou No.1	Glycine max
+G02453		HKRdes Zao	Glycine max
+G02454		Sui Wu Xing No.1	Glycine max
+G02455		Hong Da Dou	Glycine max
+G02456		Hua Ting Yang Yan Jing Dou	Glycine max
+G02457		Hong Hua Dou	Glycine max
+G02458		Hua Dou No.2	Glycine max
+G02459		Huai De Bai Hua Da Li	Glycine max
+G02460		Huai Yang Chun Dou	Glycine max
+G02461		Shui Pi Qing Dou	Glycine max
+G02462	PI594393	Shui Niu Pi	Glycine max
+G02463		Shi Da Dou No.2	Glycine max
+G02464		Shui Li Zhan	Glycine max
+G02465		Shu Yang Da Qing Dou Jia	Glycine max
+G02466		Shi Sheng Chang Ye	Glycine max
+G02467		Shu Yang Gua Shu	Glycine max
+G02468	PI436565	Su Dou No.1	Glycine max
+G02469		Shi Dou No.411	Glycine max
+G02470		Shi Mian Da Dou Zi	Glycine max
+G02471		Shi Da Dou No.1	Glycine max
+G02472		Wu Xing No.2	Glycine max
+G02473		Wu Xing No.3	Glycine max
+G02474		Wu Ming	Glycine max
+G02475	PI602994	Pu Dong Da Huang Dou	Glycine max
+G02476		Wu Xing No.1	Glycine max
+G02477		Wu Chang Liu Yue Bao	Glycine max
+G02478		Wu Jin Ben Niu Qing Dou	Glycine max
+G02479	PI548686	SRF 300	Glycine max
+G02480		WD001	Glycine max
+G02481		Wei Xian Gu Li Hun Qing Dou	Glycine max
+G02482	PI587632A	Qi Dong Guan Qing Dou Jia	Glycine max
+G02483		Qi Huang No.25	Glycine max
+G02484		Qi Huang No.26	Glycine max
+G02485		Qi Huang No.31	Glycine max
+G02486		Qi Huang No.28	Glycine max
+G02487		Ke Feng No.15	Glycine max
+G02488		Qi Yue Zha	Glycine max
+G02489		Qi Huang No.30	Glycine max
+G02490	PI567580A	Qi Si Mi	Glycine max
+G02491		Qi Huang No.33	Glycine max
+G02492		Ke Feng No.14	Glycine max
+G02493		Ke Xi No.8	Glycine max
+G02494		Ke Huang No.3	Glycine max
+G02495		Ke Feng No.6	Glycine max
+G02496		Ke Feng No.53	Glycine max
+G02498		Bai Tian Shu Xiao Huang Dou	Glycine max
+G02499		Te Da Dou No.1	Glycine max
+G02500		Xepcoh BenDi No.1	Glycine max
+G02501		Tan Er Bai	Glycine max
+G02502		Tai An Ba Yue Zha	Glycine max
+G02503		Tai Zhou Bai Hua Wu Jia No.2	Glycine max
+G02504		Tai Wan No.75	Glycine max
+G02505		Tai Gu Zao	Glycine max
+G02506		Tai Nong No.15	Glycine max
+G02507		Bai Qi Da Wan Dou	Glycine max
+G02508		Bao Ji Mu	Glycine max
+G02509		Bai Ke Dou	Glycine max
+G02510		Bai Mei Xiao Qing Dou	Glycine max
+G02511	PI578379	Bai Pi Zi	Glycine max
+G02512		Bai Zhen Zhu	Glycine max
+G02513		Bei Chuan Da Yang Wei Ba	Glycine max
+G02514	PI567429A	Bai Pi Huang Dou	Glycine max
+G02515		Meng Cheng Ba Yue Zha	Glycine max
+G02516		Ma Yi Qi Hei Dou	Glycine max
+G02517		Mei Guo Da Dou	Glycine max
+G02518		He Feng No.52	Glycine max
+G02519		Mao Dou Zi	Glycine max
+G02520		Mamotan_F-8_A	Glycine max
+G02521	PI567565	Mao Huang Dou	Glycine max
+G02522		Mei Guo Hak08g	Glycine max
+G02523		Meng Dou No.11	Glycine max
+G02524		Mao Jia Dou	Glycine max
+G02525		Mei No.2	Glycine max
+G02526		He Feng No.46	Glycine max
+G02527		He Feng No.35	Glycine max
+G02529		He Nan Xiao You Dou	Glycine max
+G02530		He Feng No.30	Glycine max
+G02531	PI567543A	He Nan Chun	Glycine max
+G02532		He Nong No.60	Glycine max
+G02533		Wang Zhong Wang	Glycine max
+G02534		Chi Cheng Lyu Huang Dou	Glycine max
+G02535		Hei Dou LN	Glycine max
+G02536	PI567164	He Long You Tai	Glycine max
+G02537	PI603538A	Wan Dou Zao	Glycine max
+G02538	PI567430	Da Bai Pi	Glycine max
+G02539	PI567615	Chen Liu Niu Mao Huang	Glycine max
+G02541		Jin Dou No.39	Glycine max
+G02542	PI574482	Jin Dou No.2	Glycine max
+G02543	PI567486A	Da Bai Qi	Glycine max
+G02544		Jin Dou No.23	Glycine max
+G02545		Jin Dou No.21	Glycine max
+G02546		Jin Dou No.29	Glycine max
+G02547	PI490765	Da He Dou	Glycine max
+G02548		Jin Dou No.25	Glycine max
+G02549		Jin Dou No.34	Glycine max
+G02550		Jin Dou No.19	Glycine max
+G02551		Jin Dou No.16	Glycine max
+G02552		Jin Dou No.14	Glycine max
+G02553		Ke Xin No.4	Glycine max
+G02554		Ke Xin No.3	Glycine max
+G02555	PI547782	L73D-2743	Glycine max
+G02556	PI547745	L70-4136	Glycine max
+G02557		Da Hua Pi	Glycine max
+G02558		Da Hong Dou	Glycine max
+G02559	PI547539	L71-1403	Glycine max
+G02560	PI525453	Conrad	Glycine max
+G02561	PI317334B	(Kitamishiro)	Glycine max
+G02562	PI423766	KAS 230-4	Glycine max
+G02563	PI547732	L67-234	Glycine max
+G02564	PI547612	L74-826	Glycine max
+G02565	PI547553	L72-1893	Glycine max
+G02566	PI547549	L72-1832	Glycine max
+G02567		Ke Feng No.29	Glycine max
+G02568		Song Jiang Deng Xi Feng Jia	Glycine max
+G02569		Ke Feng No.35	Glycine max
+G02570		Yu Xuan No.13	Glycine max
+G02571	PI592949	Yu Dou No.8	Glycine max
+G02572		Yu Xian Xiao Zi Cao Hei Dou	Glycine max
+G02573		Yu Dou No.28	Glycine max
+G02574		Zhang Qiu Jia Huang Dou	Glycine max
+G02575		Zao Shu No.18	Glycine max
+G02576		Zao Zhuang Leng Da Dou	Glycine max
+G02577		Zao Shu No.17	Glycine max
+G02578		Zhou Dou No.12	Glycine max
+G02579		Zhou Dou No.11	Glycine max
+G02580		Zhen Yuan Ba Yue Zha	Glycine max
+G02581		Zheng Ning Lyu Huang Dou	Glycine max
+G02582		Zhong Zuo No.J10153	Glycine max
+G02583		Zhong Zuo No.9056	Glycine max
+G02584		Zhong Zuo No.5807	Glycine max
+G02585		Zhong Sheng Da Jia Zhi Dou	Glycine max
+G02586		Zi Jie Dou	Glycine max
+G02587		Zhong Zuo No.J9056	Glycine max
+G02588		Zhou Dou No.17	Glycine max
+G02589		Zhu Twinning 2	Glycine max
+G02590		Zhou Dou No.13	Glycine max
+G02591		Zhong Huang No.19	Glycine max
+G02592		Zhong Huang No.24	Glycine max
+G02593		Zong Mao Bian Jing	Glycine max
+G02594		Zheng No.92029	Glycine max
+G02595		Zheng No.59	Glycine max
+G02596		Zheng No.7016	Glycine max
+G02597		Zheng Zhou No.135	Glycine max
+G02598		Zheng No.9525	Glycine max
+G02599		Zhong Huang No.10	Glycine max
+G02600		Zheng No.9805	Glycine max
+G02601		Zheng No.97196	Glycine max
+G02602		Zhong Pin No.03-5368	Glycine max
+G02603		Zhong Pin No.661	Glycine max
+G02604		Zhu Twinning 3_nonshattering	Glycine max
+G02605		Zi Gong Qing Pi Dou	Glycine max
+G02606	PI567414	Zhu Ye Qing	Glycine max
+G02607		Zhou Dou No.18	Glycine max
+G02608		Zhong Zuo No.J8035	Glycine max
+G02609		Zhou Dou No.19	Glycine max
+G02610		Zhong Huang No.55	Glycine max
+G02611		Zhong Huang No.6	Glycine max
+G02612		Zhong Huang No.58	Glycine max
+G02613		Zhong Huang No.66	Glycine max
+G02614		Zhong Huang No.61	Glycine max
+G02615		Yong Cheng Xiao Jian Ke	Glycine max
+G02616		Zhong Huang No.67	Glycine max
+G02617		Yu Dou No.22	Glycine max
+G02618		Zhong Pin No.03-5363	Glycine max
+G02619		Zhong Ke No.42	Glycine max
+G02620		Yu Dou No.25	Glycine max
+G02621		Wu Gong Yi Wo Feng	Glycine max
+G02622		You Bian No.30	Glycine max
+G02623		Yong Cheng Yang Yan Dou	Glycine max
+G02624		Yu Dou No.10	Glycine max
+G02625		Yu Dou No.12	Glycine max
+G02626		Yu Dou No.18	Glycine max
+G02627		Yu Dou No.2	Glycine max
+G02628		Zou Ping Hei Ma Hu Yan	Glycine max
+G02629		Zhong Huang No.48	Glycine max
+G02630		Zhong Huang No.30	Glycine max
+G02631		Zhong Huang No.49	Glycine max
+G02632		Zhong Huang No.28	Glycine max
+G02633		Zhong Huang No.39	Glycine max
+G02634		Zhong Huang No.41	Glycine max
+G02635		Zhong Huang No.34	Glycine max
+G02636		Zhong Huang No.4	Glycine max
+G02637		Zhong Huang No.44	Glycine max
+G02638		Zhong Huang No.43	Glycine max
