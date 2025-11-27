@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+slurmOutput
+*.Rproj
+DATA/RAW
+DATA/PROCESSED_VCF
+formoi

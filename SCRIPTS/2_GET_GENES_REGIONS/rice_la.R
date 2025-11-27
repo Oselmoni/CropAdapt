@@ -1,0 +1,18 @@
+### Load gtf file
+GTF = read.table('DATA/RAW/rice_la/R498_IGDBv3_coreset.gff', sep='\t')
+
+table(GTF$V3)
+
+### keep only genes
+GENES = GTF[GTF$V3=='mRNA',c(1,4,5)]
+
+table(GENES$V1)
+
+### convert chromosome id
+GENES$V1 = substr(GENES$V1, 4, nchar(GENES$V1))
+
+
+
+### write down genes table
+write.table(GENES, file='DATA/PROCESSED_VCF/rice_la/GENES.tsv', sep='\t', row.names=F, quote=F, col.names=F)
+

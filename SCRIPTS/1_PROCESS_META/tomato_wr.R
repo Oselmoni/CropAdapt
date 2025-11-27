@@ -3,9 +3,10 @@ library(openxlsx)
 
 
 ### load metadata
-meta = openxlsx::read.xlsx('DATA/META_RAW//tomato_wr/mec15477-sup-0002-TableS1.xlsx', startRow = 1)
+meta = openxlsx::read.xlsx('DATA/META_RAW//tomato_wr/abiotic_environmental_data.xlsx', startRow = 1)
 
-
+# subset metadata
+meta = meta[,c(1,3,4)]
 
 ### keep column of interest
 colnames(meta) = c('ID','LON','LAT')
