@@ -1,15 +1,20 @@
 ### Load gtf file
-GTF = read.table('DATA/RAW/rice_la/R498_IGDBv3_coreset.gff', sep='\t')
+GTF = read.table('DATA/RAW/rice_la/genomic.gtf', sep='\t')
 
 table(GTF$V3)
 
 ### keep only genes
-GENES = GTF[GTF$V3=='mRNA',c(1,4,5)]
+GENES = GTF[GTF$V3=='transcript',c(1,4,5)]
 
 table(GENES$V1)
 
+### Create chromsome id
+chrom_table = read.table('DATA/RAW/rice_la///sequence_report.tsv', sep='\t', header=T)
+chrom = 1:12
+names(chrom) = chrom_table$RefSeq.seq.accession[1:12]
+
 ### convert chromosome id
-GENES$V1 = substr(GENES$V1, 4, nchar(GENES$V1))
+GENES$V1 = chrom[GENES$V1]
 
 
 

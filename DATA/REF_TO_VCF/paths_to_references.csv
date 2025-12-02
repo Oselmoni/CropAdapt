@@ -1,0 +1,12 @@
+barley,DATA/RAW/barley/barley_morex_pseudomolecules.fasta
+commonbean_la,DATA/RAW/commonbean_la/GCF_000499845.1_PhaVulg1_0_genomic.fna
+commonbean_wr,DATA/RAW/commonbean_wr/GCF_000499845.1_PhaVulg1_0_genomic.fna
+corn_la,DATA/RAW/corn_la/GCF_902167145.1_Zm-B73-REFERENCE-NAM-5.0_genomic.fna
+corn_wr,DATA/RAW/corn_wr/GCF_000005005.2_B73_RefGen_v4_genomic.fna
+rice_la,DATA/RAW/rice_la/GCF_001433935.1_IRGSP-1.0_genomic.fna
+rice_wr,DATA/RAW/rice_wr/GCF_000005425.2_Build_4.0_genomic.fna
+sorghum_la,DATA/RAW/sorghum_la/sbi1.fasta
+soybean,DATA/RAW/soybean/Gmax_275_v2.0.fa
+sunflower_wr,DATA/RAW/sunflower_wr/GCF_002127325.1_HanXRQr1.0_genomic.fna
+teparybean,DATA/RAW/teparybean/Pacu.CVR.asm.hm.fa
+tomato_wr,DATA/RAW/tomato_wr/GCF_000188115.4_SL3.0_genomic.fna
