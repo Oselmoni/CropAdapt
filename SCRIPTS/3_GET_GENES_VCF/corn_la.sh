@@ -3,7 +3,7 @@
 #SBATCH --time=0-10:00
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=10000
-#SBATCH --output=/data/oselmo/CropAdapt/slurmOutput/R-%x.%j.out
+#SBATCH --output=./slurmOutput/R-%x.%j.out
 #SBATCH --wait
 
 ### Compress vcf

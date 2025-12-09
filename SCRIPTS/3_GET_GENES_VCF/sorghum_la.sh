@@ -3,7 +3,7 @@
 #SBATCH --time=0-3:00
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=8000
-#SBATCH --output=/data/oselmo/CropAdapt/slurmOutput/R-%x.%j.out
+#SBATCH --output=./slurmOutput/R-%x.%j.out
 #SBATCH --wait
 
 ### convert hmp files to vcf and zip (the tr command preliminarily removes quotes from the hmp.txt file)

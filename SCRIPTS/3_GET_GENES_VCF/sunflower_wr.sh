@@ -3,7 +3,7 @@
 #SBATCH --time=0-3:00
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16000
-#SBATCH --output=/data/oselmo/CropAdapt/slurmOutput/R-%x.%j.out
+#SBATCH --output=./slurmOutput/R-%x.%j.out
 #SBATCH --wait
 
 
