@@ -1,15 +1,14 @@
 library(vcfppR)
 
 ## Load VCF
-vcf = vcftable('DATA/PROCESSED_VCF/commonbean_wr//processed.vcf.gz_pruned.vcf.gz')
+vcf = vcftable('DATA/PROCESSED_VCF/teparybean////processed.vcf.gz_pruned.vcf.gz')
 
 ## Load meta
-meta = read.csv('DATA/META/commonbean_wr.csv')
+meta = read.csv('DATA/META/teparybean_la.csv')
 
-# reformat samples id
+## adjust sample ids
 vcf$samples = unlist(lapply(strsplit(vcf$samples, ':'), function(x) {return(x[1])}))
-meta$ID = gsub('G (.*)', 'G\\1',meta$ID)
-
+vcf$samples[which(vcf$samples=='G40059_Menudo_Blanco_Arroz')[1]] = NA # duplicate sample, keep one only
 
 ## Extract GT matrix
 GT = vcf$gt
@@ -27,5 +26,13 @@ GT = GT[,ol]
 ## Subset meta 
 rownames(meta) = meta$ID
 meta = meta[ol,]
+
+
+## Run preliminary PCoA
+pcoa = cmdscale(dist(t(GT[sample(1:nrow(GT), 1000),])), k=4)
+
+## Keep only variety of interest
+meta = meta[names(which(pcoa[,1]>(-10))),]
+GT=GT[,names(which(pcoa[,1]>(-10)))]
 
 

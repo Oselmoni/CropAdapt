@@ -26,3 +26,24 @@ GT = GT[,ol]
 ## Subset meta 
 rownames(meta) = meta$ID
 meta = meta[ol,]
+
+
+## Run preliminary PCoA
+set.seed(0);pcoa = cmdscale(dist(t(GT[sample(1:nrow(GT), 1000),])))
+
+
+## Keep only variety of interest
+meta = meta[names(which(pcoa[,1]<(-10))),]
+GT=GT[,names(which(pcoa[,1]<(-10)))]
+
+
+
+## Run preliminary PCoA #2
+set.seed(0);pcoa = cmdscale(dist(t(GT[sample(1:nrow(GT), 1000),])))
+plot(pcoa)
+
+## Keep only variety of interest
+meta = meta[names(which(pcoa[,1]<(3))),]
+GT=GT[,names(which(pcoa[,1]<(3)))]
+
+

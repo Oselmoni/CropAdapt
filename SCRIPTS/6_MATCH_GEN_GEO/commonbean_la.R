@@ -1,10 +1,10 @@
 library(vcfppR)
 
 ## Load VCF
-vcf = vcftable('DATA/PROCESSED_VCF/sunflower_wr/processed.vcf.gz_pruned.vcf.gz')
+vcf = vcftable('DATA/PROCESSED_VCF/commonbean_la//processed.vcf.gz_pruned.vcf.gz')
 
 ## Load meta
-meta = read.csv('DATA/META/sunflower_wr.csv')
+meta = read.csv('DATA/META/commonbean_la.csv')
 
 ## Extract GT matrix
 GT = vcf$gt
@@ -23,3 +23,4 @@ GT = GT[,ol]
 ## Subset meta 
 rownames(meta) = meta$ID
 meta = meta[ol,]
+

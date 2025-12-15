@@ -23,3 +23,6 @@ GT = GT[,ol]
 rownames(meta) = meta$ID
 meta = meta[ol,]
 
+
+
+

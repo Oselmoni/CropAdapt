@@ -7,13 +7,18 @@ meta = openxlsx::read.xlsx('DATA/META_RAW//commonbean_la/41588_2019_546_MOESM3_E
 
 ### get samples of interest
 meta = meta[meta$Type=='L',]
-
-
+country = meta$Province
 
 ### keep column of interest
 meta = meta[,c('ID-SEQ','Longtud','Latitude')]
 colnames(meta) = c('ID','LON','LAT')
 
+### for non-chinese samples: lon/lat have been mistakenly swapped 
+newlon = meta$LAT[regexpr('China', country)==-1]
+newlat = meta$LON[regexpr('China', country)==-1]
+
+meta$LON[regexpr('China', country)==-1]=newlon
+meta$LAT[regexpr('China', country)==-1]=newlat
 
 ### Fix longitude
 HE = substr(meta$LON,1,1) # get hemisphere info
@@ -37,4 +42,5 @@ meta$YEAR = NA
 
 ### save output
 write.csv(meta, 'DATA/META/commonbean_la.csv', row.names = F)
+
 

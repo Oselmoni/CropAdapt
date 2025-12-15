@@ -25,3 +25,15 @@ rownames(meta) = meta$ID
 meta = meta[ol,]
 
 
+### load metadata samples with info on genepools
+INFO = openxlsx::read.xlsx('DATA/META_RAW//commonbean_la/41588_2019_546_MOESM3_ESM.xlsx', startRow = 2)
+genepools = INFO$Genepool
+names(genepools) = INFO$`ID-SEQ`
+
+genepools = genepools[rownames(meta)]
+
+### retain only genepool of interest
+genepools = genepools[genepools=='Mesoamerican']
+meta=meta[names(genepools),]
+GT=GT[,rownames(meta)]
+
