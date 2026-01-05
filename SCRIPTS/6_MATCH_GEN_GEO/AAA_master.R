@@ -107,10 +107,10 @@ for (f in lf) {
   }
   
   #### save filter SNP and metadata table
-  snpgdsCreateGenoSet(src.fn=tmp, dest.fn=paste0('DATA/GEA_INPUT/gds_',d,'.gds'), snp.id=snps_mn_maf, sample.id=ind_mn)
+  snpgdsCreateGenoSet(src.fn=tmp, dest.fn=paste0('DATA/GEA_INPUT/GDS/gds_',d,'.gds'), snp.id=snps_mn_maf, sample.id=ind_mn)
   
   meta = meta[ind_mn,]
-  save(meta, file=paste0('DATA/GEA_INPUT/meta_',d,'.rda'))
+  save(meta, file=paste0('DATA/GEA_INPUT/meta/meta_',d,'.rda'))
   
   closefn.gds(SNPS)
   gc()
