@@ -1,18 +1,19 @@
-tomato_wr
-barley_la
-barley_wr
-commonbean_la_andean
-commonbean_la_mesoamerican 
-commonbean_wr
-corn_la
-corn_wr
-rice_la_circumaus
-rice_la_indica
-rice_la_japonica
-rice_wr
-sorghum_la
-soybean_la
-soybean_wr
-teparybean_la_central
-teparybean_la_mexico
-teparybean_wr
+dataset	annotation_file	protein_file
+tomato_wr	tomato_wr	tomato_wr_protein
+barley_la	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf
+barley_wr	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf
+commonbean_la_andean	commonbean_la	commonbean_la_protein
+commonbean_la_mesoamerican 	commonbean_la	commonbean_la_protein
+commonbean_wr	commonbean_wr	commonbean_wr_protein
+corn_la	corn_la	corn_la_protein
+corn_wr	corn_wr	corn_wr_protein
+rice_la_circumaus	rice_la	rice_la_protein
+rice_la_indica	rice_la	rice_la_protein
+rice_la_japonica	rice_la	rice_la_protein
+rice_wr	rice_wr	rice_wr_protein
+sorghum_la	sorghum_la	sorghum_Sbi1.4.pep
+soybean_la	soybean	soybean_Gmax_275_Wm82.a2.v1.protein
+soybean_wr	soybean	soybean_Gmax_275_Wm82.a2.v1.protein
+teparybean_la_central	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep
+teparybean_la_mexico	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep
+teparybean_wr	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep
