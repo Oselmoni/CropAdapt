@@ -15,7 +15,7 @@ load('DATA/SNP_ANNOTATION/orthogroups.rda')
 
 
 ### for every dataset...
-for (ds in ds_list) {
+for (ds in ds_list[-1]) {
   
 #  ds=ds_list[1] 
   
