@@ -1,0 +1,15 @@
+tomato_wr 0.83030303030303
+barley_la 0.840361445783133
+barley_wr 0.845997973657548
+commonbean_la_andean 0.861
+commonbean_la_mesoamerican 0.818
+commonbean_wr 0.858471074380165
+corn_la 0.731
+corn_wr 0.759297520661157
+rice_la_circumaus 0.805924412665986
+rice_la_indica 0.788283658787256
+rice_la_japonica 0.852307692307692
+rice_wr 0.877720207253886
+sorghum_la 0.893223819301848
+soybean_la 0.804259634888438
+soybean_wr 0.750252780586451

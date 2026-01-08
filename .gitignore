@@ -6,4 +6,11 @@ slurmOutput
 *.Rproj
 DATA/RAW
 DATA/PROCESSED_VCF
+DATA/ENV/CONSENSUS_LC/*
+DATA/ENV/CONSENSUS_LC_Processed/*
+DATA/ENV/ERA5_bioclim/*
+DATA/ENV/SoilGrids/*
+DATA/ENV/SoilGrids_Processed/*
+DATA/ENV/GMRT/*
 formoi
+.DS*
