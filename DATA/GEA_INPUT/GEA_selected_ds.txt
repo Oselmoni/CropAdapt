@@ -14,6 +14,5 @@ rice_wr	rice_wr	rice_wr_protein
 sorghum_la	sorghum_la	sorghum_Sbi1.4.pep
 soybean_la	soybean	soybean_Gmax_275_Wm82.a2.v1.protein
 soybean_wr	soybean	soybean_Gmax_275_Wm82.a2.v1.protein
-teparybean_la_central	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep
 teparybean_la_mexico	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep
 teparybean_wr	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep

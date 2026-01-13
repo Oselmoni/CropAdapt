@@ -2,12 +2,13 @@ library(SNPRelate)
 library(rnaturalearth)
 source('SCRIPTS/custom_R_functions.R')
 
-lf = list.files('SCRIPTS/6_MATCH_GEN_GEO_ENV/')[-1]
+lf = list.files('SCRIPTS/6_MATCH_GEN_GEO/')[-1]
 
 land=ne_countries()
 
 ## create dataframe on datasets stats
 DS_STATS=data.frame()
+
 
 for (f in lf) {
 
@@ -15,7 +16,7 @@ for (f in lf) {
   d=substr(f, 1 ,nchar(f)-2)
   
   ### load vcf and metadata
-  source(paste0('SCRIPTS/6_MATCH_GEN_GEO_ENV/',f))
+  source(paste0('SCRIPTS/6_MATCH_GEN_GEO/',f))
   
   ### enter dataset stats
   DS_STATS[d,'N'] = nrow(meta)

@@ -20,8 +20,9 @@ write.table(data.frame(), file = 'DATA/GEA_INPUT/GTI/IMPACC.txt', row.names = F,
 ### for every dataset...
 for (ds in ds_list[-1]) {
 
- # ds=ds_list[2]
+    # ds=ds_list[3]
     print(ds)
+  
     ### Load gds
     SNPS = snpgdsOpen(paste0('DATA/GEA_INPUT/GDS/gds_',ds,'.gds'), readonly = T, allow.duplicate = T)
 
@@ -32,7 +33,7 @@ for (ds in ds_list[-1]) {
     #####
     ####### FIND OPTIMAL K
     #####
-    
+
     ### Randomly sample 1000 SNP from geno matrix (to speed up calculation)
     set.seed(0);sGENO = GENO[,sample(1:ncol(GENO), size = 1000)]
     tmpgeno = tempfile(fileext = '.geno')

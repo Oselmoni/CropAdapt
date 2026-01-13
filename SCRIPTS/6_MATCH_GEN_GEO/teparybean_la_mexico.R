@@ -36,3 +36,8 @@ meta = meta[names(which(pcoa[,1]>(-10))),]
 GT=GT[,names(which(pcoa[,1]>(-10)))]
 
 
+## Remove samples in Africa
+meta = meta[which(meta$LON<0),]
+GT=GT[,rownames(meta)]
+
+
