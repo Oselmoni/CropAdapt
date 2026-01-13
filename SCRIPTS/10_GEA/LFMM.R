@@ -18,7 +18,6 @@ load('DATA/SNP_ANNOTATION/orthogroups.rda')
 for (ds in ds_list) {
  
   #ds=ds_list[1] 
-
   print(ds)
 
   ### Load imputed GT matrix
@@ -89,8 +88,8 @@ for (ds in ds_list) {
 
   ### Load env data
   load(paste0('DATA/GEA_INPUT/meta_env/meta_',ds,'.rda'))
-  ENV = meta[,-c(1:4)]
-  
+  ENV = meta[rownames(GTI),-c(1:4)]
+
   ### Impute missing environmental data
   iENV=missForest(ENV)
   iENVdf=iENV$ximp
@@ -107,6 +106,7 @@ for (ds in ds_list) {
     
     print(e)
     
+
     lfmm = lfmm_ridge(GTI, iENVdf[,e], K = K)
     lfmm.pv <- lfmm_test(Y=GTI, X=iENVdf[,e], lfmm=lfmm, calibrate="gif")
     
