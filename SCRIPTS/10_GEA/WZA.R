@@ -1,6 +1,7 @@
 library(SNPRelate)
 library(foreach)
 library(doParallel)
+source('SCRIPTS/custom_R_functions.R')
 
 
 ### Get list of name of datasets of interest
@@ -13,9 +14,14 @@ names(annotation_files)=names(protein_files)=ds_list
 ### get list of orthologous groups
 load('DATA/SNP_ANNOTATION/orthogroups.rda')
 
+#setup parallel backend to use many processors
+cores=detectCores()
+cl <- makeCluster(cores[1]-2) 
+registerDoParallel(cl)
+
 
 ### for every dataset...
-for (ds in ds_list[-1]) {
+for (ds in ds_list) {
   
 #  ds=ds_list[1] 
   
@@ -119,7 +125,7 @@ for (ds in ds_list[-1]) {
   
   ### Load env data
   load(paste0('DATA/GEA_INPUT/meta_env/meta_',ds,'.rda'))
-  ENV = meta[,-c(1:4)]
+  ENV = meta[rownames(GT),-c(1:4)]
   
 
   
@@ -128,29 +134,19 @@ for (ds in ds_list[-1]) {
   ######
 
   ### Run Kendall Tau test for one environmental variable  vs. one SNP at the time
-  for (e in colnames(ENV)) {
+  foreach(e=colnames(ENV)) %dopar% {
+    
     
     ### Create container for WZA input 
     WZAin = SNP_ANNOTATION_OL
-    print(e)
-   
-    
-    #setup parallel backend to use many processors
-    cores=detectCores()
-    cl <- makeCluster(cores[1]-2) 
-    registerDoParallel(cl)
-    
-    pKT <- foreach(gt=colnames(GT), .combine=c) %dopar% {
-      
-        kTAU = cor.test(ENV[,e], GT[,gt], use = 'pairwise.complete.obs', method='kendall')$p.value
 
-    ### add correlation test results to container
-    return(kTAU)
     
-    }
+    ### Calculate correlation tau kendall for every SNP
+    kTAU = cor(ENV[,e], GT, use = 'pairwise.complete.obs', method='kendall')
     
-    # stop parallel cluster
-    stopCluster(cl)
+    ### calculate p-values
+    pKT =  unlist(lapply(kTAU, kendall_pvalue, n=nrow(GT)))
+  
    
     # add pKT to WZA input
     WZAin$pKT = pKT
@@ -167,6 +163,7 @@ for (ds in ds_list[-1]) {
                   '--summary_stat pKT --window rnd_og --MAF MAF ', ### other params
                   '--output ',tmpOUT)) ### output folder
     
+    
     ### read wza out
     WZAout = read.csv(tmpOUT)
     
@@ -176,5 +173,6 @@ for (ds in ds_list[-1]) {
     save(WZA, file=paste0('DATA/GEA_OUTPUT/WZA/',ds,'/',e,'.rda'))    
     
     }
+
 }
 
