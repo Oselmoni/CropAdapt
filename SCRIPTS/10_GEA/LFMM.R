@@ -24,8 +24,7 @@ for (ds in ds_list) {
   gti_files=list.files('DATA/GEA_INPUT/GTI/',full.names = T)
   load(gti_files[regexpr(ds, gti_files)!=-1])
 
-  dim(GTI)
-  
+
   ######
   ######### LOAD AND PREPARE ANNOTATION DATA
   ######
@@ -110,17 +109,17 @@ for (ds in ds_list) {
     lfmm = lfmm_ridge(GTI, iENVdf[,e], K = K)
     lfmm.pv <- lfmm_test(Y=GTI, X=iENVdf[,e], lfmm=lfmm, calibrate="gif")
     
-    ### add lfmm results to container
-    LFMM=lfmm.pv
-    
     ### get lowest p-value per orthogroup
-    SNP_ANNOTATION_OL$p = LFMM$calibrated.pvalue[SNP_ANNOTATION_OL$id,1]
+    SNP_ANNOTATION_OL$p = lfmm.pv$calibrated.pvalue[SNP_ANNOTATION_OL$id,1]
     
     
     LFMM_OG = data.frame('meanP' = by(SNP_ANNOTATION_OL$p, SNP_ANNOTATION_OL$rnd_og, mean, na.rm=T),
                          'medP' = by(SNP_ANNOTATION_OL$p, SNP_ANNOTATION_OL$rnd_og, median, na.rm=T),
                          'minP' = by(SNP_ANNOTATION_OL$p, SNP_ANNOTATION_OL$rnd_og, min, na.rm=T))
     
+    ### Create an LFMM output for SNP & annotation to OG
+    LFMM = SNP_ANNOTATION_OL
+
 
     ### Store LFMM results
     save(LFMM_OG, file=paste0('DATA/GEA_OUTPUT/LFMM/',ds,'/LFMM_OG_',e,'.rda'))

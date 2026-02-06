@@ -211,6 +211,69 @@ for (ds in ds_list) {
 
 
 
+### 
+###### Step 2: Run PicMin across species
+###
+
+### get picmin functions
+source('SCRIPTS/10_GEA/picmin.R') # load custom script to run picmin
+
+
+### Precompute null distribution of p-values for different number of lineages
+nullP = PicMinNull(linMin = 3, linMax = length(ds_list))
+
+
+
+### Create container of picmin results
+PERM_PM_RES = list()
+
+
+### for every replicate
+for (i in 1:length(perm_env_vars)) {
+  
+  print(i)
+  
+  ####
+  ####### Extract p-values for GEA vs. variable of interest
+  ####
+  
+  PVALS = data.frame()
+  
+  for (ds in ds_list) {
+    
+    load(paste0('DATA/GEA_OUTPUT/WZA/',ds,'/pWZA.rda'))
+    
+    ## get current permutation
+    wza_pval = pWZA[,i]
+    
+    ## transform to empirical pvalues
+    ep = PicMin:::EmpiricalPs(wza_pval)
+    
+    PVALS[names(wza_pval),ds] = ep
+    
+  }
+  
+  ### Run PICMIN
+  PERM_PM_RES[[i]] = RunPicmin(PVALS, nullP = nullP)
+  
+  
+  ### Display number of hits in random datasets  
+  hist(unlist(lapply(PERM_PM_RES, function(x) {sum(x$pooled_q<0.01)})), xlab='# hits by chance')
+  
+}
+
+
+### create container of q-values of permuted-wza-picmin
+PERM_PM_Q = data.frame()
+for (i in 1:length(perm_env_vars)) {
+  
+  PERM_PM_Q[PERM_PM_RES[[i]]$locus,paste0(i,'_',perm_env_vars[i])] = PERM_PM_RES[[i]]$pooled_q
+  
+}
+
+save(PERM_PM_Q, file='DATA/GEA_OUTPUT/WZA/PERM_PM_Q.rda')
+
+
 
 
 stopCluster(cl)
