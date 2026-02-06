@@ -87,7 +87,13 @@ for (CH in unique(chr)) {
 
 head(SNP_ANNOTATION)
 
-#save(SNP_ANNOTATION, file='DATA/SNP_ANNOTATION/commonbean_la.rda', compression_level = 9)
+save(SNP_ANNOTATION, file='DATA/SNP_ANNOTATION/commonbean_la.rda', compression_level = 9)
 
 
+#### Save genes metadata
+load('DATA/SNP_ANNOTATION/commonbean_la.rda')
+CDS = GTF[,c('V1','V4','V5','V7','GENEID')] 
+colnames(CDS) = c('CHR','STA','END','STR','GENEID')
+CDS = CDS[CDS$GENEID%in%SNP_ANNOTATION$geneID,]
+save(CDS, file='DATA/GENE_ANNOTATION/commonbean_la.rda')
 

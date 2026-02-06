@@ -90,5 +90,11 @@ GTF[GTF$GENEID%in%randomSNPS$geneID,]
 
 
 
-#save(SNP_ANNOTATION, file='DATA/SNP_ANNOTATION/teparybean.rda', compression_level = 9)
+save(SNP_ANNOTATION, file='DATA/SNP_ANNOTATION/teparybean.rda', compression_level = 9)
 
+#### Save genes metadata
+load('DATA/SNP_ANNOTATION/teparybean.rda')
+CDS = GTF[,c('V1','V4','V5','V7','GENEID')] 
+colnames(CDS) = c('CHR','STA','END','STR','GENEID')
+CDS = CDS[CDS$GENEID%in%SNP_ANNOTATION$geneID,]
+save(CDS, file='DATA/GENE_ANNOTATION/teparybean.rda')

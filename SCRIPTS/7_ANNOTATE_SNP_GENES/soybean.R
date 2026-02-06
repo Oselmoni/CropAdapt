@@ -6,7 +6,7 @@ library(doParallel)
 
 ### Load gtf file
 GTF = read.table('DATA/RAW/soybean/Gmax_275_Wm82.a2.v1.gene_exons.gff3', sep='\t')
-head(GTF, n=50)
+
 ### load gene names
 fasta = read.fasta('DATA/RAW/PROTEINS/soybean_Gmax_275_Wm82.a2.v1.protein.fa')
 nameGenes=names(fasta)
@@ -87,5 +87,13 @@ randomSNPS = SNP_ANNOTATION[sample(which(is.na(SNP_ANNOTATION$geneID)==F), 1),]
 randomSNPS
 GTF[GTF$GENEID%in%randomSNPS$geneID,]
 
-#save(SNP_ANNOTATION, file='DATA/SNP_ANNOTATION/soybean.rda', compression_level = 9)
+save(SNP_ANNOTATION, file='DATA/SNP_ANNOTATION/soybean.rda', compression_level = 9)
 
+
+
+### Save genes metadata
+load('DATA/SNP_ANNOTATION/soybean.rda')
+CDS = GTF[,c('V1','V4','V5','V7','GENEID')] 
+colnames(CDS) = c('CHR','STA','END','STR','GENEID')
+CDS = CDS[CDS$GENEID%in%SNP_ANNOTATION$geneID,]
+save(CDS, file='DATA/GENE_ANNOTATION/soybean.rda')
