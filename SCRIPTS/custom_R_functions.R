@@ -28,3 +28,219 @@ cplot = function(x,y, col=1, pch=16, cex=1, main='', xlab='', ylab='', signif=2,
   
   
 }
+
+
+
+
+# custom plot for GEA display 
+plotGEAgeo = function(coord, col, env, eVar, main='', colBRK, df=100) {
+  
+  ### Load environmental raster
+  if (  file.exists(paste0('DATA/ENV/ForPlotting/',envVars[eVar,"variableRaw"])) == F ) { # if layer doesn't exist... create for the first time, adjust CRS and resolution
+    R = rast(paste0(paste0(envVars[eVar,'folder'],'/',envVars[eVar,"variableRaw"]))) # load raw raster
+    R = project(R, y='epsg:4326') # reproject
+    canvas = R;res(canvas) = c(0.5,0.5) # reduce spatial resolution
+    R = resample(R, canvas)
+    writeRaster(R, filename=paste0('DATA/ENV/ForPlotting/',envVars[eVar,"variableRaw"]))
+  } else { # if layer is already created --> laad directly 
+    R = rast(paste0('DATA/ENV/ForPlotting/',envVars[eVar,"variableRaw"]))
+  }
+  
+  
+  
+  ### Set extent of plotting map area
+  dX = diff(range(coord[,1]))
+  dY = diff(range(coord[,2]))
+  
+  ### Set boundaries of plotted area, so that overall plot is a square
+  if (dX<dY) {
+    minY = min(coord[,2])-dY*0.05
+    maxY = max(coord[,2])+dY*0.05
+    
+    delta = ((dY*1.1)-dX)/2
+    minX = min(coord[,1])-delta
+    maxX = max(coord[,1])+delta
+    
+  } else {
+    minX = min(coord[,1])-dX*0.05
+    maxX = max(coord[,1])+dX*0.05
+    
+    delta = ((dX*1.1)-dY)/2
+    minY = min(coord[,2])-delta
+    maxY = max(coord[,2])+delta
+  }
+  
+  
+  # crop area of interest
+  R = crop(R, ext(c(minX, maxX, minY, maxY)))
+  
+  ## load topography for bg
+  TOPO = rast('DATA/ENV/GMRT/GMRTv4_4_0_20251215topo.tif')
+  TOPO = crop(TOPO, R)
+  TOPO[TOPO<(-30)] = NA
+  TOPO = terrain(TOPO, v='TRI')
+  
+  # resample
+  R =resample(R, TOPO)
+  
+  
+  ## rasterize land 
+  LAND=rasterize(ne_countries(scale='large'), R)
+  
+  ## remove water pixel from raster
+  R[is.na(LAND)] = NA
+  TOPO[is.na(LAND)] = NA  
+  
+  
+  ###
+  ### plot background map
+  ###
+  par(mar=c(0,0,0,0))
+  plot(NA, xlim=c(ceiling(minX),floor(maxX)), ylim=c(ceiling(minY),floor(maxY)), xaxs='i', yaxs='i', axes=F)
+  plot(R, col=colorRampPalette(c('#7BD0F5','#FD7790'))(10), breaks=c(0,seq(quantile(env, 0.05, na.rm=T), quantile(env, 0.95, na.rm=T), length.out=9),Inf), add=T, legend=F)
+  plot(TOPO, col=adjustcolor(colorRampPalette(c('grey90','grey20'))(20), 0.2), add=T)
+  #plot(ne_coastline(scale = 'large'), add=T, col='grey30', border=NA)
+  
+  box()
+  ###
+  ### add points
+  ###
+  
+  DT=(maxX-minX)/df
+  
+  
+  rows = seq(minX, maxX, by=DT)
+  cols = seq(minY, maxY, by=DT)
+  
+  availPOS = data.frame('LON'=rep(rows, each=length(cols)), 'LAT'=rep(cols, times=length(rows)))
+  
+  ### group together coordinates within the same distance
+  geoCL = cutree(hclust(dist(coord[,c('LON','LAT')]), method = 'single'), h=DT)
+  
+  
+  ## for every geographic cluster of points (from smallest to largest)
+  for (geo in names(sort(table(geoCL)))) {
+    
+    
+    coords_geo = coord[geoCL==geo,,drop=F]
+    
+    
+    
+    # find center of cluster
+    centerLON = mean(coords_geo$LON)
+    centerLAT = mean(coords_geo$LAT)
+    
+    
+    # calculate distance from center
+    availPOS$DC = sqrt((availPOS$LON-centerLON)^2+(availPOS$LAT-centerLAT)^2)
+    
+    
+    
+    # for every point, find a position from matrix
+    for (i in 1:nrow(coords_geo)) {
+      
+      # find closest available point
+      sel.pos = which.min(availPOS$DC)
+      
+      # add point coordinate
+      coords_geo$LONplot[i] = availPOS$LON[sel.pos]
+      coords_geo$LATplot[i] = availPOS$LAT[sel.pos]
+      
+      # removce chosen point
+      availPOS = availPOS[-sel.pos,]
+      
+    }
+    
+    ### draw lines
+    for (i in 1:nrow(coords_geo)) {
+      lines(c(centerLON,coords_geo$LONplot[i]),
+            c(centerLAT,coords_geo$LATplot[i]),
+      )
+    }
+    
+    ### draw points
+    points(coords_geo$LONplot, coords_geo$LATplot, bg=COLMAF[which(geoCL==geo)], pch=21, lwd=.5, cex=1.5)
+    
+    
+  }
+  
+  
+  box()
+  title(main=main, line=-2)
+}
+
+
+
+
+
+
+
+### custom manhattan plot
+manhattanPlot = function(chr, p, pos, sig, main='', chrL) {
+  
+
+  # set chromosome colors
+  chrCol = rep(c('grey80','grey50'), length.out=length(unique(chr)))
+  
+  # calculate cumulative position
+  chrN = as.numeric(as.factor(chr))
+  cpos = pos[chrN==1]
+  for (ch in 2:length(unique(chrN))) {
+    
+    cpos = c(cpos, max(cpos)+pos[chrN==ch])
+    
+  }
+  
+  ### Plot manhattan plot
+  par(mar=c(3,3,2,1))
+  plot(cpos, p, pch=16, col=chrCol[chrN], main=main, axes=F, xlab='', ylab='', cex=0.5)
+  
+  # add circle to significant genes
+  points(cpos[sig], p[sig], col='red', pch=16)
+  
+  # add chromosome labs
+  axis(1, at=unlist(by(cpos, chr, mean)), labels = chrL, lwd = 0, las=2, line=-1, chrCol)
+  axis(2, at=seq(par('usr')[3], par('usr')[4], length.out=4), labels = round(seq(par('usr')[3], par('usr')[4], length.out=4) ))
+  title(ylab='-log(empirical p-value)', line=2)
+  
+}
+
+
+
+
+
+### Custom boxplot GEA
+plotGEAbp = function(gt, env, envLab) {
+  
+  
+  # plot canvas
+  par(mar=c(3,3,2,1))
+  plot(NA, xlim=c(-0.5,2.5), ylim=range(env,na.rm=T), axes=F)
+  
+  # add colorscale in background
+  env_brks = c(par('usr')[3],seq(quantile(env, 0.05, na.rm=T), quantile(env, 0.95, na.rm=T), length.out=8),par('usr')[4])
+  for (i in 1:10) {  rect(par('usr')[1],  env_brks[i], par('usr')[2], env_brks[i+1] , border=NA, col=colorRampPalette(c('#7BD0F5','#FD7790'))(10)[i]) }
+  
+  # add gt distribution
+  points(gt+runif(length(gt), -0.3,0.3), sam_reg_env, pch=16, col=adjustcolor(1,0.1), cex=.5)
+  
+  # add distribution values for every gt
+  lines(c(0,0), quantile(env[gt==0], na.rm=T)[c(2,4)], lwd=2);points(0, median(env[gt==0], na.rm=T), cex=2, pch=21, bg=COLBOX[1])
+  lines(c(1,1), quantile(env[gt==1], na.rm=T)[c(2,4)], lwd=2);points(1, median(env[gt==1], na.rm=T), cex=2, pch=21, bg=COLBOX[2])
+  lines(c(2,2), quantile(env[gt==2], na.rm=T)[c(2,4)], lwd=2);points(2, median(env[gt==2], na.rm=T), cex=2, pch=21, bg=COLBOX[3])
+  
+  # Add axes
+  axis(1, at=c(0,1,2))
+  axis(2, at=seq(min(env, na.rm=T),max(env, na.rm=T), length.out=3), labels=signif(seq(min(env, na.rm=T),max(env, na.rm=T), length.out=3),3))
+  box()
+  title(ylab=envLab, xlab='Genotype', line=2)
+}
+
+
+### Stouffer p-value normalization
+stP = function(ps) {
+  z <- qnorm(1 - ps)
+  Zg <- sum(z) / sqrt(length(z))
+  p_gene <- 1 - pnorm(Zg) 
+  return(p_gene) }
+

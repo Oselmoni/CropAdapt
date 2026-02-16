@@ -115,3 +115,7 @@ RunPicmin = function(all_lins_p, ### this a table where every row is a genomic w
   return(picMin_results)
   
 }
+
+
+
+
