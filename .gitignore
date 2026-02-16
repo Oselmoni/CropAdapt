@@ -12,6 +12,7 @@ DATA/ENV/ERA5_bioclim/*
 DATA/ENV/SoilGrids/*
 DATA/ENV/SoilGrids_Processed/*
 DATA/ENV/GMRT/*
+DATA/ENV/ForPlotting/*
 formoi
 .DS*
 DATA/ORTHOFINDER
