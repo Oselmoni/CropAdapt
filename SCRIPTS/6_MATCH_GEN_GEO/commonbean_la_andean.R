@@ -11,6 +11,9 @@ GT = vcf$gt
 colnames(GT) = vcf$samples
 rownames(GT) = paste0(vcf$chr,':',vcf$pos)
 
+## get rid of samples in Indian Ocean (not on land)
+meta = meta[which(meta$LAT>10),]
+
 
 ## Check overlap samples
 ol = names(which(table(c(meta$ID, vcf$samples))==2))

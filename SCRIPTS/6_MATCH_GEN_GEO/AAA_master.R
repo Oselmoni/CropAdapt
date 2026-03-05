@@ -1,5 +1,6 @@
 library(SNPRelate)
 library(rnaturalearth)
+library(sf)
 source('SCRIPTS/custom_R_functions.R')
 
 lf = list.files('SCRIPTS/6_MATCH_GEN_GEO/')[-1]
@@ -12,6 +13,7 @@ DS_STATS=data.frame()
 
 for (f in lf) {
 
+  f=lf[25]
   print(f)
   d=substr(f, 1 ,nchar(f)-2)
   
@@ -58,6 +60,16 @@ for (f in lf) {
   DS_STATS[d,'N_snps_AF_mn_maf'] = length(snps_mn_maf)
   
   
+  ### Calculate number of samples located ~10 km apart
+  points <- st_as_sf(meta[ind_mn,], coords = c("LON", "LAT"), crs = 4326) 
+  geo_DIS= as.dist(st_distance(points)/1000)
+  hcl = hclust(geo_DIS)
+  SamSites = paste0('geoCL_',cutree(hcl, h=10)) # 10 km
+  
+  DS_STATS[d,'SamSites'] = length(unique(SamSites))
+  DS_STATS[d,'med_D_SamSites'] = median(geo_DIS)
+  
+
   ### Calculate PCA 
   PCA = snpgdsPCA(SNPS, sample.id=ind_mn, snp.id=snps_mn_maf, autosome.only=F)
   
@@ -71,26 +83,33 @@ for (f in lf) {
             alpha =1)
   
   {
-    pdf(paste0('FIGURES/ds_genomic_summary/',d,'.pdf'), h=7, w=6)
+    pdf(paste0('FIGURES/ds_genomic_summary/',d,'.pdf'), h=10, w=6)
     ## plot summary figure
     layout(matrix(c(1,2,3,
+                    1,2,3,
+                    4,5,6,
                     4,5,6,
                     7,8,9,
+                    7,8,9,
                     10,10,10,
-                    10,10,10), nrow=5, byrow = T))
+                    10,10,10,
+                    10,10,10,
+                    10,10,10,
+                    10,10,10,
+                    10,10,11), nrow=12, byrow = T))
     
     ## plot stats
     par(mar=c(3,3,2,1))
-    hist(MN_ind, breaks=100, main='\nA-Miss. rate by ind.', xlim=c(0,1), las=2)
+    hist(MN_ind, breaks=100, main='\nA) Miss. rate by ind.', xlim=c(0,1), las=2)
     rect(0.1, 0, 1, par('usr')[4], border=NA, col=adjustcolor('red',0.1))
-    hist(MN_snp, breaks=100, main=paste0(d,'\nB-Miss. rate by SNP'), xlim=c(0,1), las=2)
+    hist(MN_snp, breaks=100, main=paste0(d,'\nB) Miss. rate by SNP'), xlim=c(0,1), las=2)
     rect(0.1, 0, 1, par('usr')[4], border=NA, col=adjustcolor('red',0.1))
-    hist(MAF_snp, breaks=100, main='\nC-Minor Allele Freq.', xlim=c(0,1), las=2)
+    hist(MAF_snp, breaks=100, main='\nC) Minor Allele Freq.', xlim=c(0,1), las=2)
     rect(0, 0, 0.05, par('usr')[4], border=NA, col=adjustcolor('red',0.1))
     
     ## plot PCA
     par(mar=c(3,3,1,1))
-    cplot(1:length(PVE[is.na(PVE)==F]), PVE[is.na(PVE)==F], main='D - Pr. Comp. Analysis', ylab='PVE', xlab='PC#')
+    cplot(1:length(PVE[is.na(PVE)==F]), PVE[is.na(PVE)==F], main='D) Pr. Comp. Analysis', ylab='PVE', xlab='PC#')
     cplot(PCA$eigenvect[,1], PCA$eigenvect[,2], col=col, xlab=paste0('PC1 (PVE=',signif(PVE[1],2),'%)'), ylab=paste0('PC2 (PVE=',signif(PVE[2],2),'%)'))
     cplot(PCA$eigenvect[,3], PCA$eigenvect[,4], col=col, xlab=paste0('PC3 (PVE=',signif(PVE[3],2),'%)'), ylab=paste0('PC4 (PVE=',signif(PVE[4],2),'%)'))
     cplot(PCA$eigenvect[,5], PCA$eigenvect[,6], col=col, xlab=paste0('PC5 (PVE=',signif(PVE[5],2),'%)'), ylab=paste0('PC6 (PVE=',signif(PVE[6],2),'%)'))
@@ -99,11 +118,11 @@ for (f in lf) {
     
     
     ## Plot map
-    par(mar=c(1,1,0,1))
-    plot(meta[ind_mn,c('LON','LAT')], col=NA, axes=F)
-    plot(land, add=T, col='grey90', border=NA)
-    points(meta[ind_mn,c('LON','LAT')], col=col, pch=16)
-    box()
+    plotPCAgeo(coord=meta[ind_mn,c('LON','LAT')],col = col, main='', df = 200)
+    
+
+
+
     dev.off()
   }
   

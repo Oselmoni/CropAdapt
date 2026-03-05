@@ -175,6 +175,9 @@ plotGEAgeo = function(coord, col, env, eVar, main='', colBRK, df=100) {
 
 
 
+
+
+
 ### custom manhattan plot
 manhattanPlot = function(chr, p, pos, sig, main='', chrL) {
   
@@ -243,4 +246,143 @@ stP = function(ps) {
   Zg <- sum(z) / sqrt(length(z))
   p_gene <- 1 - pnorm(Zg) 
   return(p_gene) }
+
+
+
+
+# custom plot for PCA display 
+plotPCAgeo = function(coord, col, main='', df=100) {
+  
+  ### add color to df
+  coord$col = col
+  
+  ### for display purposed, exclude samples located more than 5000 km away frm any other
+  DIST = as.matrix(dist(coord[,c('LON','LAT')]))
+  diag(DIST) = NA
+  minDIST = apply(DIST, 1, min, na.rm=T)
+  coord = coord[minDIST<50,]
+  
+  ### Set extent of plotting map area
+  dX = diff(range(coord[,1]))
+  dY = diff(range(coord[,2]))
+  
+  ### Set boundaries of plotted area, so that overall plot is a square
+  if (dX<dY) {
+    minY = min(coord[,2])-dY*0.05
+    maxY = max(coord[,2])+dY*0.05
+    
+    delta = ((dY*1.1)-dX)/2
+    minX = min(coord[,1])-delta
+    maxX = max(coord[,1])+delta
+    
+  } else {
+    minX = min(coord[,1])-dX*0.05
+    maxX = max(coord[,1])+dX*0.05
+    
+    delta = ((dX*1.1)-dY)/2
+    minY = min(coord[,2])-delta
+    maxY = max(coord[,2])+delta
+  }
+  
+  
+
+  ## load topography for bg
+  TOPO = rast('DATA/ENV/GMRT/GMRTv4_4_0_20251215topo.tif')
+  TOPO = crop(TOPO, ext(c(minX, maxX, minY, maxY)))
+  TOPO[TOPO<(-30)] = NA
+  TOPO = terrain(TOPO, v='TRI')
+  
+ 
+  ## rasterize land 
+  LAND=rasterize(ne_countries(scale='large'), TOPO)
+  
+  ## remove water pixel from raster
+  TOPO[is.na(LAND)] = NA  
+  
+  
+  ###
+  ### plot background map
+  ###
+  par(mar=c(0,0,0,0))
+  plot(NA, xlim=c(ceiling(minX),floor(maxX)), ylim=c(ceiling(minY),floor(maxY)), xaxs='i', yaxs='i', axes=F)
+  plot(ne_countries(scale = 'large'), col='grey80', border='NA', add=T)
+  plot(TOPO, col=adjustcolor(colorRampPalette(c('grey80','grey20'))(20), 0.2), add=T)
+
+  
+  ###
+  ### add points
+  ###
+  
+  DT=(maxX-minX)/df
+  
+  
+  rows = seq(minX, maxX, by=DT)
+  cols = seq(minY, maxY, by=DT)
+  
+  availPOS = data.frame('LON'=rep(rows, each=length(cols)), 'LAT'=rep(cols, times=length(rows)))
+  
+  ### group together coordinates within the same distance
+  geoCL = cutree(hclust(dist(coord[,c('LON','LAT')]), method = 'single'), h=DT)
+  
+  
+  ## for every geographic cluster of points (from smallest to largest)
+  for (geo in names(sort(table(geoCL)))) {
+    
+    
+    coords_geo = coord[geoCL==geo,,drop=F]
+    
+    
+    
+    # find center of cluster
+    centerLON = mean(coords_geo$LON)
+    centerLAT = mean(coords_geo$LAT)
+    
+    
+    # calculate distance from center
+    availPOS$DC = sqrt((availPOS$LON-centerLON)^2+(availPOS$LAT-centerLAT)^2)
+    
+    
+    
+    # for every point, find a position from matrix
+    for (i in 1:nrow(coords_geo)) {
+      
+      # find closest available point
+      sel.pos = which.min(availPOS$DC)
+      
+      # add point coordinate
+      coords_geo$LONplot[i] = availPOS$LON[sel.pos]
+      coords_geo$LATplot[i] = availPOS$LAT[sel.pos]
+      
+      # removce chosen point
+      availPOS = availPOS[-sel.pos,]
+      
+    }
+    
+    ### draw lines
+    for (i in 1:nrow(coords_geo)) {
+      lines(c(centerLON,coords_geo$LONplot[i]),
+            c(centerLAT,coords_geo$LATplot[i]),
+      )
+    }
+    
+    ### draw points
+    points(coords_geo$LONplot, coords_geo$LATplot, bg=coords_geo$col, pch=21, lwd=.5, cex=1)
+    
+    
+  }
+  title(main='     E) Geographic distribution', line=-2, adj=0)
+
+  ### if small area, add reference map
+  if (max(c(dX,dY))<200) {
+    
+    plot(NA, xlim=c(-180,+180), ylim=c(-90,90), xlab='', ylab='', axes=F)
+    rect(-180, -90,180,90, col='white')
+    plot(land, col='grey80', border=NA, add=T, axes=F)
+    rect(minX, max(c(-90,minY)), maxX, min(c(maxY,90)), border='red', col=NA)
+    
+  }
+  
+  
+}
+
 

@@ -1,18 +1,18 @@
-dataset	annotation_file	protein_file
-tomato_wr	tomato_wr	tomato_wr_protein
-barley_la	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf
-barley_wr	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf
-commonbean_la_andean	commonbean_la	commonbean_la_protein
-commonbean_la_mesoamerican 	commonbean_la	commonbean_la_protein
-commonbean_wr	commonbean_wr	commonbean_wr_protein
-corn_la	corn_la	corn_la_protein
-corn_wr	corn_wr	corn_wr_protein
-rice_la_circumaus	rice_la	rice_la_protein
-rice_la_indica	rice_la	rice_la_protein
-rice_la_japonica	rice_la	rice_la_protein
-rice_wr	rice_wr	rice_wr_protein
-sorghum_la	sorghum_la	sorghum_Sbi1.4.pep
-soybean_la	soybean	soybean_Gmax_275_Wm82.a2.v1.protein
-soybean_wr	soybean	soybean_Gmax_275_Wm82.a2.v1.protein
-teparybean_la_mexico	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep
-teparybean_wr	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep
+dataset	annotation_file	protein_file	name
+tomato_wr	tomato_wr	tomato_wr_protein 	tomato wild relatives
+barley_la	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf	barley landraces
+barley_wr	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf	barley wild relatives
+commonbean_la_andean	commonbean_la	commonbean_la_protein	common bean landraces (andean)
+commonbean_la_mesoamerican	commonbean_la	commonbean_la_protein	common bean landraces (mesoamerican)
+commonbean_wr	commonbean_wr	commonbean_wr_protein	common bean wild relatives
+corn_la	corn_la	corn_la_protein	corn landraces
+corn_wr	corn_wr	corn_wr_protein	corn wild relatives
+rice_la_circumaus	rice_la	rice_la_protein	rice landraces (circumaus)
+rice_la_indica	rice_la	rice_la_protein	rice landraces (indica)
+rice_la_japonica	rice_la	rice_la_protein	rice landraces (japonica)
+rice_wr	rice_wr	rice_wr_protein	rice wild relatives
+sorghum_la	sorghum_la	sorghum_Sbi1.4.pep	sorghum landraces
+soybean_la	soybean	soybean_Gmax_275_Wm82.a2.v1.protein	soybean landraces
+soybean_wr	soybean	soybean_Gmax_275_Wm82.a2.v1.protein	soybean wild relatives
+teparybean_la_mexico	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep	tepary bean landraces
+teparybean_wr	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep	tepary bean wild relatives
