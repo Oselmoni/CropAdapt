@@ -7,9 +7,9 @@ library(SNPRelate)
 source('SCRIPTS/custom_R_functions.R')
 
 ### Get list of name of datasets of interest
-ds_list = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T)$dataset
-annotation_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T)$annotation_file
-protein_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T)$protein_file
+ds_list = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$dataset
+annotation_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$annotation_file
+protein_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$protein_file
 
 names(annotation_files)=names(protein_files)=ds_list
 
@@ -35,7 +35,7 @@ set.seed(0);perm_env_vars = sample(envVars$VariableID, 100, replace=T)
 
 
 ### for every dataset...
-for (ds in ds_list[1:17]) {
+for (ds in ds_list) {
   
   dir.create(paste0('DATA/GEA_OUTPUT/KTAU/',ds), showWarnings = F)
   

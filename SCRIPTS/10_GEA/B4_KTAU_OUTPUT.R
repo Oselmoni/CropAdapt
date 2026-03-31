@@ -16,7 +16,7 @@ envVars = read.csv('DATA/ENV/envlist.csv')
 rownames(envVars)= envVars$VariableID
 
 ### Get list of selected datasets
-selectedDS = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt', header=T, row.names=1)
+selectedDS = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt', header=T, row.names=1, sep='\t')
 
 ### Load orthogroups list
 load('DATA/SNP_ANNOTATION/orthogroups.rda')
@@ -242,13 +242,13 @@ for (ds in top_ds) {
                              'LAT'=iENV$LAT)
   sam_reg_env = env
   
-  ### get rid of samples too far away
-  tk = sam_reg_coord$LON>quantile(sam_reg_coord$LON, 0.25)-IQR(sam_reg_coord$LON)*2.5&
-    sam_reg_coord$LON<quantile(sam_reg_coord$LON, 0.75)+IQR(sam_reg_coord$LON)*2.5&is.na(gt)==F
-  
-  sam_reg_coord = sam_reg_coord[tk,]
-  sam_reg_maf = sam_reg_maf[tk]
-  sam_reg_env = sam_reg_env[tk]
+  # ### get rid of samples too far away
+  # tk = sam_reg_coord$LON>quantile(sam_reg_coord$LON, 0.25)-IQR(sam_reg_coord$LON)*2.5&
+  #   sam_reg_coord$LON<quantile(sam_reg_coord$LON, 0.75)+IQR(sam_reg_coord$LON)*2.5&is.na(gt)==F
+  # 
+  # sam_reg_coord = sam_reg_coord[tk,]
+  # sam_reg_maf = sam_reg_maf[tk]
+  # sam_reg_env = sam_reg_env[tk]
   
   
   

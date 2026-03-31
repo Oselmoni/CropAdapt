@@ -181,7 +181,7 @@ plotGEAgeo = function(coord, col, env, eVar, main='', colBRK, df=100) {
 ### custom manhattan plot
 manhattanPlot = function(chr, p, pos, sig, main='', chrL) {
   
-
+  
   # set chromosome colors
   chrCol = rep(c('grey80','grey50'), length.out=length(unique(chr)))
   
@@ -251,7 +251,7 @@ stP = function(ps) {
 
 
 # custom plot for PCA display 
-plotPCAgeo = function(coord, col, main='', df=100) {
+plotPCAgeo = function(coord, col, main='', df=100, mainT=T, cexP=1) {
   
   ### add color to df
   coord$col = col
@@ -285,29 +285,35 @@ plotPCAgeo = function(coord, col, main='', df=100) {
   }
   
   
-
+  
   ## load topography for bg
   TOPO = rast('DATA/ENV/GMRT/GMRTv4_4_0_20251215topo.tif')
   TOPO = crop(TOPO, ext(c(minX, maxX, minY, maxY)))
   TOPO[TOPO<(-30)] = NA
   TOPO = terrain(TOPO, v='TRI')
   
- 
+  
   ## rasterize land 
   LAND=rasterize(ne_countries(scale='large'), TOPO)
   
   ## remove water pixel from raster
   TOPO[is.na(LAND)] = NA  
   
+  ## set scalbar sizes
+  max_range = max(c(dX,dY))
+  sbsize =   1000 # by default, sb 1000 km
+  if (max_range<20) { sbsize = 500} # if small areas, reduce sbsize
+  if (max_range<10) { sbsize = 250} # if small areas, reduce sbsize
+  if (max_range<5) { sbsize = 100}
   
   ###
   ### plot background map
   ###
-  par(mar=c(0,0,0,0))
+  par(mar=c(1,1,3,1))
   plot(NA, xlim=c(ceiling(minX),floor(maxX)), ylim=c(ceiling(minY),floor(maxY)), xaxs='i', yaxs='i', axes=F)
   plot(ne_countries(scale = 'large'), col='grey80', border='NA', add=T)
-  plot(TOPO, col=adjustcolor(colorRampPalette(c('grey80','grey20'))(20), 0.2), add=T)
-
+  plot(TOPO, col=adjustcolor(colorRampPalette(c('grey80','grey20'))(20), 0.2), add=T, legend=F)
+  sbar(sbsize/100, labels = paste0(sbsize, ' km'), lwd=1, xy=c(minX+diff(c(minX,maxX))*0.1, minY+diff(c(minY,maxY))*0.1))
   
   ###
   ### add points
@@ -366,18 +372,19 @@ plotPCAgeo = function(coord, col, main='', df=100) {
     }
     
     ### draw points
-    points(coords_geo$LONplot, coords_geo$LATplot, bg=coords_geo$col, pch=21, lwd=.5, cex=1)
+    points(coords_geo$LONplot, coords_geo$LATplot, bg=coords_geo$col, pch=21, lwd=.5, cex=cexP)
     
     
   }
-  title(main='     E) Geographic distribution', line=-2, adj=0)
-
+  box()
+  if (mainT==T) {title(main='     E) Geographic distribution', line=0.5, adj=0)}
+  
   ### if small area, add reference map
   if (max(c(dX,dY))<200) {
     
     plot(NA, xlim=c(-180,+180), ylim=c(-90,90), xlab='', ylab='', axes=F)
-    rect(-180, -90,180,90, col='white')
-    plot(land, col='grey80', border=NA, add=T, axes=F)
+    rect(-180, -90,180,90, col=adjustcolor('white', 0.8))
+    plot(land, col=adjustcolor('grey80', 0.8), border=NA, add=T, axes=F)
     rect(minX, max(c(-90,minY)), maxX, min(c(maxY,90)), border='red', col=NA)
     
   }

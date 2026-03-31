@@ -5,14 +5,18 @@ DS_STATS_RAW = read.table('FIGURES/ds_genomic_summary/DS_STATS_RAW.txt')
 ## open datasets list
 dslist = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt', header=T, sep='\t')
 
+## load imputation accuracy stats
+IMPAC = read.table('DATA/GEA_INPUT/GTI/IMPACC.txt', row.names=1)
 
 ## merge two table
 OUT = DS_STATS[dslist$dataset,]
 OUT = cbind(OUT, DS_STATS_RAW[dslist$annotation_file,])
 OUT$Dataset = dslist$name
+OUT$imp_acc = IMPAC[rownames(OUT),]
+
 
 ## sort columns
-OUT = OUT[,c('Dataset','n_ind','n_loci','n_loci_aLD','N','N_snps','N_geo','N_AF_mn','N_snps_AF_mn','N_snps_AF_mn_maf','SamSites','med_D_SamSites')]
+OUT = OUT[,c('Dataset','n_ind','n_loci','n_loci_aLD','N','N_snps','N_geo','N_AF_mn','N_snps_AF_mn','N_snps_AF_mn_maf','SamSites','med_D_SamSites','imp_acc')]
 
 ## round distance between samples
 OUT$med_D_SamSites = round(OUT$med_D_SamSites)

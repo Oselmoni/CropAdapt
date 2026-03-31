@@ -24,7 +24,7 @@ meta$LAT[regexpr('China', country)==-1]=newlat
 HE = substr(meta$LON,1,1) # get hemisphere info
 DEG = as.numeric(substr(meta$LON,2,nchar(meta$LON))) # get decimal degree
 
-DEG[HE=='S'] = -DEG[HE=='S'] # change sign in hemisphere south
+DEG[HE=='W'] = -DEG[HE=='W'] # change sign in hemisphere west
 meta$LON = DEG
 
 
@@ -33,8 +33,10 @@ meta$LON = DEG
 HE = substr(meta$LAT,1,1) # get hemisphere info
 DEG = as.numeric(substr(meta$LAT,2,nchar(meta$LAT))) # get decimal degree
 
-DEG[HE=='W'] = -DEG[HE=='W'] # change sign in hemisphere west
+DEG[HE=='S'] = -DEG[HE=='S'] # change sign in hemisphere south
 meta$LAT = DEG
+
+
 
 
 ### add info on year

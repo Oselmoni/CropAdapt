@@ -6,9 +6,9 @@ library(foreach)
 library(doParallel)
 
 ### Get list of name of datasets of interest
-ds_list = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T)$dataset
-annotation_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T)$annotation_file
-protein_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T)$protein_file
+ds_list = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$dataset
+annotation_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$annotation_file
+protein_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$protein_file
 
 names(annotation_files)=names(protein_files)=ds_list
 

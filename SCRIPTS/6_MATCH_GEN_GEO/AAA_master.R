@@ -11,9 +11,9 @@ land=ne_countries()
 DS_STATS=data.frame()
 
 
-for (f in lf) {
-
-  f=lf[25]
+for (f in lf[-length(lf)]) {
+  
+  f=lf
   print(f)
   d=substr(f, 1 ,nchar(f)-2)
   
@@ -69,7 +69,7 @@ for (f in lf) {
   DS_STATS[d,'SamSites'] = length(unique(SamSites))
   DS_STATS[d,'med_D_SamSites'] = median(geo_DIS)
   
-
+  
   ### Calculate PCA 
   PCA = snpgdsPCA(SNPS, sample.id=ind_mn, snp.id=snps_mn_maf, autosome.only=F)
   
@@ -83,7 +83,7 @@ for (f in lf) {
             alpha =1)
   
   {
-    pdf(paste0('FIGURES/ds_genomic_summary/',d,'.pdf'), h=10, w=6)
+    png(paste0('FIGURES/ds_genomic_summary/',d,'.png'), h=10, w=6, units = 'in', res=500)
     ## plot summary figure
     layout(matrix(c(1,2,3,
                     1,2,3,
@@ -91,18 +91,19 @@ for (f in lf) {
                     4,5,6,
                     7,8,9,
                     7,8,9,
+                    10,10,11,
+                    10,10,11,
                     10,10,10,
                     10,10,10,
                     10,10,10,
                     10,10,10,
-                    10,10,10,
-                    10,10,11), nrow=12, byrow = T))
+                    10,10,10), nrow=13, byrow = T))
     
     ## plot stats
     par(mar=c(3,3,2,1))
     hist(MN_ind, breaks=100, main='\nA) Miss. rate by ind.', xlim=c(0,1), las=2)
     rect(0.1, 0, 1, par('usr')[4], border=NA, col=adjustcolor('red',0.1))
-    hist(MN_snp, breaks=100, main=paste0(d,'\nB) Miss. rate by SNP'), xlim=c(0,1), las=2)
+    hist(MN_snp, breaks=100, main=paste0('\nB) Miss. rate by SNP'), xlim=c(0,1), las=2)
     rect(0.1, 0, 1, par('usr')[4], border=NA, col=adjustcolor('red',0.1))
     hist(MAF_snp, breaks=100, main='\nC) Minor Allele Freq.', xlim=c(0,1), las=2)
     rect(0, 0, 0.05, par('usr')[4], border=NA, col=adjustcolor('red',0.1))
@@ -118,11 +119,11 @@ for (f in lf) {
     
     
     ## Plot map
-    plotPCAgeo(coord=meta[ind_mn,c('LON','LAT')],col = col, main='', df = 200)
+    plotPCAgeo(coord=meta[ind_mn,c('LON','LAT')],col = col, main='', df = 400)
     
-
-
-
+    
+    
+    
     dev.off()
   }
   

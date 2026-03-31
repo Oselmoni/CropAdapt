@@ -2,8 +2,9 @@ library(SNPRelate)
 library(LEA)
 library(rnaturalearth)
 library(terra)
+source('SCRIPTS/custom_R_functions.R')
 ### Get list of name of datasets of interest
-ds_list = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt')[,1]
+ds_list = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt', sep='\t')[,1]
 
 ### get country boundaries
 land=ne_countries(scale='large')
@@ -123,20 +124,25 @@ for (ds in ds_list[-1]) {
     ADCO = Q(project, topK, 1)
 
     ## get ancestral populations for every sample
-    ANC.POP = rep(NA, length=nrow(meta))
-    for (i in 1:ncol(ADCO)) {
-        ANC.POP[ADCO[,i]>0.5]=i
-    }
-
-    ## Plot K decision
-    pdf(paste0('FIGURES/snmf_k/',ds,'.pdf'), h=3, w=5)
-    layout(matrix(c(1,2,2), nrow=1))
-    ## Plot cross-entropy by number of ancestral populations
-    boxplot(snmf_out$CE~snmf_out$K, xlab='K', ylab='cross-entropy', main=ds)
+    ANC.POP = apply(ADCO,1,which.max)
     
-    plot(meta[,2:3], pch=16, col=NA, main=paste0('K=',topK))
-    plot(land, add=T, col='grey90', border='grey90')
-    points(meta[,2:3], pch=16, col=ANC.POP)
-    box()
-    dev.off()    
+    save(snmf_out, file=paste0('DATA/GEA_INPUT/GTI/snmf_out_',ds,'.rda'))
+    save(ANC.POP, file=paste0('DATA/GEA_INPUT/GTI/ANC.POP_',ds,'.rda'))
+    
+    
+    ## Plot K decision
+    png(paste0('FIGURES/snmf_k/',ds,'.png'), h=4, w=6, units = 'in', res=500)
+    layout(matrix(c(1,1,1,2,2,2,2,3,3,
+                    1,1,1,2,2,2,2,2,2,
+                    1,1,1,2,2,2,2,2,2,
+                    1,1,1,2,2,2,2,2,2), nrow=4, byrow = T))
+    ## Plot cross-entropy by number of ancestral populations
+    par(mar=c(3,3,3,1))
+    plot(snmf_out$K, snmf_out$CE, xlab='K', ylab='cross-entropy', pch=16, col=adjustcolor(c('grey40','red3')[(1:20==topK)+1], 0.5))
+    title(xlab='K', ylab='cross-entropy', line=2)
+    plotPCAgeo(coord = meta[,2:3], col=ANC.POP, df=400, mainT=F, cexP=0.75)
+    
+    
+    dev.off()      
 }    
+

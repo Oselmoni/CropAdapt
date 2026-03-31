@@ -4,9 +4,9 @@ library(foreach)
 library(doParallel)
 
 ### Get list of name of datasets of interest
-ds_list = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T)$dataset
-annotation_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T)$annotation_file
-protein_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T)$protein_file
+ds_list = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$dataset
+annotation_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$annotation_file
+protein_files = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$protein_file
 
 names(annotation_files)=names(protein_files)=ds_list
 
@@ -23,7 +23,7 @@ registerDoParallel(cl)
 
 
 ### for every dataset...
-for (ds in ds_list[1:17]) {
+for (ds in ds_list) {
   gc()
   #ds=ds_list[1]
   print(ds)
@@ -151,7 +151,7 @@ for (ds in ds_list[1:17]) {
     write.table(WZAin, tmpIN, quote=F, row.names=F, sep='\t')
     
     ### run WZA via python
-    system(paste0('/home/oselmo/data/conda/envs/myenv/bin/python SCRIPTS/10_GEA/WZA/general_WZA_script.py ',
+    system(paste0('python SCRIPTS/10_GEA/WZA/general_WZA_script.py ',
                   '--correlations ',tmpIN,' ', ### input file
                   '--summary_stat pKT --window rnd_og --MAF MAF ', ### other params
                   '--output ',tmpOUT)) ### output folder
@@ -170,3 +170,4 @@ for (ds in ds_list[1:17]) {
   
 }
 
+stopCluster(cl)

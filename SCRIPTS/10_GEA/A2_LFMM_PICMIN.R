@@ -1,7 +1,7 @@
 source('SCRIPTS/10_GEA/picmin.R') # load custom script to run picmin
 
 ### Load same env variable for different datasets
-dslist = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T)$dataset
+dslist = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$dataset
 
 ### Load list of environmental variables
 envVars = read.csv('DATA/ENV/envlist.csv')
@@ -44,7 +44,7 @@ for (evar in envVars$VariableID) {
   ### Run PICMIN
   PM_RES[[evar]] = RunPicmin(PVALS, nullP = nullP)
   
-  print(sum(PM_RES[[evar]]$pooled_q<0.05))
+  print(sum(PM_RES[[evar]]$pooled_q<0.01))
   
   
 }
