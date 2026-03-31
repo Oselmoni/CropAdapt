@@ -1,0 +1,19 @@
+Bulk Density Cation exchange capacity (at ph 7) Coarse fragments Clay content Nitrogen  Organic carbon density Soil organic carbon stock pH water Sand Silt TOT
+tomato wild relatives 0.14 0.14 0.1 0.1 0.1 0.42 0.14 0.14 0.1 0.1 0.15
+barley landraces 0.29 0.29 0.29 0.29 0.29 0.29 0.29 0.29 0.29 0.29 0.29
+barley wild relatives 0.076 0.053 0.053 0.053 0.053 0.053 0.053 0.053 0.053 0.053 0.055
+common bean landraces (andean) 0.47 0.47 0.47 0.47 0.47 0.47 0.47 0.47 0.47 0.47 0.47
+common bean landraces (mesoamerican) 0.57 0.57 0.57 0.57 0.57 0.57 0.57 0.57 0.57 0.57 0.57
+common bean wild relatives 0.1 0.13 0.13 0.13 0.13 0.15 0.13 0.13 0.13 0.13 0.13
+corn landraces 0.21 0.28 0.28 0.28 0.28 0.28 0.28 0.28 0.28 0.28 0.28
+corn wild relatives 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033 0.033
+rice landraces (circumaus) 0.086 0.093 0.093 0.093 0.093 0.093 0.093 0.093 0.093 0.093 0.092
+rice landraces (indica) 0.16 0.17 0.17 0.17 0.17 0.17 0.17 0.17 0.17 0.17 0.17
+rice landraces (japonica) 0.096 0.096 0.096 0.096 0.096 0.096 0.096 0.096 0.096 0.096 0.096
+rice wild relatives 0.34 0.33 0.33 0.33 0.33 0.33 0.33 0.33 0.33 0.33 0.33
+sorghum landraces 0.12 0.13 0.13 0.13 0.13 0.13 0.13 0.13 0.13 0.13 0.13
+soybean landraces 0.41 0.39 0.39 0.39 0.39 0.39 0.39 0.39 0.39 0.39 0.39
+soybean wild relatives 0.24 0.24 0.24 0.24 0.24 0.24 0.24 0.24 0.24 0.24 0.24
+tepary bean landraces 0.13 0.16 0.16 0.16 0.16 0.16 0.16 0.16 0.16 0.16 0.16
+tepary bean wild relatives 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065 0.0065
+TOT 0.21 0.21 0.21 0.21 0.21 0.23 0.21 0.21 0.21 0.21 0.21
