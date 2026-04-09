@@ -46,9 +46,24 @@ for (ds in ds_list) {
 #######
 
 ### check which varibles were missing
-apply(ENVmissing, 2, function(x) {mean(is.na(x))}) # only variables from soil grids
+apply(ENV, 2, function(x) {mean(is.na(x))}) # only variables from soil grids
 
 navars = envVars$VariableID[envVars$Source=='SoilGrids'] # create index of variables to cross-validate
+
+
+
+### Make a table of missing environmental data per dataset
+
+MissEnv = data.frame(do.call(rbind, by(ENV[,navars], ENV$ds, function(x) {apply(x,2,function(y){mean(is.na(y))})})))
+rownames(MissEnv) = ds_meta[rownames(MissEnv),'name']
+colnames(MissEnv) = envVars[navars,'Description']
+
+MissEnv$TOT = apply(MissEnv,1,mean)
+MissEnv['TOT',] = apply(MissEnv,2,mean)
+
+MissEnv = signif(MissEnv,2) 
+
+write.table(MissEnv, 'FIGURES/envVars/MissEnv.txt', col.names = T, row.names=T, quote=F)
 
 
 # keep only sites without missing data, then scale each variable
@@ -71,17 +86,15 @@ set.seed(0);for (ds in ds_list) {
   # create an index of sites with 10 km of distance
   sites= paste0('s_',cutree(hclust(dist(ENVmissing[ENVmissing$ds==ds,c('LON','LAT')])), h=0.01))
   
-  # sample 100 variables and sites to be masked
-  N = round(length(unique(sites))*0.2)*length(navars)
+  # sample sites to be masked
+  N = round(length(unique(sites))*MissEnv[ds_meta[ds,'name'],'TOT'])
   na_sites = sample(unique(sites), size = N, replace = T)
-  na_evar = sample(navars, size = N, replace = T)
-  
   
   for (i in 1:N) {
-    sENV[sites==na_sites[i],na_evar[i]] = NA
+    sENV[sites==na_sites[i],navars] = NA
   }
   
-  storeMissing[[ds]] = list(na_sites, na_evar)
+  storeMissing[[ds]] = na_sites
   
   ### build env matrix with missing points
   ENVmissing[ENVmissing$ds==ds,-c(1,2,ncol(ENV))] = sENV
@@ -107,29 +120,38 @@ for (ds in ds_list) {
   # load original vs imputed environmental matrices
   sENV = as.matrix(ENVscaled[ENVscaled$ds==ds,-c(1,2,ncol(ENV))])
   sENVi = as.matrix(iENVmissing[ENVscaled$ds==ds,-c(1,2,ncol(ENV))])
+  XXX = as.matrix(ENVmissing[ENVmissing$ds==ds,-c(1,2,ncol(ENV))])
+  
   
   # create an index of sites with 10 km of distance
-  sites= paste0('s_',cutree(hclust(dist(ENVmissing[ENVmissing$ds==ds,c('LON','LAT')])), h=0.1))
+  sites= paste0('s_',cutree(hclust(dist(ENVmissing[ENVmissing$ds==ds,c('LON','LAT')])), h=0.01))
   
 
+  
   # retrieve indices of masked sites and evars
-  N = round(length(unique(sites))*0.2)*length(navars)
-  
-  na_sites = storeMissing[[ds]][[1]]
-  na_evar = storeMissing[[ds]][[2]]
-  
-  for (i in 1:N) {
- 
-    ERRORS = rbind(ERRORS, data.frame(ds, 'evar'=na_evar[i], 'REAL'=mean(sENV[sites==na_sites[i],na_evar[i]]), 'IMP'=mean(sENVi[sites==na_sites[i],na_evar[i]])))
-    
-  }
-  
+  N = round(length(unique(sites))*MissEnv[ds_meta[ds,'name'],'TOT'])
 
+  na_sites = storeMissing[[ds]]
+
+  for (i in 1:N) {
+    
+    for (evar in navars) {
+ 
+    ERRORS = rbind(ERRORS, data.frame(ds, 'evar'=evar, 'REAL'=mean(sENV[sites==na_sites[i],evar]), 'IMP'=mean(sENVi[sites==na_sites[i],evar])))
+    
+    
+    }
+  }
 }
+
+
+### get median correlation plus IQR by dataset
+median(by(ERRORS, ERRORS$ds, function(x) {cor(x$REAL, x$IMP)}))
+IQR(by(ERRORS, ERRORS$ds, function(x) {cor(x$REAL, x$IMP)}))
 
 ### Plot errors by datasets
 png(paste0('FIGURES/envVars/IMP_ds.png'), h=6, w=6, units = 'in', res=500)
-par(mfrow=c(4,5));par(mar=c(3,3,1,1))
+par(mfrow=c(6,3));par(mar=c(3,3,1,1))
 for (ds in sort(ds_list)) {
 
   s_ERRORS = na.omit(ERRORS[ERRORS$ds==ds,] )
@@ -163,16 +185,3 @@ for (evar in navars) {
 dev.off()
 
 
-
-### Make a table of missing environmental data per dataset
-
-MissEnv = data.frame(do.call(rbind, by(ENV[,navars], ENV$ds, function(x) {apply(x,2,function(y){mean(is.na(y))})})))
-rownames(MissEnv) = ds_meta[rownames(MissEnv),'name']
-colnames(MissEnv) = envVars[navars,'Description']
-
-MissEnv$TOT = apply(MissEnv,1,mean)
-MissEnv['TOT',] = apply(MissEnv,2,mean)
-
-MissEnv = signif(MissEnv,2) 
-
-write.table(MissEnv, 'FIGURES/envVars/MissEnv.txt', col.names = T, row.names=T, quote=F)

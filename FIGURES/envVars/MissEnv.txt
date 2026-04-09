@@ -1,4 +1,4 @@
-Bulk Density Cation exchange capacity (at ph 7) Coarse fragments Clay content Nitrogen  Organic carbon density Soil organic carbon stock pH water Sand Silt TOT
+NA NA NA NA NA NA NA NA NA NA TOT
 tomato wild relatives 0.14 0.14 0.1 0.1 0.1 0.42 0.14 0.14 0.1 0.1 0.15
 barley landraces 0.29 0.29 0.29 0.29 0.29 0.29 0.29 0.29 0.29 0.29 0.29
 barley wild relatives 0.076 0.053 0.053 0.053 0.053 0.053 0.053 0.053 0.053 0.053 0.055

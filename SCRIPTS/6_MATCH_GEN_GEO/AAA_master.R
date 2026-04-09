@@ -13,7 +13,6 @@ DS_STATS=data.frame()
 
 for (f in lf[-length(lf)]) {
   
-  f=lf
   print(f)
   d=substr(f, 1 ,nchar(f)-2)
   
@@ -64,10 +63,10 @@ for (f in lf[-length(lf)]) {
   points <- st_as_sf(meta[ind_mn,], coords = c("LON", "LAT"), crs = 4326) 
   geo_DIS= as.dist(st_distance(points)/1000)
   hcl = hclust(geo_DIS)
-  SamSites = paste0('geoCL_',cutree(hcl, h=10)) # 10 km
+  SamSites = paste0('geoCL_',cutree(hcl, h=5)) # 10 km
   
   DS_STATS[d,'SamSites'] = length(unique(SamSites))
-  DS_STATS[d,'med_D_SamSites'] = median(geo_DIS)
+  DS_STATS[d,'med_D_SamSites'] = round(median(geo_DIS))
   
   
   ### Calculate PCA 

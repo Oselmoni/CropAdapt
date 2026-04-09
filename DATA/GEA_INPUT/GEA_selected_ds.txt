@@ -1,5 +1,5 @@
 dataset	annotation_file	protein_file	name
-tomato_wr	tomato_wr	tomato_wr_protein 	tomato wild relatives
+tomato_wr	tomato_wr	tomato_wr_protein	tomato wild relatives
 barley_la	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf	barley landraces
 barley_wr	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf	barley wild relatives
 commonbean_la_andean	commonbean_la	commonbean_la_protein	common bean landraces (andean)

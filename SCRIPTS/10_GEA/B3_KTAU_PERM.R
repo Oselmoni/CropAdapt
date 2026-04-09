@@ -45,7 +45,7 @@ for (ds in ds_list) {
   print(ds)
   
   ### Load imputed GT matrix
-  gti_files=list.files('DATA/GEA_INPUT/GTI/',full.names = T)
+  gti_files=list.files('DATA/GEA_INPUT/GTI/', pattern = 'GTI_',full.names = T)
   load(gti_files[regexpr(ds, gti_files)!=-1])
   
   
