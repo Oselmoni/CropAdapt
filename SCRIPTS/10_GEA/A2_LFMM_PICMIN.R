@@ -7,8 +7,8 @@ dslist = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$dat
 envVars = read.csv('DATA/ENV/envlist.csv')
 
 #setup parallel backend to use many processors
-cores=detectCores()
-cl <- makeCluster(cores[1]-2) 
+cores=32
+cl <- makeCluster(cores-1) 
 registerDoParallel(cl)
 
 ### Precompute null distribution of p-values for different number of lineages
