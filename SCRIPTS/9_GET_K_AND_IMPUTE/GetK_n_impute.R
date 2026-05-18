@@ -115,7 +115,7 @@ for (ds in ds_list[-1]) {
     GTI[sampledGTidx] = sampledGT
 
     ## save imputed Genotype matrix
-    save(GTI, file=paste0('DATA/GEA_INPUT/GTI/GTI_',ds,'_K',topK,'.rda'))
+    save(GTI, file=paste0('DATA/GEA_INPUT/GTI/GTI_',ds,'_K',topK,'.rda'), compress = T)
  
     ## load metadata
     load(paste0('DATA/GEA_INPUT/meta/meta_',ds,'.rda'))
