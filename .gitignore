@@ -13,6 +13,7 @@ DATA/ENV/SoilGrids/*
 DATA/ENV/SoilGrids_Processed/*
 DATA/ENV/GMRT/*
 DATA/ENV/ForPlotting/*
+DATA/ATHALIANA
 formoi
 .DS*
 DATA/ORTHOFINDER
