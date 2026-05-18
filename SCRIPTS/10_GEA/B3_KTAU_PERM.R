@@ -17,13 +17,14 @@ names(annotation_files)=names(protein_files)=ds_list
 load('DATA/SNP_ANNOTATION/orthogroups.rda')
 
 #setup parallel backend to use many processors
-cores = min(c(detectCores(),120))
-cl <- makeCluster(cores-2) 
+cores = 32
+cl <- makeCluster(cores-1) 
 registerDoParallel(cl)
 
 
 ### Load list of environmental variables
 envVars = read.csv('DATA/ENV/envlist.csv')
+rownames(envVars) = envVars$VariableID
 
 ## Create set of environmental variables to be permuted
 set.seed(0);perm_env_vars = sample(envVars$VariableID, 100, replace=T)
@@ -40,12 +41,12 @@ for (ds in ds_list) {
   dir.create(paste0('DATA/GEA_OUTPUT/KTAU/',ds), showWarnings = F)
   
   gc()
-  #ds=ds_list[17]
+  #ds=ds_list[1]
   
   print(ds)
   
   ### Load imputed GT matrix
-  gti_files=list.files('DATA/GEA_INPUT/GTI/', pattern = 'GTI_',full.names = T)
+  gti_files=list.files('DATA/GEA_INPUT/GTI/', pattern = paste0('GTI_',ds,'_K'),full.names = T)
   load(gti_files[regexpr(ds, gti_files)!=-1])
   
   
@@ -109,7 +110,7 @@ for (ds in ds_list) {
   
   rownames(SNP_ANNOTATION_OL) = SNP_ANNOTATION_OL$id
   
-
+  
   ######
   ######### GET MINOR ALLELE FREQUENCY
   ######
@@ -137,15 +138,17 @@ for (ds in ds_list) {
   iENV = iENV[rownames(GTI),]
   
   
-  
   ### Run LFMM for one environmental variable at the time
   pWZA =  foreach (i=1:length(perm_env_vars), .combine = cbind) %dopar%  {
     
     e = perm_env_vars[i]
     
+    ## retrieve resolution of environmental variable
+    res = envVars[e,'Res']
+    
     ### Get ID of sampling sites (within 10 km)
     coord = iENV[,1:2]
-    sites = paste0('site_',cutree(hclust(dist(coord)), h = 0.05))
+    sites = paste0('site_',cutree(hclust(dist(coord)), h = res))
     names(sites) = rownames(iENV)
     
     ### get mean environmental value per sampling site
@@ -178,7 +181,7 @@ for (ds in ds_list) {
     write.table(WZAin, tmpIN, quote=F, row.names=F, sep='\t')
     
     ### run WZA via python
-    system(paste0('/home/oselmo/data/conda/envs/myenv/bin/python SCRIPTS/10_GEA/WZA/general_WZA_script.py ',
+    system(paste0('python SCRIPTS/10_GEA/WZA/general_WZA_script.py ',
                   '--correlations ',tmpIN,' ', ### input file
                   '--summary_stat pKT --window rnd_og --MAF MAF ', ### other params
                   '--output ',tmpOUT)) ### output folder
@@ -187,17 +190,20 @@ for (ds in ds_list) {
     ### read wza out
     WZAout = read.csv(tmpOUT)
     
+    ### filter out genes with outlier number of SNPs 
+    nSNPS_cutoff = quantile(WZAout$SNPs,0.75)+(3*IQR(WZAout$SNPs))
+    WZAout = WZAout[WZAout$SNPs<=nSNPS_cutoff,]
+    
     ## add p-value to container
     pvals = WZAout$Z_pVal
     names(pvals) = WZAout$gene
     return(pvals)
     
   }
+  colnames(pWZA)=perm_env_vars
   
   ### write output
   save(pWZA, file=paste0('DATA/GEA_OUTPUT/KTAU/',ds,'/pWZA.rda'))    
-  
-  
 }
 
 
@@ -216,9 +222,9 @@ source('SCRIPTS/10_GEA/picmin.R') # load custom script to run picmin
 nullP = PicMinNull(linMin = 3, linMax = length(ds_list))
 
 
-
 ### Create container of picmin results
 PERM_PM_RES = list()
+PERM_PM_Q = data.frame()
 
 
 ### for every replicate
@@ -246,8 +252,11 @@ for (i in 1:length(perm_env_vars)) {
     
   }
   
+  
   ### Run PICMIN
   PERM_PM_RES[[i]] = RunPicmin(PVALS, nullP = nullP)
+  PERM_PM_Q[PERM_PM_RES[[i]]$locus,paste0(i,'_',perm_env_vars[i])] = PERM_PM_RES[[i]]$pooled_q
+  save(PERM_PM_Q, file='DATA/GEA_OUTPUT/KTAU/PERM_PM_Q.rda')
   
   
   ### Display number of hits in random datasets  
@@ -256,15 +265,7 @@ for (i in 1:length(perm_env_vars)) {
 }
 
 
-### create container of q-values of permuted-wza-picmin
-PERM_PM_Q = data.frame()
-for (i in 1:length(perm_env_vars)) {
-  
-  PERM_PM_Q[PERM_PM_RES[[i]]$locus,paste0(i,'_',perm_env_vars[i])] = PERM_PM_RES[[i]]$pooled_q
-  
-}
 
-save(PERM_PM_Q, file='DATA/GEA_OUTPUT/KTAU/PERM_PM_Q.rda')
 
 
 

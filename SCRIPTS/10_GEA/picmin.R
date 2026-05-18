@@ -39,7 +39,7 @@ PicMinNull = function(linMin, linMax) {
 
 RunPicmin = function(all_lins_p, ### this a table where every row is a genomic window/gene, every column a species, and the values are the p-values of the geas
                      numReps_std=1000, ### number of repetitions applied to all genes to calculate rough p-value
-                     numReps_max=10^9, ### maximal number of repetitions allowed to potentially significant genes to calculate exact p-value 
+                     numReps_max=10^8, ### maximal number of repetitions allowed to potentially significant genes to calculate exact p-value 
                      minObsData=3, ### this is a number indicating the minimal number of species used to search for convergence. The guidelines recommend >=3. Note: this is the number of species with non missing values, so the p-values table could have 10 species, but  only those with a least 3 species with data (vs. 7 with missing values) will be used. 
                      nullP) {  ### this is a list object storing the null distribution of p-values for different number of lineages
 
@@ -52,7 +52,7 @@ RunPicmin = function(all_lins_p, ### this a table where every row is a genomic w
   count = 0 
   
   for (n in missingDataLevels){ # for every missing data level
-
+    gc()
    
     count = count + 1
     
@@ -73,7 +73,7 @@ RunPicmin = function(all_lins_p, ### this a table where every row is a genomic w
 
     
     res <- foreach(i=seq(nrow(lins_p_n)), .combine=rbind) %dopar% {
-
+      gc()
       nri = numReps_std # number of permutation used for this gene
       
       ## try test with standard number of permutations

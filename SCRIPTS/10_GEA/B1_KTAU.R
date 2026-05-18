@@ -17,8 +17,8 @@ load('DATA/SNP_ANNOTATION/orthogroups.rda')
 envVars = read.csv('DATA/ENV/envlist.csv')
 
 #setup parallel backend to use many processors
-cores = min(c(detectCores(),120))
-cl <- makeCluster(cores[1]-2) 
+cores = 32
+cl <- makeCluster(cores-1) 
 registerDoParallel(cl)
 
 
@@ -29,7 +29,7 @@ for (ds in ds_list) {
   print(ds)
   
   ### Load imputed GT matrix
-  gti_files=list.files('DATA/GEA_INPUT/GTI/', pattern = 'GTI_',full.names = T)
+  gti_files=list.files('DATA/GEA_INPUT/GTI/', pattern = paste0('GTI_',ds,'_K'),full.names = T)
   load(gti_files[regexpr(ds, gti_files)!=-1])
   
   
@@ -159,6 +159,10 @@ for (ds in ds_list) {
     
     ### read wza out
     WZAout = read.csv(tmpOUT)
+    
+    ### filter out genes with outlier number of SNPs 
+    nSNPS_cutoff = quantile(WZAout$SNPs,0.75)+(3*IQR(WZAout$SNPs))
+    WZAout = WZAout[WZAout$SNPs<=nSNPS_cutoff,]
     
     ### write output
     PVALS = WZAin$pKT;names(PVALS)=WZAin$id
