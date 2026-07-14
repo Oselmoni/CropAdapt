@@ -8,7 +8,7 @@ save(orthogroups, file='DATA/SNP_ANNOTATION/orthogroups.rda')
 ### For every dataset -> create dataset of position of orthogroups along genome
 
 ## load dataset ID
-selectedDS = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt', header=T, row.names=1)
+selectedDS = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt', header=T, row.names=1, sep='\t')
 
 
 for (ds in rownames(selectedDS)) {
