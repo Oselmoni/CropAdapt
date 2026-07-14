@@ -1,15 +1,15 @@
 dataset	annotation_file	protein_file	name
-tomato_wr	tomato_wr	tomato_wr_protein	tomato wild relatives
-barley_la	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf	barley landraces
-barley_wr	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf	barley wild relatives
-commonbean_la	commonbean_la	commonbean_la_protein	common bean landraces
-commonbean_wr	commonbean_wr	commonbean_wr_protein	common bean wild relatives
-corn_la	corn_la	corn_la_protein	corn landraces
-corn_wr	corn_wr	corn_wr_protein	corn wild relatives
-rice_la	rice_la	rice_la_protein	rice landraces
-rice_wr	rice_wr	rice_wr_protein	rice wild relatives
-sorghum_la	sorghum_la	sorghum_Sbi1.4.pep	sorghum landraces
-soybean_la	soybean	soybean_Gmax_275_Wm82.a2.v1.protein	soybean landraces
-soybean_wr	soybean	soybean_Gmax_275_Wm82.a2.v1.protein	soybean wild relatives
-teparybean_la	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep	tepary bean landraces
-teparybean_wr	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep	tepary bean wild relatives
+tomato_wr	tomato_wr	tomato_wr_protein	Tomato wild relatives
+barley_la	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf	Barley landraces
+barley_wr	barley	barley_Hv_IBSC_PGSB_r1_proteins_HighConf	Barley wild relatives
+commonbean_la	commonbean_la	commonbean_la_protein	Common bean landraces
+commonbean_wr	commonbean_wr	commonbean_wr_protein	Common bean wild relatives
+corn_la	corn_la	corn_la_protein	Maize landraces
+corn_wr	corn_wr	corn_wr_protein	Maize wild relatives
+rice_la	rice_la	rice_la_protein	Rice landraces
+rice_wr	rice_wr	rice_wr_protein	Rice wild relatives
+sorghum_la	sorghum_la	sorghum_Sbi1.4.pep	Sorghum landraces
+soybean_la	soybean	soybean_Gmax_275_Wm82.a2.v1.protein	Soybean landraces
+soybean_wr	soybean	soybean_Gmax_275_Wm82.a2.v1.protein	Soybean wild relatives
+teparybean_la	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep	Tepary bean landraces
+teparybean_wr	teparybean	teparybean_Pacu.CVR.gene_models.hc.pep	Tepary bean wild relatives
