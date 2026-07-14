@@ -179,7 +179,7 @@ plotGEAgeo = function(coord, col, env, eVar, main='', colBRK, df=100) {
 
 
 ### custom manhattan plot
-manhattanPlot = function(chr, p, pos, sig, main='', chrL) {
+manhattanPlot = function(chr, p, pos, sig, main='', chrL, col='green3') {
   
   
   # set chromosome colors
@@ -195,11 +195,10 @@ manhattanPlot = function(chr, p, pos, sig, main='', chrL) {
   }
   
   ### Plot manhattan plot
-  par(mar=c(3,3,2,1))
   plot(cpos, p, pch=16, col=chrCol[chrN], main=main, axes=F, xlab='', ylab='', cex=0.5)
   
   # add circle to significant genes
-  points(cpos[sig], p[sig], col='red', pch=16)
+  points(cpos[sig], p[sig], col=col, pch=21, lwd=2)
   
   # add chromosome labs
   axis(1, at=unlist(by(cpos, chr, mean)), labels = chrL, lwd = 0, las=2, line=-1, chrCol)
@@ -213,19 +212,18 @@ manhattanPlot = function(chr, p, pos, sig, main='', chrL) {
 
 
 ### Custom boxplot GEA
-plotGEAbp = function(gt, env, envLab) {
+plotGEAbp = function(gt, env, envLab, COLCS) {
   
   
   # plot canvas
-  par(mar=c(3,3,2,1))
-  plot(NA, xlim=c(-0.5,2.5), ylim=range(env,na.rm=T), axes=F)
+  plot(NA, xlim=c(-0.5,2.5), ylim=range(env,na.rm=T), axes=F, yaxs='i')
   
   # add colorscale in background
-  env_brks = c(par('usr')[3],seq(quantile(env, 0.05, na.rm=T), quantile(env, 0.95, na.rm=T), length.out=8),par('usr')[4])
-  for (i in 1:10) {  rect(par('usr')[1],  env_brks[i], par('usr')[2], env_brks[i+1] , border=NA, col=colorRampPalette(c('#7BD0F5','#FD7790'))(10)[i]) }
+  env_brks = seq(min(env), max(env), length.out=10)
+  for (i in 1:10) {  rect(par('usr')[1],  env_brks[i], par('usr')[2], env_brks[i+1] , border=NA, col=COLCS[i]) }
   
   # add gt distribution
-  points(gt+runif(length(gt), -0.3,0.3), sam_reg_env, pch=16, col=adjustcolor(1,0.1), cex=.5)
+  points(gt+runif(length(gt), -0.3,0.3), env, pch=16, col=adjustcolor(1,0.1), cex=.5)
   
   # add distribution values for every gt
   lines(c(0,0), quantile(env[gt==0], na.rm=T)[c(2,4)], lwd=2);points(0, median(env[gt==0], na.rm=T), cex=2, pch=21, bg=COLBOX[1])

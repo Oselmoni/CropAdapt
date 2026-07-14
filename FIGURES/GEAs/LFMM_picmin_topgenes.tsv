@@ -1,0 +1,7 @@
+orthogeneID	ATgene	q	env	N_rep	N_not_NA	crops
+OG0005468	AT1G74960	0.0008686799913132	Growing degree days	5	5	corn wild relatives,barley wild relatives,corn landraces,rice wild relatives,soybean wild relatives
+OG0005468	AT1G74960	0.00434339956566004	Annual mean temperature	5	5	corn wild relatives,barley wild relatives,corn landraces,rice wild relatives,soybean wild relatives
+OG0000119		0.00434339956566004	Precipitation seasonality	3	3	barley landraces,corn wild relatives,sorghum landraces
+OG0005468	AT1G74960	0.0101345989865401	Mean temperature warmest quarter	5	5	barley wild relatives,corn wild relatives,corn landraces,soybean wild relatives,rice wild relatives
+OG0005468	AT1G74960	0.0115823988417601	Sum of annual summer days	5	5	corn wild relatives,barley wild relatives,soybean wild relatives,rice wild relatives,corn landraces
+OG0005468	AT1G74960	0.028955971044029	Maximal temperature of warmest month	5	5	barley wild relatives,corn wild relatives,soybean wild relatives,corn landraces,rice wild relatives

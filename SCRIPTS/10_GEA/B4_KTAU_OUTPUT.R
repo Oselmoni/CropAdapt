@@ -9,7 +9,7 @@ load('DATA/GEA_OUTPUT/KTAU/PERM_PM_Q.rda')
 
 
 ### Load slist of datasets
-dslist = list.dirs('DATA/GEA_OUTPUT/LFMM/', full.names = F)[-1]
+dslist = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt',header=T, sep='\t')$dataset
 
 ### Load list of environmental variables
 envVars = read.csv('DATA/ENV/envlist.csv')
@@ -26,17 +26,7 @@ land = ne_countries()
 
 
 ## Set q-value significance threshold for PicMin
-qt = 0.01
-
-## Set p-value threshold for enrichment test
-pt = 0.01
-
-
-### 
-##### Calculate expected number of convergent signals for permuted env
-###
-conv_perm = apply(PERM_PM_Q<qt, 2, sum, na.rm=T)
-
+qt = 0.2
 
 
 ###
@@ -45,22 +35,9 @@ conv_perm = apply(PERM_PM_Q<qt, 2, sum, na.rm=T)
 conv = unlist(lapply(PM_RES, function(x) {sum(x$pooled_q<qt, na.rm=T)}))
 
 
-###
-#### Calculate an empirical p-value for every environmental variable
-###
-hist(conv_perm, xlim=range(c(conv_perm, conv)))
-abline(v=conv)
-
-
-emp_P = unlist(lapply(conv, function(x) {mean(conv_perm>=x)}))
-
-
-
-
 
 ### top variables
-topenv = emp_P[which(emp_P<=pt)]
-topenv
+topenv = names(which((conv>0)))
 
 
 ###
@@ -68,8 +45,8 @@ topenv
 ###
 TOPGENES = data.frame()
 
-for (env in names(topenv)) {
-  
+for (env in topenv) {
+
   ### retrieve list of signficant genes
   top_genes = PM_RES[[env]][PM_RES[[env]]$pooled_q<qt,]
   
@@ -77,7 +54,7 @@ for (env in names(topenv)) {
   top_genes$ENV = env
   
   ### add env description
-  top_genes$ENVD = envVars$Description[envVars$VariableID==env]
+  top_genes$ENVD = envVars[env,'Description']
   
   ### retrieve p-values of genes
   PVALS = data.frame()
@@ -115,7 +92,35 @@ TOPGENES = TOPGENES[order(TOPGENES$pooled_q),]
 rownames(TOPGENES) = 1:nrow(TOPGENES)
 TOPGENES
 
-unique(TOPGENES$locus)
+TOPGENES$OG = orthogroups[TOPGENES$locus,'Arabidopsis_thaliana.TAIR10.pep.all']
+TOPGENES
+
+# save TOPGENES object
+save(TOPGENES, file='DATA/GEA_OUTPUT/KTAU/TOPGENES.rda')
+
+### Output topgenes table
+
+OUT = data.frame('orthogeneID'=TOPGENES$locus,
+                 'ATgene'= unlist(lapply(strsplit(TOPGENES$OG, ', '), function(x) {
+                   paste(unique(gsub('(.*)\\..*','\\1',x)), collapse=',')
+                 })),
+                 'q'=TOPGENES$pooled_q,
+                 'env'=TOPGENES$ENVD,
+                 'N_rep'=TOPGENES$n_est,
+                 'N_not_NA'=apply(TOPGENES[9:22], 1, function(x) {sum(is.na(x)==F)}),
+                 'crops'=apply(TOPGENES, 1, function(x) {
+                   N = x['n_est']
+                   crops = x[9:22]
+                   crops = sort(crops)
+                   crops = names(crops[1:N])
+                   crops = selectedDS[substr(crops, 3, nchar(crops)-1),'name']
+                   return(paste(crops, collapse=','))
+                 })
+)
+
+write.table(OUT, file='FIGURES/GEAs/KTAU_picmin_topgenes.tsv', sep='\t', col.names=T, row.names = F, quote=F)
+
+
 
 i=1
 {
@@ -138,7 +143,7 @@ i=1
   
   for (ds in top_ds) {
     
-    ## retrieve LFMM input & output
+    ## retrieve KTAU input & output
     load(paste0('DATA/GEA_OUTPUT/KTAU/',ds,'/',tg$ENV,'.rda'))
     WZAout = WZA[[2]]
     rownames(WZAout) = WZAout$gene
@@ -175,7 +180,8 @@ i=1
   }
 }
 
-
+TOPGENES$OG = orthogroups[TOPGENES$locus,'Arabidopsis_thaliana.TAIR10.pep.all']
+TOPGENES
 
 
 ## Isolate gene of interest
@@ -211,7 +217,7 @@ for (ds in top_ds) {
   SNPS = snpgdsOpen(paste0('DATA/GEA_INPUT/GDS/gds_',ds,'.gds'), readonly = T, allow.duplicate = T)
   
   ### Load imputed GT matrix
-  gti_files=list.files('DATA/GEA_INPUT/GTI/',full.names = T)
+  gti_files=list.files('DATA/GEA_INPUT/GTI/', pattern = paste0('GTI_',ds,'_K'),full.names = T)
   load(gti_files[regexpr(ds, gti_files)!=-1])
   
   
@@ -282,5 +288,11 @@ for (ds in top_ds) {
 
 orthogroups[tg$locus,]
 
+
+load('DATA/GEA_INPUT/meta_env/meta_sorghum_la.rda')
+plot(meta$VSOILW, meta$BIO12)
+cor(meta$GRODD, meta$SUMDA)
+
+hist(meta$GRODD)
 
 
