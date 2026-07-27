@@ -3,6 +3,7 @@ GFF = read.table('DATA/ATHALIANA/RAW/Arabidopsis_thaliana.TAIR10.62.gff3', sep='
 GENE = GFF[GFF$V3=='gene',]
 GENE$geneID = gsub('ID=gene:(.*);Name.*','\\1',GENE$V9)
 
+save(GENE, file='DATA/ATHALIANA/GENE.rda')
 
 # function to extract SNPs from a given gene
 getGENO = function(gene, MN.T=0.2, MAF.T=0.05) {
@@ -49,14 +50,20 @@ getGENO = function(gene, MN.T=0.2, MAF.T=0.05) {
 
 
 # set genes of interest
-genes_of_interest = c('AT1G74960', 'AT2G40830')
+load('DATA/GEA_OUTPUT/KTAU/TOPGENES.rda')
+genes_of_interest_KTAU = unique(gsub('(.*)\\..*','\\1',unlist(strsplit(TOPGENES$OG, ', '))))
+
+load('DATA/GEA_OUTPUT/LFMM/TOPGENES.rda')
+genes_of_interest_LFMM = unique(gsub('(.*)\\..*','\\1',unlist(strsplit(TOPGENES$OG, ', '))))
+
+genes_of_interest = unique(c(genes_of_interest_KTAU, genes_of_interest_LFMM))
 
 # get SNP information for genes of interest and save
 for (gene in genes_of_interest) {
   
   SNP_AT = getGENO(gene)
   
-  save(SNP_AT, file=paste0('DATA/ATHALIANA/SNP_AT_',gene,'.rda'))
+  save(SNP_AT, file=paste0('DATA/ATHALIANA/SNP_AT/SNP_AT_',gene,'.rda'))
   
   
 }
