@@ -195,19 +195,17 @@ manhattanPlot = function(chr, p, pos, sig, main='', chrL, col='green3') {
   }
   
   ### Plot manhattan plot
-  plot(cpos, p, pch=16, col=chrCol[chrN], main=main, axes=F, xlab='', ylab='', cex=0.5)
+  plot(cpos, p, pch=16, col=chrCol[chrN], axes=F, xlab='', ylab='', cex=0.5)
   
   # add circle to significant genes
   points(cpos[sig], p[sig], col=col, pch=21, lwd=2)
   
   # add chromosome labs
   axis(1, at=unlist(by(cpos, chr, mean)), labels = chrL, lwd = 0, las=2, line=-1, chrCol)
-  axis(2, at=seq(par('usr')[3], par('usr')[4], length.out=4), labels = round(seq(par('usr')[3], par('usr')[4], length.out=4) ))
-  title(ylab='-log(empirical p-value)', line=2)
+  axis(2, at=seq(par('usr')[3], par('usr')[4], length.out=4), labels = round(seq(par('usr')[3], par('usr')[4], length.out=4) ), cex.axis=0.75)
+  title(ylab='-log(emp p-value)', line=2)
   
 }
-
-
 
 
 
@@ -222,8 +220,10 @@ plotGEAbp = function(gt, env, envLab, COLCS) {
   env_brks = seq(min(env), max(env), length.out=10)
   for (i in 1:10) {  rect(par('usr')[1],  env_brks[i], par('usr')[2], env_brks[i+1] , border=NA, col=COLCS[i]) }
   
+  rect(par('usr')[1],  par('usr')[3], par('usr')[2], par('usr')[4] , border=NA, col=adjustcolor('white',0.2))
+  
   # add gt distribution
-  points(gt+runif(length(gt), -0.3,0.3), env, pch=16, col=adjustcolor(1,0.1), cex=.5)
+  points(gt+runif(length(gt), -0.3,0.3), env, pch=16, col=adjustcolor(1,0.2), cex=.75)
   
   # add distribution values for every gt
   lines(c(0,0), quantile(env[gt==0], na.rm=T)[c(2,4)], lwd=2);points(0, median(env[gt==0], na.rm=T), cex=2, pch=21, bg=COLBOX[1])
@@ -231,8 +231,8 @@ plotGEAbp = function(gt, env, envLab, COLCS) {
   lines(c(2,2), quantile(env[gt==2], na.rm=T)[c(2,4)], lwd=2);points(2, median(env[gt==2], na.rm=T), cex=2, pch=21, bg=COLBOX[3])
   
   # Add axes
-  axis(1, at=c(0,1,2))
-  axis(2, at=seq(min(env, na.rm=T),max(env, na.rm=T), length.out=3), labels=signif(seq(min(env, na.rm=T),max(env, na.rm=T), length.out=3),3))
+  axis(1, at=c(0,1,2), cex.axis=1)
+  axis(2, at=seq(min(env, na.rm=T),max(env, na.rm=T), length.out=3), labels=signif(seq(min(env, na.rm=T),max(env, na.rm=T), length.out=3),3), cex.axis=0.85)
   box()
   title(ylab=envLab, xlab='Genotype', line=2)
 }
@@ -391,3 +391,32 @@ plotPCAgeo = function(coord, col, main='', df=100, mainT=T, cexP=1) {
 }
 
 
+### add scalebar
+
+scalebar <- function(x, y, length_km) {
+  
+  #Compute how many degrees of longitude = length_km at this latitude
+  # using the haversine formula, solved by trial (or direct approximation)
+  R <- 6371  # Earth's radius in km
+  
+  # distance for 1 degree of longitude at given latitude
+  deg2rad <- function(deg) deg * pi / 180
+  lat_rad <- deg2rad(y)
+  
+  # haversine distance between (x, lat) and (x + 1, lat)
+  hav_dist <- function(lon1, lon2, lat) {
+    lon1 <- deg2rad(lon1); lon2 <- deg2rad(lon2); lat <- deg2rad(lat)
+    dlon <- lon2 - lon1
+    a <- cos(lat)^2 * sin(dlon / 2)^2
+    2 * R * asin(sqrt(a))
+  }
+  
+  km_per_deg_lon <- hav_dist(0, 1, y)
+  length_deg <- length_km / km_per_deg_lon
+  
+  # draw the bar
+  if (is.na(length_km)==F) {
+  lines(c(x-length_deg/2, x+length_deg/2), c(y,y))
+  text(x, y, pos=1, paste0(length_km, ' km'), cex=0.75)
+  }
+}

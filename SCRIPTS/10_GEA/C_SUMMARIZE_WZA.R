@@ -1,7 +1,7 @@
 library(qvalue)
 library(Rmisc)
 
-### Count Signficant SNPs per dataset
+### Load dataset info
 dslist = read.table('DATA/GEA_INPUT/GEA_selected_ds.txt', header=T, sep='\t')
 rownames(dslist) = dslist$dataset
 
