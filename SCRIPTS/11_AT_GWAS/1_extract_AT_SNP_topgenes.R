@@ -5,8 +5,13 @@ GENE$geneID = gsub('ID=gene:(.*);Name.*','\\1',GENE$V9)
 
 save(GENE, file='DATA/ATHALIANA/GENE.rda')
 
+## Extract exons and save
+EXONS = GFF[GFF$V3=='exon',]
+save(EXONS, file='DATA/ATHALIANA/EXONS.rda', compression_level = 9)
+
+
 # function to extract SNPs from a given gene
-getGENO = function(gene, MN.T=0.2, MAF.T=0.05) {
+getGENO = function(gene, MN.T=0.2, MAF.T=0.01) {
   
   ### Find start stop of gene
   s_GENE = GENE[GENE$geneID==gene,]
@@ -26,7 +31,6 @@ getGENO = function(gene, MN.T=0.2, MAF.T=0.05) {
   
   if (ncol(GT)<=1|nrow(GT)<=1) {return()}
   rownames(GT) = vcf$samples
-  GT = GT[rownames(meta),]
   colnames(GT) = paste0(vcf$chr,':',vcf$pos)
   
   ### Get info about mutation types
@@ -43,10 +47,12 @@ getGENO = function(gene, MN.T=0.2, MAF.T=0.05) {
   GT = GT[,MAF>MAF.T,drop=F]
   MUT = MUT[colnames(GT)]
   
+
   ## return GT and MUT table
   return(list(GT,MUT))
   
 }
+
 
 
 # set genes of interest
@@ -60,7 +66,7 @@ genes_of_interest = unique(c(genes_of_interest_KTAU, genes_of_interest_LFMM))
 
 # get SNP information for genes of interest and save
 for (gene in genes_of_interest) {
-  
+
   SNP_AT = getGENO(gene)
   
   save(SNP_AT, file=paste0('DATA/ATHALIANA/SNP_AT/SNP_AT_',gene,'.rda'))

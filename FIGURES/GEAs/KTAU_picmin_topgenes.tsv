@@ -1,9 +1,12 @@
 orthogeneID	ATgene	q	env	N_rep	N_not_NA	crops
-OG0002438	AT2G40830,AT3G56580	0.00289659971034003	Volumetric soil water	7	7	common bean wild relatives,barley wild relatives,corn wild relatives,soybean wild relatives,tepary bean wild relatives,corn landraces,barley landraces
-OG0000035	AT2G24710,AT2G24720,AT2G29100,AT2G29110,AT2G29120,AT4G31710,AT5G11180,AT5G11210,AT5G27100	0.0144829855170145	Mean temperature coldest quarter	3	4	soybean landraces,corn wild relatives,soybean wild relatives
-OG0006533	AT2G17440,AT4G35470	0.0144829855170145	Mean temperature coldest quarter	4	7	soybean landraces,soybean wild relatives,rice landraces,sorghum landraces
-OG0000035	AT2G24710,AT2G24720,AT2G29100,AT2G29110,AT2G29120,AT4G31710,AT5G11180,AT5G11210,AT5G27100	0.028965971034029	Minimum temperature of coldest month	3	4	soybean landraces,corn wild relatives,soybean wild relatives
-OG0000035	AT2G24710,AT2G24720,AT2G29100,AT2G29110,AT2G29120,AT4G31710,AT5G11180,AT5G11210,AT5G27100	0.028965971034029	Sum of annual frost days	3	4	soybean landraces,corn wild relatives,soybean wild relatives
-OG0006533	AT2G17440,AT4G35470	0.0383799461620054	Minimum temperature of coldest month	4	7	soybean wild relatives,soybean landraces,sorghum landraces,rice landraces
-OG0006533	AT2G17440,AT4G35470	0.0434489565510435	Mean temperature driest quarter	4	7	soybean landraces,soybean wild relatives,rice landraces,sorghum landraces
-OG0003184	AT5G16880	0.0868979131020869	Mean diurnal range	5	9	soybean landraces,common bean wild relatives,rice wild relatives,common bean landraces,corn landraces
+OG0002438	AT2G40830,AT3G56580	0.00289659971034003	Volumetric soil water	7	7	Common bean wild relatives,Barley wild relatives,Maize wild relatives,Soybean wild relatives,Tepary bean wild relatives,Maize landraces,Barley landraces
+OG0000035	AT2G24710,AT2G24720,AT2G29100,AT2G29110,AT2G29120,AT4G31710,AT5G11180,AT5G11210,AT5G27100	0.0144829855170145	Mean temperature coldest quarter	3	4	Soybean landraces,Maize wild relatives,Soybean wild relatives
+OG0006533	AT2G17440,AT4G35470	0.0144829855170145	Mean temperature coldest quarter	4	7	Soybean landraces,Soybean wild relatives,Rice landraces,Sorghum landraces
+OG0000035	AT2G24710,AT2G24720,AT2G29100,AT2G29110,AT2G29120,AT4G31710,AT5G11180,AT5G11210,AT5G27100	0.028965971034029	Minimum temperature of coldest month	3	4	Soybean landraces,Maize wild relatives,Soybean wild relatives
+OG0000035	AT2G24710,AT2G24720,AT2G29100,AT2G29110,AT2G29120,AT4G31710,AT5G11180,AT5G11210,AT5G27100	0.028965971034029	Sum of annual frost days	3	4	Soybean landraces,Maize wild relatives,Soybean wild relatives
+OG0006533	AT2G17440,AT4G35470	0.0383799461620054	Minimum temperature of coldest month	4	7	Soybean wild relatives,Soybean landraces,Sorghum landraces,Rice landraces
+OG0006533	AT2G17440,AT4G35470	0.0434489565510435	Mean temperature driest quarter	4	7	Soybean landraces,Soybean wild relatives,Rice landraces,Sorghum landraces
+OG0003184	AT5G16880	0.0868979131020869	Mean diurnal range	5	9	Soybean landraces,Common bean wild relatives,Rice wild relatives,Common bean landraces,Maize landraces
+OG0010882	AT3G47990	0.108621413785862	Volumetric soil water	3	4	Soybean wild relatives,Soybean landraces,Rice wild relatives
+OG0006158	AT1G01470,AT2G46140	0.108621413785862	Volumetric soil water	3	5	Barley landraces,Soybean landraces,Soybean wild relatives
+OG0001520	AT4G29930,AT5G57150	0.108621413785862	Volumetric soil water	7	7	Soybean landraces,Barley landraces,Maize wild relatives,Barley wild relatives,Rice wild relatives,Soybean wild relatives,Common bean landraces

@@ -33,7 +33,8 @@ UNIPROT = UNIPROT[order(UNIPROT$Reviewed),] # set reviewed prot on top
 
 
 
-
+### Load araGWAS results
+load('DATA/ATHALIANA/araGWAS.rda')
 
 
 
@@ -51,7 +52,7 @@ for (og in unique(TOPGENES$locus)) {
     
     for (at in AT) {
 
-        ### Find uniprot annotations
+      ### Find uniprot annotations
       UP_name =   UNIPROT$Protein.names[UNIPROT$TAIR==paste0(at,';')][1]
       UP_ID =   UNIPROT$Entry.Name[UNIPROT$TAIR==paste0(at,';')][1]
       MF =   UNIPROT$Gene.Ontology..molecular.function.[UNIPROT$TAIR==paste0(at,';')][1]
@@ -64,34 +65,50 @@ for (og in unique(TOPGENES$locus)) {
       if (length(BP)==0) {BP=''}
       if (length(CC)==0) {CC=''}
       
+      
       ### Find GTxPhenotype associations
+      gwas = araGWAS[araGWAS$snp.gene_name==at,]
       
-      if (file.exists(paste0('DATA/ATHALIANA/GwP/GwP_',at,'.rda'))) {
-        load(paste0('DATA/ATHALIANA/GwP/GwP_',at,'.rda'))
-        
-        toph =  names(sort(apply(OUT$GxP,1,mean), decreasing = T)[1])
-        tophR2 =  sort(apply(OUT$GxP,1,mean), decreasing = T)[1]
-        check1 = mean(OUT$RND.PH$dR2>tophR2)
-        check2 = mean(OUT$RND.GT$dR2>tophR2)
+      if (nrow(gwas)>0) {
       
-    } else { toph = tophR2 = check1 = check2 = ''}
+      gwas$pos = paste0(gwas$snp.chr,':',gwas$snp.position)
+      
+      top_pheno_pos =   gwas$pos[which.max(gwas$score)]
+      top_pheno_type =   gwas$snp.annotations.0.effect[which.max(gwas$score)]
     
-      PROT.ANN = rbind(PROT.ANN, data.frame('OrthogeneID'=og, 'A. thaliana OG'=at, toph, 'R2'=tophR2, 'p1'=check1 , 'p2'=check2, 'UP_ID'=UP_ID, 'UP_Name'=UP_name, 'GO.MF'=MF, 'GO.BP'=BP, 'GO.CC'=CC))
+      top_pheno = gwas$study.phenotype.name[which.max(gwas$score)]
+      top_pheno_id = gwas$study.id[which.max(gwas$score)]
+      top_pheno_score = max(gwas$score)
+      top_pheno_bonferroni = gwas$overBonferroni[which.max(gwas$score)]
+      top_pheno_permutation = gwas$overPermutation[which.max(gwas$score)]
       
-   
-   
-  
-}}
+      } else {
+        top_pheno_pos = top_pheno_type = top_pheno = top_pheno_score = top_pheno_bonferroni = top_pheno_permutation = top_pheno_id = ''
+      }
+    
+      
+      PROT.ANN = rbind(PROT.ANN, data.frame('OrthogeneID'=og, 'A. thaliana OG'=at, 'UP_ID'=UP_ID, 'UP_Name'=UP_name, 'GO.MF'=MF, 'GO.BP'=BP, 'GO.CC'=CC, top_pheno_pos, top_pheno_type, top_pheno_id, top_pheno, top_pheno_score, top_pheno_bonferroni, top_pheno_permutation))
+      
+    }
+      
+    }
+
 }
+
+head(PROT.ANN)
 
 ### add info on phenotypes
 load('DATA/ATHALIANA/PHENO_META.rda')
+rownames(PHENO.META) = PHENO.META$phenotype_id
 
-PROT.ANN$Pheno = PHENO.META[PROT.ANN$toph,'name']
-PROT.ANN$Study = PHENO.META[PROT.ANN$toph,'study']
-PROT.ANN$Scoring = PHENO.META[PROT.ANN$toph,'scoring']
-PROT.ANN$Growth.Conditions = PHENO.META[PROT.ANN$toph,'growth_conditions']
-PROT.ANN$DOI = PHENO.META[PROT.ANN$toph,'doi']
+PROT.ANN$Pheno = PHENO.META[PROT.ANN$top_pheno_id,'name']
+PROT.ANN$Study = PHENO.META[PROT.ANN$top_pheno_id,'study']
+PROT.ANN$Scoring = PHENO.META[PROT.ANN$top_pheno_id,'scoring']
+PROT.ANN$TO_name = PHENO.META[PROT.ANN$top_pheno_id,'to_name']
+PROT.ANN$TO_definition = PHENO.META[PROT.ANN$top_pheno_id,'to_definition']
+
+PROT.ANN$Growth.Conditions = PHENO.META[PROT.ANN$top_pheno_id,'growth_conditions']
+PROT.ANN$DOI = PHENO.META[PROT.ANN$top_pheno_id,'doi']
 
 # Write output tables
 write.table(PROT.ANN,'FIGURES/GEAs/topgenes_prot.tsv', sep='\t', quote=F, row.names = F, col.names=T)
