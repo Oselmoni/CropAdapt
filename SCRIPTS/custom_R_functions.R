@@ -201,8 +201,8 @@ manhattanPlot = function(chr, p, pos, sig, main='', chrL, col='green3') {
   points(cpos[sig], p[sig], col=col, pch=21, lwd=2)
   
   # add chromosome labs
-  axis(1, at=unlist(by(cpos, chr, mean)), labels = chrL, lwd = 0, las=2, line=-1, chrCol)
-  axis(2, at=seq(par('usr')[3], par('usr')[4], length.out=4), labels = round(seq(par('usr')[3], par('usr')[4], length.out=4) ), cex.axis=0.75)
+  axis(1, at=unlist(by(cpos, chr, function(x) {min(x)+(diff(range(x))/2)})), labels = chrL, lwd = 0, las=2, line=-1, chrCol, cex.axis=.5)
+  axis(2, at=seq(par('usr')[3], par('usr')[4], length.out=4), labels = round(seq(par('usr')[3], par('usr')[4], length.out=4) ), cex.axis=0.75, lwd=0.5)
   title(ylab='-log(emp p-value)', line=2)
   
 }
@@ -231,9 +231,9 @@ plotGEAbp = function(gt, env, envLab, COLCS) {
   lines(c(2,2), quantile(env[gt==2], na.rm=T)[c(2,4)], lwd=2);points(2, median(env[gt==2], na.rm=T), cex=2, pch=21, bg=COLBOX[3])
   
   # Add axes
-  axis(1, at=c(0,1,2), cex.axis=1)
-  axis(2, at=seq(min(env, na.rm=T),max(env, na.rm=T), length.out=3), labels=signif(seq(min(env, na.rm=T),max(env, na.rm=T), length.out=3),3), cex.axis=0.85)
-  box()
+  axis(1, at=c(0,1,2), cex.axis=1, lwd=0.5)
+  axis(2, at=seq(min(env, na.rm=T),max(env, na.rm=T), length.out=3), labels=signif(seq(min(env, na.rm=T),max(env, na.rm=T), length.out=3),3), cex.axis=0.85, lwd=0.5)
+  box(lwd=0.5)
   title(ylab=envLab, xlab='Genotype', line=2)
 }
 
