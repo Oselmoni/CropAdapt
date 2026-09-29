@@ -34,8 +34,6 @@ load(paste0('DATA/GEA_OUTPUT/',GEAT,'/TOPGENES.rda'))
 
 for (i in 1:nrow(TOPGENES)) {
 
-
-
 ## Isolate gene of interest
 tg = TOPGENES[i,-ncol(TOPGENES)]
 tg
@@ -54,14 +52,13 @@ top_ds = substr(top_ds, 3,nchar(top_ds)-1)
 
 {
 png(paste0('FIGURES/GEAs/topgene_',GEAT,'_',tg$locus,'_',tg$ENV,'.png'), width = 6, height = 1.5*length(top_ds), units = 'in', res = 300)
-
 par(mfrow=c(length(top_ds),4))
 
 
 ### Set Colors
-xCOLCS = colorRampPalette(c('#4B92C7','#954489','#E74D69'))(10)
-xCOLMAF = colorRampPalette(c('#4B92C7','#954489','#E74D69'))(10)
-xCOLBOX = c('#4B92C7','#954489','#E74D69')
+xCOLCS = colorRampPalette(c('#8194E9','#DD7D7D'))(10)
+xCOLMAF = colorRampPalette(c('#8194E9','#DAA1DA','#DD7D7D'))(10)
+xCOLBOX =c('#8194E9','#DAA1DA','#DD7D7D')
 
 
 for (ds in top_ds) {
@@ -133,8 +130,8 @@ for (ds in top_ds) {
   ### calculate  frequency of minor allele across sampling regions
 
   # use hierarchical clustering to split populations by geographical distancw
-  DIST = as.dist(st_distance(st_as_sf(iENV, coords = c("LON","LAT"), crs = 4326))/1000)
-  sam_reg = cutree(hclust(DIST), h=100) # group sites up to 100 km apart
+  DIST = as.dist(st_distance(st_as_sf(iENV, coords = c("LON","LAT"), crs = 4326))/200)
+  sam_reg = cutree(hclust(DIST), h=50) # group sites up to 50 km apart
  
   ### Calculate mean coordnates, genotype and environmental variable by region 
   GTENV_reg = do.call(rbind, by(iENV[,c('LON','LAT')], sam_reg, function(x) { data.frame('LON'=mean(x$LON), 'LAT'=mean(x$LAT)) }))
@@ -142,7 +139,6 @@ for (ds in top_ds) {
   # add maf and env
   GTENV_reg$MAF = as.numeric(by(gt, sam_reg, function(x) { sum(x, na.rm=T)/(length(x[is.na(x)==F])*2) }))
   GTENV_reg$ENV = as.numeric(by(env, sam_reg, mean))
-  
   
   #### For display purposes, remove points that are geographical outliers
   meanD = apply(as.matrix(dist(GTENV_reg[,1:2])), 1, mean)
@@ -191,14 +187,15 @@ for (ds in top_ds) {
   
   ## Plot Manhattan plot
   par(mar=c(3,3,2,1))
-  manhattanPlot(p=genes_MP$EP, chr=genes_MP$CHRN, pos=genes_MP$POS, sig=which(genes_MP$OG==tg$locus), main='', chrL=metaCHR$id, col='purple')
+  manhattanPlot(p=genes_MP$EP, chr=genes_MP$CHRN, pos=genes_MP$POS, sig=which(genes_MP$OG==tg$locus), main='', chrL=gsub('chr(.*)','\\1',metaCHR$id), col='purple')
   legend('topright', '',bg=NA, box.lwd = 0,title=paste0('P=',signif(10^-genes_MP$EP[which(genes_MP$OG==tg$locus)][1],3)), cex=1, title.col = 'purple')
 
   pos.title = par('usr')[1]-(par('usr')[2]-par('usr')[1])*0.4
-  mtext(paste0(letters[which(top_ds==ds)],') ', selectedDS[ds,'name']), line=0.75, font=2, at=pos.title, cex=1, adj=0)
+  mtext(paste0(LETTERS[which(top_ds==ds)],') ', selectedDS[ds,'name']), line=0.75, font=2, at=pos.title, cex=0.8, adj=0)
   
 
 
+  
   
 
   ## Plot GEA
@@ -217,23 +214,23 @@ for (ds in top_ds) {
   # plot ENV on map
   par(mar=c(1,1,2,1))
   plot(NA, xlim=c(minX,maxX), ylim=c(minY,maxY), axes=F)
-  plot(land, add=T, col='lightgrey', border=NA)
-  points(GTENV_reg$LON, GTENV_reg$LAT, col=COLCS[cut(GTENV_reg$ENV, 10)], pch=16 , add=T, border=NA)
+  plot(land, add=T, col='grey90', border=NA)
+  points(GTENV_reg$LON, GTENV_reg$LAT, col=COLCS[cut(GTENV_reg$ENV, 10)], pch=16 , add=T, border=NA, cex=0.75)
   if (ds==top_ds[1]) {title(main=paste0(' ',envVars[tg$ENV,'ShortName']), line=0.2, cex.main=0.85)}
   legend('bottomleft', legend = c(signif(min(GTENV_reg$ENV),3), '', '', signif(max(GTENV_reg$ENV),3)), col=COLCS[c(1,4,7,10)], pch=15, box.lwd = 0, bg=adjustcolor('white',0.4), pt.cex = 2, title.adj = 0, cex=0.7)
   scalebar(mean(par('usr')[1])+diff(par('usr')[1:2])*0.5, mean(par('usr')[3])+diff(par('usr')[3:4])*0.15, length_km = scale)
-  box()
+  box(lwd=0.5)
   
          
   # plot GT on map
   par(mar=c(1,1,2,1))
   plot(NA, xlim=c(minX,maxX), ylim=c(minY,maxY), axes=F)
-  plot(land, add=T, col='lightgrey', border=NA)
-  points(GTENV_reg$LON, GTENV_reg$LAT, col=COLMAF[cut(GTENV_reg$MAF, 10)], pch=16 , add=T, border=NA)
+  plot(land, add=T, col='grey90', border=NA)
+  points(GTENV_reg$LON, GTENV_reg$LAT, col=COLMAF[cut(GTENV_reg$MAF, 10)], pch=16 , add=T, border=NA, cex=0.75)
   if (ds==top_ds[1]) {title(main='Allele Frequency', line=0.2, cex.main=0.85)}
   legend('bottomleft', legend = c(signif(min(GTENV_reg$MAF),3), '','', signif(max(GTENV_reg$MAF),3)), col=COLMAF[c(1,4,7,10)], pch=15, box.lwd = 0, bg=adjustcolor('white',0.4), pt.cex = 2, title.adj = 0, cex=0.7)
   scalebar(mean(par('usr')[1])+diff(par('usr')[1:2])*0.5, mean(par('usr')[3])+diff(par('usr')[3:4])*0.15, length_km = scale)
-  box()
+  box(lwd=0.5)
   
   
   

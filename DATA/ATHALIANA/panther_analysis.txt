@@ -1,0 +1,61 @@
+
+
+
+
+
+Analysis Type:	PANTHER Overrepresentation Test (Released 20240807)
+Annotation Version and Release Date:	GO Ontology database DOI:   Released 2026-04-28
+Analyzed List:	Client Text Box Input (Arabidopsis thaliana)
+Reference List:	Arabidopsis thaliana (all genes in database)
+Test Type:	FISHER
+Correction:	FDR
+GO biological process complete	Arabidopsis thaliana - REFLIST (27475)	Client Text Box Input (31)	Client Text Box Input (expected)	Client Text Box Input (over/under)	Client Text Box Input (fold Enrichment)	Client Text Box Input (raw P-value)	Client Text Box Input (FDR)
+cellular response to amino acid stimulus (GO:0071230)	22	9	.02	+	 > 100	4.05E-22	2.12E-18
+response to amino acid (GO:0043200)	34	9	.04	+	 > 100	4.23E-20	1.11E-16
+regulation of gibberellin biosynthetic process (GO:0010371)	10	2	.01	+	 > 100	5.51E-05	6.28E-03
+intracellular calcium ion homeostasis (GO:0006874)	53	9	.06	+	 > 100	3.52E-18	4.62E-15
+calcium ion homeostasis (GO:0055074)	56	9	.06	+	 > 100	6.01E-18	6.31E-15
+cellular response to acid chemical (GO:0071229)	64	9	.07	+	 > 100	2.17E-17	1.90E-14
+calcium-mediated signaling (GO:0019722)	82	9	.09	+	97.28	2.28E-16	1.71E-13
+response to desiccation (GO:0009269)	19	2	.02	+	93.29	2.08E-04	2.23E-02
+calcium ion transmembrane transport (GO:0070588)	87	9	.10	+	91.69	3.98E-16	2.61E-13
+calcium ion transport (GO:0006816)	90	9	.10	+	88.63	5.47E-16	3.19E-13
+cold acclimation (GO:0009631)	53	4	.06	+	66.89	3.73E-07	5.29E-05
+intracellular monoatomic cation homeostasis (GO:0030003)	157	9	.18	+	50.81	9.33E-14	4.89E-11
+intracellular signaling cassette (GO:0141124)	159	9	.18	+	50.17	1.05E-13	4.99E-11
+intracellular monoatomic ion homeostasis (GO:0006873)	164	9	.19	+	48.64	1.39E-13	6.07E-11
+inorganic ion homeostasis (GO:0098771)	192	9	.22	+	41.54	5.81E-13	2.34E-10
+monoatomic cation homeostasis (GO:0055080)	200	9	.23	+	39.88	8.41E-13	2.94E-10
+monoatomic ion homeostasis (GO:0050801)	217	9	.24	+	36.76	1.76E-12	5.75E-10
+intracellular chemical homeostasis (GO:0055082)	229	9	.26	+	34.83	2.85E-12	8.79E-10
+cellular homeostasis (GO:0019725)	264	9	.30	+	30.21	1.02E-11	2.97E-09
+metal ion transport (GO:0030001)	270	9	.30	+	29.54	1.25E-11	3.44E-09
+response to acid chemical (GO:0001101)	457	15	.52	+	29.09	3.87E-19	6.76E-16
+regulation of small molecule metabolic process (GO:0062012)	102	3	.12	+	26.07	2.07E-04	2.26E-02
+chemical homeostasis (GO:0048878)	345	9	.39	+	23.12	1.11E-10	2.76E-08
+homeostatic process (GO:0042592)	392	9	.44	+	20.35	3.42E-10	7.79E-08
+monoatomic cation transmembrane transport (GO:0098655)	399	9	.45	+	19.99	3.99E-10	8.72E-08
+monoatomic cation transport (GO:0006812)	442	9	.50	+	18.05	9.81E-10	1.98E-07
+monoatomic ion transmembrane transport (GO:0034220)	446	9	.50	+	17.88	1.06E-09	2.06E-07
+intracellular signal transduction (GO:0035556)	558	11	.63	+	17.47	1.29E-11	3.38E-09
+monoatomic ion transport (GO:0006811)	496	9	.56	+	16.08	2.68E-09	4.85E-07
+response to water deprivation (GO:0009414)	412	6	.46	+	12.91	5.88E-06	7.90E-04
+response to water (GO:0009415)	424	6	.48	+	12.54	6.92E-06	9.07E-04
+response to light stimulus (GO:0009416)	752	10	.85	+	11.79	5.86E-09	1.02E-06
+response to radiation (GO:0009314)	781	10	.88	+	11.35	8.40E-09	1.38E-06
+response to cold (GO:0009409)	418	5	.47	+	10.60	9.76E-05	1.09E-02
+response to abiotic stimulus (GO:0009628)	2121	18	2.39	+	7.52	6.88E-13	2.58E-10
+cellular response to chemical stimulus (GO:0070887)	1199	10	1.35	+	7.39	4.62E-07	6.38E-05
+signal transduction (GO:0007165)	1446	12	1.63	+	7.36	2.39E-08	3.69E-06
+signaling (GO:0023052)	1485	12	1.68	+	7.16	3.21E-08	4.81E-06
+cell communication (GO:0007154)	1516	12	1.71	+	7.02	4.04E-08	5.88E-06
+transmembrane transport (GO:0055085)	1311	9	1.48	+	6.08	9.69E-06	1.24E-03
+response to chemical (GO:0042221)	2750	16	3.10	+	5.16	6.73E-09	1.14E-06
+transport (GO:0006810)	2327	11	2.63	+	4.19	2.69E-05	3.21E-03
+localization (GO:0051179)	2575	12	2.91	+	4.13	1.15E-05	1.44E-03
+establishment of localization (GO:0051234)	2427	11	2.74	+	4.02	3.99E-05	4.64E-03
+cellular response to stimulus (GO:0051716)	2674	12	3.02	+	3.98	1.70E-05	2.07E-03
+regulation of cellular process (GO:0050794)	4963	22	5.60	+	3.93	1.59E-10	3.78E-08
+regulation of biological process (GO:0050789)	5362	22	6.05	+	3.64	7.50E-10	1.57E-07
+biological regulation (GO:0065007)	5570	22	6.28	+	3.50	1.60E-09	3.00E-07
+response to stimulus (GO:0050896)	5679	21	6.41	+	3.28	2.03E-08	3.22E-06

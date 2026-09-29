@@ -18,6 +18,10 @@ TOPGENES = rbind(TOPGENES.LFMM, TOPGENES.KTAU)
 col.ds = colnames(TOPGENES)[substr(colnames(TOPGENES),1,2)=='P(']
 colnames(TOPGENES)[colnames(TOPGENES)%in%col.ds]=paste0('P(',dslist[substr(col.ds, 3, nchar(col.ds)-1),'name'],')')
 
+## add pheno metadata
+load('DATA/ATHALIANA/PHENO_META.rda')
+rownames(PHENO.META) = PHENO.META$phenotype_id
+
 
 ## Write output
 write.table(TOPGENES,'FIGURES/GEAs/TOPGENES.tsv', sep='\t', quote=F, row.names = F, col.names=T)
@@ -73,6 +77,7 @@ for (og in unique(TOPGENES$locus)) {
       
       gwas$pos = paste0(gwas$snp.chr,':',gwas$snp.position)
       
+      ## get info of top phenotype
       top_pheno_pos =   gwas$pos[which.max(gwas$score)]
       top_pheno_type =   gwas$snp.annotations.0.effect[which.max(gwas$score)]
     
@@ -82,12 +87,15 @@ for (og in unique(TOPGENES$locus)) {
       top_pheno_bonferroni = gwas$overBonferroni[which.max(gwas$score)]
       top_pheno_permutation = gwas$overPermutation[which.max(gwas$score)]
       
+      ## get summary of type of all phenotypes associated
+      all_pheno = paste(unique(PHENO.META[as.character(gwas$study.id),'to_name']), collapse = ';')
+      
       } else {
-        top_pheno_pos = top_pheno_type = top_pheno = top_pheno_score = top_pheno_bonferroni = top_pheno_permutation = top_pheno_id = ''
+        top_pheno_pos = top_pheno_type = top_pheno = top_pheno_score = top_pheno_bonferroni = top_pheno_permutation = top_pheno_id = all_pheno = ''
       }
     
       
-      PROT.ANN = rbind(PROT.ANN, data.frame('OrthogeneID'=og, 'A. thaliana OG'=at, 'UP_ID'=UP_ID, 'UP_Name'=UP_name, 'GO.MF'=MF, 'GO.BP'=BP, 'GO.CC'=CC, top_pheno_pos, top_pheno_type, top_pheno_id, top_pheno, top_pheno_score, top_pheno_bonferroni, top_pheno_permutation))
+      PROT.ANN = rbind(PROT.ANN, data.frame('OrthogeneID'=og, 'A. thaliana OG'=at, 'UP_ID'=UP_ID, 'UP_Name'=UP_name, 'GO.MF'=MF, 'GO.BP'=BP, 'GO.CC'=CC, top_pheno_pos, top_pheno_type, top_pheno_id, top_pheno, top_pheno_score, top_pheno_bonferroni, top_pheno_permutation, all_pheno))
       
     }
       
@@ -98,9 +106,6 @@ for (og in unique(TOPGENES$locus)) {
 head(PROT.ANN)
 
 ### add info on phenotypes
-load('DATA/ATHALIANA/PHENO_META.rda')
-rownames(PHENO.META) = PHENO.META$phenotype_id
-
 PROT.ANN$Pheno = PHENO.META[PROT.ANN$top_pheno_id,'name']
 PROT.ANN$Study = PHENO.META[PROT.ANN$top_pheno_id,'study']
 PROT.ANN$Scoring = PHENO.META[PROT.ANN$top_pheno_id,'scoring']
@@ -112,3 +117,6 @@ PROT.ANN$DOI = PHENO.META[PROT.ANN$top_pheno_id,'doi']
 
 # Write output tables
 write.table(PROT.ANN,'FIGURES/GEAs/topgenes_prot.tsv', sep='\t', quote=F, row.names = F, col.names=T)
+save(PROT.ANN, file='DATA/ATHALIANA/PROTANN.rda')
+
+

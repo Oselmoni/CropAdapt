@@ -53,14 +53,14 @@ for (ds in dslist$dataset) {
   }
 } 
 
-max(TAB.KTAU)
+max(TAB.KTAU)*100
 
 ### Function to transform table to figure
 tab_plot = function(relative, absolute, maxval) {
 
 
   ## set colorscale
-  CCC = colorRampPalette(c('white','lightblue','pink'))(10)
+  CCC = adjustcolor(colorRampPalette(c('white','lightblue','pink'))(10), 0.8)
 
   
   ### Set the composed plot layout
@@ -74,6 +74,13 @@ tab_plot = function(relative, absolute, maxval) {
   par(mar=c(18,15,0,0))
   plot(NA, xlim=c(1,ncol(relative)), ylim=c(1,nrow(relative)), axes=F, xlab='', ylab='')
 
+  ### add grid on bg
+  abline(v=1:ncol(relative), col='grey90')
+  abline(h=1:nrow(relative), col='grey90')
+  
+  ### store x-y range
+  xyrange = par('usr')
+  
   # add value for every cell
   for (x in 1:ncol(relative)) {
     for (y in 1:nrow(relative)) {
@@ -98,24 +105,25 @@ tab_plot = function(relative, absolute, maxval) {
   
   ## Add historgram for env
   par(mar=c(1,15,1,0))
-  barplot(apply(relative, 2, mean), axes=T, names='', las=2, border=0)
+  barplot(apply(relative, 2, mean), width=0.5, space=1, axes=T, names='', las=2, border=0, xlim=c(1,43)-0.25)
+
+ 
   
   ## Add historgram for ds
   par(mar=c(18,0,0,1))
-  barplot(apply(relative, 1, mean), horiz=T, axes=T, names='', las=2, border=0)
+  barplot(apply(relative, 1, mean),width=0.5, space=1,horiz=T, axes=T, names='', las=2, border=0,  ylim=c(1,14)-0.25)
 
-    
 }
 
 
 
 ### Create plots DS by ENV 
 png(filename = 'FIGURES/GEAs/KTAU_GEA.png', width = 9, height = 5.5, units = 'in', res = 300)
-tab_plot(relative = TAB.KTAU, absolute = TAB.KTAU.abs, maxval = 0.0056)
+tab_plot(relative = TAB.KTAU*100, absolute = TAB.KTAU.abs, maxval = 0.56)
 dev.off()
 
 png(filename = 'FIGURES/GEAs/LFMM_GEA.png', width = 9, height = 5.5, units = 'in', res = 300)
-tab_plot(relative = TAB.LFMM, absolute = TAB.LFMM.abs, maxval = 0.0056)
+tab_plot(relative = TAB.LFMM*100, absolute = TAB.LFMM.abs, maxval = 0.56)
 dev.off()
 
 
@@ -127,10 +135,10 @@ TAB.LFMM.LA = TAB.LFMM[lapply(strsplit(rownames(TAB.LFMM), '_'), function(x) {re
 
 png(filename = 'FIGURES/GEAs/GEA_types.png', width = 7, height = 5, units = 'in', res = 300)
 par(mar=c(10,5,1,1))
-boxplot( unlist(as.vector(TAB.KTAU.WR)),
-         unlist(as.vector(TAB.KTAU.LA)),
-         unlist(as.vector(TAB.LFMM.WR)),
-         unlist(as.vector(TAB.LFMM.LA)),
+boxplot( unlist(as.vector(TAB.KTAU.WR))*100,
+         unlist(as.vector(TAB.KTAU.LA))*100,
+         unlist(as.vector(TAB.LFMM.WR))*100,
+         unlist(as.vector(TAB.LFMM.LA))*100,
          names=c('Kendall Τ, CWR', 'Kendall T, landraces', 'LFMM, CWR', 'LFMM, landraces'), las=2)
          title(ylab ='% of significant genes (q<0.05)',line=4)
 dev.off()        

@@ -217,18 +217,18 @@ plotGEAbp = function(gt, env, envLab, COLCS) {
   plot(NA, xlim=c(-0.5,2.5), ylim=range(env,na.rm=T), axes=F, yaxs='i')
   
   # add colorscale in background
-  env_brks = seq(min(env), max(env), length.out=10)
-  for (i in 1:10) {  rect(par('usr')[1],  env_brks[i], par('usr')[2], env_brks[i+1] , border=NA, col=COLCS[i]) }
+  #env_brks = seq(min(env), max(env), length.out=10)
+  #for (i in 1:10) {  rect(par('usr')[1],  env_brks[i], par('usr')[2], env_brks[i+1] , border=NA, col=COLCS[i]) }
   
-  rect(par('usr')[1],  par('usr')[3], par('usr')[2], par('usr')[4] , border=NA, col=adjustcolor('white',0.2))
+  #rect(par('usr')[1],  par('usr')[3], par('usr')[2], par('usr')[4] , border=NA, col=adjustcolor('white',0.2))
   
   # add gt distribution
-  points(gt+runif(length(gt), -0.3,0.3), env, pch=16, col=adjustcolor(1,0.2), cex=.75)
+  points(gt+runif(length(gt), -0.3,0.3), env, pch=16, col=adjustcolor(1,0.1), cex=.75)
   
   # add distribution values for every gt
-  lines(c(0,0), quantile(env[gt==0], na.rm=T)[c(2,4)], lwd=2);points(0, median(env[gt==0], na.rm=T), cex=2, pch=21, bg=COLBOX[1])
-  lines(c(1,1), quantile(env[gt==1], na.rm=T)[c(2,4)], lwd=2);points(1, median(env[gt==1], na.rm=T), cex=2, pch=21, bg=COLBOX[2])
-  lines(c(2,2), quantile(env[gt==2], na.rm=T)[c(2,4)], lwd=2);points(2, median(env[gt==2], na.rm=T), cex=2, pch=21, bg=COLBOX[3])
+  lines(c(0,0), quantile(env[gt==0], na.rm=T)[c(2,4)], lwd=2);points(0, median(env[gt==0], na.rm=T), cex=1.5, pch=21, bg=COLBOX[1])
+  lines(c(1,1), quantile(env[gt==1], na.rm=T)[c(2,4)], lwd=2);points(1, median(env[gt==1], na.rm=T), cex=1.5, pch=21, bg=COLBOX[2])
+  lines(c(2,2), quantile(env[gt==2], na.rm=T)[c(2,4)], lwd=2);points(2, median(env[gt==2], na.rm=T), cex=1.5, pch=21, bg=COLBOX[3])
   
   # Add axes
   axis(1, at=c(0,1,2), cex.axis=1, lwd=0.5)
